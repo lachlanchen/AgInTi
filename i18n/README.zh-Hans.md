@@ -1,94 +1,132 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # AgInTi
 
 [![Status](https://img.shields.io/badge/status-initializing-orange)](#aginti)
 [![Docs](https://img.shields.io/badge/docs-readme_draft-blue)](#aginti)
-[![Repository Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
+[![Repository%20Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
 [![i18n](https://img.shields.io/badge/i18n-planned-0ea5e9)](#aginti)
 [![License](https://img.shields.io/badge/license-TBD-lightgrey)](#aginti)
 
+*以文档为先的启动仓库 • README 优先工作流 • 持续推进多语言规划。*
+
+| 关注点 | 当前状态 |
+|---|---|
+| 核心成熟度 | 启动脚手架（`README`-first） |
+| 本地化 | `i18n/` 中维护 10 种语言 |
+| 流水线来源 | `.auto-readme-work/20260301_064213/` |
+
+---
+
 ## 📌 概览
 
-AgInTi 目前处于初始化/脚手架阶段。在本 README 草稿生成时，仓库主要包含：
+AgInTi 目前是一个以文档脚手架为主的仓库，采用 README 优先工作流和多语言文档规划。
 
-- Git 元数据（`.git/`）
-- 已为多语言 README 文件准备好的 `i18n/` 目录
-- `.auto-readme-work/` 工作区，其中包含 README 生成流水线上下文和语言规划产物
+在本草稿编写时，仓库内容聚焦于文档协作和语言准备，尚未转向可运行的产品代码：
 
-在当前工作树中，尚未检测到应用源码、包清单、运行时入口点或 CI 工作流。
+- ✅ 尚未检测到顶层源码树。
+- ✅ `i18n/` 已包含多个翻译版 README。
+- ✅ `.auto-readme-work/20260301_064213/` 保存了本次处理的活动流水线上下文。
+- ✅ `.auto-readme-work/20260228_184104/` 作为历史记录保留。
 
 ### 仓库快照
 
-| 项目 | 当前状态 |
-| --- | --- |
-| 源代码 | 尚未检测到 |
-| 运行时清单 | 尚未检测到 |
-| CI 工作流 | 尚未检测到 |
-| 文档工作区 | `.auto-readme-work/20260228_184104/` |
-| i18n 目录 | 已存在（`i18n/`） |
+| 条目 | 当前状态 |
+|---|---|
+| 🧩 源代码 | 尚未检测到 |
+| ⚙️ 运行时清单 | 尚未检测到 |
+| 🧪 CI 工作流 | 尚未检测到 |
+| 🧭 文档工作区 | `.auto-readme-work/20260301_064213/` |
+| 🌐 文档翻译 | `i18n/` 中有 10 种语言 |
+
+---
 
 ## 🚦 项目状态
 
-这是该仓库的**首个完整 README 草稿**。
+本 README 是一个增量更新、与仓库实际一致的第一份完整英文草稿。
 
-- 已观测到的仓库状态：**顶层源码树尚不存在**
-- 现有规范 README 基线：**本次运行期间在本地工作区未发现**
-- 本文档采用的方法：保留所有已发现且与仓库实际一致的细节，并对未知项进行明确标注，而不是删除或臆造内容
+- 仓库状态仍保持启动/文档导向。
+- 保留了现有实质性章节，并在必要处扩展，而非替换。
+- 未知内容均明确标注，避免推测性表述。
 
-如果远端分支/历史中存在规范的历史 README，应在此草稿基础上与其内容进行增量合并，而不是替换其中的实质性章节。
+如果上游存在其他分支或历史中的规范 README，后续更新应进行增量合并。
 
-## ✨ 功能（当前）
+---
 
-当前仓库能力以文档/流水线为主：
+## ✨ 特性
 
-- 位于 `.auto-readme-work/` 下的 README 生成流水线工作区
-- 多语言 README 目标规划（包含英文在内共 11 种语言）
-- 根目录与 `i18n/` 的语言导航模板
+- 文档优先的仓库布局
+- `.auto-readme-work/` 下集中化的多语言 README 流水线
+- 明确的语言切换模板与翻译映射文件
+- 用于仓库检查与校验的实际命令片段
+- 通过去重控制，严格追踪 README 的更新流程（支持/横幅区块）
 
-计划中的产品/运行时功能目前尚不明确。
+---
 
 ## 🗂️ 项目结构
 
 ```text
 AgInTi/
 ├── .auto-readme-work/
+│   ├── 20260301_064213/
+│   │   ├── language-nav-root.md
+│   │   ├── language-nav-i18n.md
+│   │   ├── pipeline-context.md
+│   │   ├── repo-structure-analysis.md
+│   │   └── translation-plan.txt
 │   └── 20260228_184104/
-│       ├── pipeline-context.md
-│       ├── repo-structure-analysis.md
 │       ├── language-nav-root.md
 │       ├── language-nav-i18n.md
+│       ├── pipeline-context.md
+│       ├── repo-structure-analysis.md
+│       ├── translated-files.txt
 │       └── translation-plan.txt
-├── .git/
-└── i18n/
+├── i18n/
+│   ├── README.ar.md
+│   ├── README.de.md
+│   ├── README.es.md
+│   ├── README.fr.md
+│   ├── README.ja.md
+│   ├── README.ko.md
+│   ├── README.ru.md
+│   ├── README.vi.md
+│   ├── README.zh-Hans.md
+│   └── README.zh-Hant.md
+└── README.md
 ```
 
 ### 关键文档输入
 
 | 文件 | 用途 |
-| --- | --- |
-| `.auto-readme-work/20260228_184104/pipeline-context.md` | 定义本次运行的 README 约束与生成流程上下文。 |
-| `.auto-readme-work/20260228_184104/repo-structure-analysis.md` | 汇总检测到的仓库结构与已知缺口。 |
-| `.auto-readme-work/20260228_184104/language-nav-root.md` | 根目录 `README.md` 的规范语言切换行。 |
-| `.auto-readme-work/20260228_184104/language-nav-i18n.md` | `i18n/` 下翻译文件的规范语言切换行。 |
-| `.auto-readme-work/20260228_184104/translation-plan.txt` | 翻译的语言环境到文件映射。 |
+|---|---|
+| `.auto-readme-work/20260301_064213/pipeline-context.md` | 记录本次运行的生成约束与提示上下文。 |
+| `.auto-readme-work/20260301_064213/repo-structure-analysis.md` | 检测到的仓库结构与功能缺口快照。 |
+| `.auto-readme-work/20260301_064213/translation-plan.txt` | 语言到文件的映射计划。 |
+| `.auto-readme-work/20260301_064213/language-nav-root.md` | `README.md` 的标准语言切换行。 |
+| `.auto-readme-work/20260301_064213/language-nav-i18n.md` | `i18n/` 文件的标准语言切换行。 |
 
-## 🧰 前置条件
+---
 
-按当前仓库内容使用时，不需要任何运行时前置依赖。
+## 🧰 先决条件
 
-若进行文档工作流和仓库操作，你可能需要：
+当前仓库状态不需要运行时依赖。
+
+用于文档使用与维护，你需要：
 
 - `git`
-- 与 POSIX 兼容的 shell（示例使用 `bash`）
-- 文本编辑器
+- 一个 POSIX shell（示例使用 `bash`）
+- 用于 Markdown 更新的文本编辑器
+
+---
 
 ## 📥 安装
 
-由于目前尚无应用/包清单，因此也没有安装/构建步骤。
+目前尚无安装/构建流程。
 
-克隆仓库：
+要在本地查看仓库：
 
 ```bash
 git clone git@github.com:lachlanchen/AgInTi.git
@@ -97,127 +135,137 @@ cd AgInTi
 
 ## ▶️ 使用
 
-当前的实际使用方式是进行仓库检查以及 README/i18n 文档工作。
+当前用途主要是文档维护、审核与本地化同步。
 
-示例：
+### 常见工作流
 
 ```bash
-# Show top-level files
 ls -la
-
-# Inspect auto-generated README context files
-ls -la .auto-readme-work/20260228_184104
-
-# Inspect i18n directory
+ls -la .auto-readme-work/20260301_064213
 ls -la i18n
 ```
 
+### 典型 README 工作流
+
+1. 阅读 `.auto-readme-work/20260301_064213/` 中当前上下文文件。
+2. 检查源 README 与已翻译版本。
+3. 采用增量编辑，避免移除现有实质性内容。
+4. 在各语言版本中保持语言切换与支持区块一致。
+
+---
+
 ## ⚙️ 配置
 
-目前尚未检测到应用配置文件。
+当前尚未发现应用级配置文件。
 
-已知的仓库配置信号：
+文档层面的配置当前由以下内容表达：
 
-- Git 远程已配置为 `origin git@github.com:lachlanchen/AgInTi.git`
-- 多语言 README 导航与目标语言映射位于 `.auto-readme-work/20260228_184104/`
+- `.auto-readme-work/20260301_064213/translation-plan.txt`（目标语言清单）
+- `.auto-readme-work/20260301_064213/language-nav-root.md` 与 `.../language-nav-i18n.md` 中的语言切换模板
+- `.auto-readme-work/20260301_064213/repo-structure-analysis.md` 的仓库结构上下文
+
+---
 
 ## 🧪 示例
 
-### 示例 1：验证 README 语言导航一致性
+### 示例 1：验证语言切换行
 
 ```bash
-# Compare language switcher templates used by the pipeline
-cat .auto-readme-work/20260228_184104/language-nav-root.md
-cat .auto-readme-work/20260228_184104/language-nav-i18n.md
+cat .auto-readme-work/20260301_064213/language-nav-root.md
+cat .auto-readme-work/20260301_064213/language-nav-i18n.md
 ```
 
-### 示例 2：确认翻译目标集合
+### 示例 2：确认翻译范围
 
 ```bash
-cat .auto-readme-work/20260228_184104/translation-plan.txt
+cat .auto-readme-work/20260301_064213/translation-plan.txt
 ```
 
-### 示例 3：验证仓库尚无运行时清单
+### 示例 3：确认脚手架状态（预期结果：无清单）
 
 ```bash
-# Typical manifest check (expected: none in current state)
-find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml \)
+find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
+
+---
 
 ## 🛠️ 开发说明
 
-- 仓库目前看起来处于早期引导阶段。
-- README 优先的搭建工作正在进行，多语言结构已准备完毕。
-- 在结构分析期间未检测到本地提交历史（分析上下文记录为 `No commits yet on main`）。
-- 添加源代码时，请同步更新本 README，补充明确的设置、使用和配置说明。
+- 将此文件作为英文文档的规范来源。
+- 更新时保留实质性章节（增量编辑策略）。
+- 仅在对应代码、清单与工具链就绪后补充运行指令。
+- 保持支持与 banner 区块去重（每种仅保留一次）。
+- 在功能落地后尽快更新路线图与故障排查内容。
+
+---
 
 ## 🩺 故障排查
 
-### 旧版本/本地副本缺少 `README.md`
+### 我只看到了文档文件
 
-如果你的本地克隆此前不包含 `README.md`，请从最新分支状态同步：
+在当前启动状态下这是预期情况；未检测到源码或运行时清单。
+
+### 本地化文档不一致
+
+请使用最新翻译计划并重新运行 README 同步流程以统一结构和链接。
+
+### 本地分支看起来过时
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### 存在 `i18n/` 但缺少翻译文件
-
-这在早期草稿阶段属于预期情况。翻译目标定义于：
-
-- `.auto-readme-work/20260228_184104/translation-plan.txt`
-
-### 项目运行时技术栈不明确
-
-如果你没有看到 `src/`、清单文件或入口点，这与当前观测状态一致。待引入实现文件后再补充技术栈细节。
+---
 
 ## 🗺️ 路线图
 
-近期文档与项目引导目标：
+- 在代码引入后增加具体产品/应用层。
+- 基于真实清单补充安装、构建与运行说明。
+- 增加 CI 工作流与文档检查。
+- 完善对代码和翻译的贡献规范。
+- 保持所有语言版本的 README 同步更新。
 
-- 完善英文基线 README，补充真实的项目目标与架构
-- 按翻译计划在 `i18n/` 下新增各语言 README
-- 引入应用源码目录结构和运行时清单文件
-- 增加可复现的安装与运行命令
-- 代码库成型后补充 CI 检查（lint/test/docs validation）
+---
 
 ## 🤝 贡献
 
-欢迎贡献。鉴于仓库仍处于早期搭建阶段：
+欢迎贡献。
 
-1. 先提交 issue 描述拟议变更（文档、结构或初始代码布局）。
-2. 创建功能分支。
-3. 保持改动聚焦且文档化。
-4. 当行为或结构变化时，同步更新 README/i18n 文档。
-5. 提交 pull request，并提供清晰上下文与验证步骤。
+1. 创建 issue 说明上下文与范围。
+2. 新建专用分支。
+3. 保持改动聚焦且增量。
+4. 保留已有技术细节和章节上下文。
+5. 提交 PR，并附上清晰的验证说明。
 
-建议的本地工作流：
+### 建议流程
 
 ```bash
 git checkout -b feat/your-change
-# make edits
+# edit README + relevant files
+git add README.md
 
-git add .
-git commit -m "Describe your change"
+git commit -m "docs: update README"
+
 git push -u origin feat/your-change
 ```
 
-## 💬 支持
+## ❤️ Support
 
-当前仓库文件中尚未声明专门的支持、赞助或捐赠渠道。
+| Donate | PayPal | Stripe |
+|---|---|---|
+| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=ko-fi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
-若后续新增支持链接，请在此处补充，并在 README 后续修订中持续保留。
+## 📄 许可
 
-## 📄 许可证
-
-当前仓库内容尚未声明许可证信息。
+尚未提供 `LICENSE` 文件。
 
 - 状态：`TBD`
-- 建议下一步：添加 `LICENSE` 文件，并在本节写明准确的 SPDX 标识符。
+- 建议下一步：补充许可证文件，并在此处写明准确的 SPDX 标识。
 
 ## 🧾 假设与保留说明
 
-- 本草稿基于 `/home/lachlan/ProjectsLFS/AgInTi` 当前存在的仓库文件生成。
-- 生成时本地不可用既有规范 README，因此无法从其中导入实质内容。
-- 根据保留策略，未知或缺失细节均会被明确标注，而非猜测或省略。
+- 本次运行在 `/home/lachlan/ProjectsLFS/AgInTi` 上评估了仓库内容。
+- 运行时目标与架构尚未在已提交文件中体现；该草稿有意聚焦于当前可验证事实。
+- 已保留并扩展来自先前草稿的实质性章节。
+- 已在本次请求范围内仅插入一次 banner 与支持区块。

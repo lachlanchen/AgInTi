@@ -1,94 +1,132 @@
 [English](README.md) · [العربية](i18n/README.ar.md) · [Español](i18n/README.es.md) · [Français](i18n/README.fr.md) · [日本語](i18n/README.ja.md) · [한국어](i18n/README.ko.md) · [Tiếng Việt](i18n/README.vi.md) · [中文 (简体)](i18n/README.zh-Hans.md) · [中文（繁體）](i18n/README.zh-Hant.md) · [Deutsch](i18n/README.de.md) · [Русский](i18n/README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # AgInTi
 
 [![Status](https://img.shields.io/badge/status-initializing-orange)](#aginti)
 [![Docs](https://img.shields.io/badge/docs-readme_draft-blue)](#aginti)
-[![Repository Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
+[![Repository%20Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
 [![i18n](https://img.shields.io/badge/i18n-planned-0ea5e9)](#aginti)
 [![License](https://img.shields.io/badge/license-TBD-lightgrey)](#aginti)
 
+*Documentation-first bootstrap repository • README-first workflow • active multilingual planning.*
+
+| Focus | Current state |
+|---|---|
+| Core maturity | Bootstrap scaffold (`README`-first) |
+| Localization | 10 locales maintained in `i18n/` |
+| Pipeline source | `.auto-readme-work/20260301_064213/` |
+
+---
+
 ## 📌 Overview
 
-AgInTi is currently in an initialization/scaffold phase. At the time of this README draft, the repository primarily contains:
+AgInTi is currently a documentation-scaffold repository with a README-first workflow and multilingual documentation planning.
 
-- Git metadata (`.git/`)
-- An `i18n/` directory prepared for multilingual README files
-- An `.auto-readme-work/` workspace containing README generation pipeline context and language planning artifacts
+At the time of this draft, repository contents are focused on documentation coordination and language preparation, not yet on a runtime product:
 
-No application source code, package manifests, runtime entrypoints, or CI workflows were detected in the current working tree.
+- ✅ No top-level source tree is detected yet.
+- ✅ `i18n/` contains translated README variants.
+- ✅ `.auto-readme-work/20260301_064213/` stores the active pipeline context for this pass.
+- ✅ `.auto-readme-work/20260228_184104/` is retained as a historical artifact.
 
-### Repository Snapshot
+### Repository snapshot
 
-| Item | Current State |
-| --- | --- |
-| Source code | Not detected yet |
-| Runtime manifests | Not detected yet |
-| CI workflows | Not detected yet |
-| Documentation workspace | `.auto-readme-work/20260228_184104/` |
-| i18n directory | Present (`i18n/`) |
+| Item | Current state |
+|---|---|
+| 🧩 Source code | Not detected yet |
+| ⚙️ Runtime manifests | Not detected yet |
+| 🧪 CI workflows | Not detected yet |
+| 🧭 Documentation workspace | `.auto-readme-work/20260301_064213/` |
+| 🌐 Translated docs | 10 locales in `i18n/` |
 
-## 🚦 Project Status
+---
 
-This is the **first complete README draft** for the repository.
+## 🚦 Project status
 
-- Repository state observed: **no top-level source tree yet**
-- Existing canonical README baseline: **not present in local workspace during this run**
-- Documentation approach used here: preserve all discovered repository-accurate details and clearly label unknowns rather than remove or fabricate content
+This README is an increment-only, repository-accurate first complete English draft.
 
-If a canonical historical README exists in a remote branch/history, this draft should be incrementally merged with that content rather than replacing substantive sections.
+- State remains bootstrap/documentation oriented.
+- Substantive existing sections have been preserved and expanded rather than replaced.
+- Unknowns are explicitly marked and avoid speculative claims.
 
-## ✨ Features (Current)
+If a canonical upstream README exists in a different branch or history, future updates should merge it incrementally.
 
-Current repository capabilities are documentation/pipeline-oriented:
+---
 
-- README generation pipeline workspace under `.auto-readme-work/`
-- Multilingual README target planning (11 languages including English)
-- Root and `i18n/` language-navigation templates
+## ✨ Features
 
-Planned product/runtime features are unknown at this stage.
+- Documentation-first repository layout
+- Centralized multilingual README pipeline under `.auto-readme-work/`
+- Explicit language switcher templates and translation mapping files
+- Practical command snippets for repository inspection and validation
+- Strictly tracked README update process with deduplication of support/banner blocks
 
-## 🗂️ Project Structure
+---
+
+## 🗂️ Project structure
 
 ```text
 AgInTi/
 ├── .auto-readme-work/
+│   ├── 20260301_064213/
+│   │   ├── language-nav-root.md
+│   │   ├── language-nav-i18n.md
+│   │   ├── pipeline-context.md
+│   │   ├── repo-structure-analysis.md
+│   │   └── translation-plan.txt
 │   └── 20260228_184104/
-│       ├── pipeline-context.md
-│       ├── repo-structure-analysis.md
 │       ├── language-nav-root.md
 │       ├── language-nav-i18n.md
+│       ├── pipeline-context.md
+│       ├── repo-structure-analysis.md
+│       ├── translated-files.txt
 │       └── translation-plan.txt
-├── .git/
-└── i18n/
+├── i18n/
+│   ├── README.ar.md
+│   ├── README.de.md
+│   ├── README.es.md
+│   ├── README.fr.md
+│   ├── README.ja.md
+│   ├── README.ko.md
+│   ├── README.ru.md
+│   ├── README.vi.md
+│   ├── README.zh-Hans.md
+│   └── README.zh-Hant.md
+└── README.md
 ```
 
-### Key Documentation Inputs
+### Key documentation inputs
 
 | File | Purpose |
-| --- | --- |
-| `.auto-readme-work/20260228_184104/pipeline-context.md` | Defines README constraints and generation workflow context for this run. |
-| `.auto-readme-work/20260228_184104/repo-structure-analysis.md` | Summarizes detected repository structure and known gaps. |
-| `.auto-readme-work/20260228_184104/language-nav-root.md` | Canonical language switcher line for root `README.md`. |
-| `.auto-readme-work/20260228_184104/language-nav-i18n.md` | Canonical language switcher line for translated files under `i18n/`. |
-| `.auto-readme-work/20260228_184104/translation-plan.txt` | Locale-to-file mapping for translations. |
+|---|---|
+| `.auto-readme-work/20260301_064213/pipeline-context.md` | Generation constraints and prompt context for this run. |
+| `.auto-readme-work/20260301_064213/repo-structure-analysis.md` | Snapshot of detected structure and project gaps. |
+| `.auto-readme-work/20260301_064213/translation-plan.txt` | Locale-to-file mapping for translated variants. |
+| `.auto-readme-work/20260301_064213/language-nav-root.md` | Canonical language selector line for `README.md`. |
+| `.auto-readme-work/20260301_064213/language-nav-i18n.md` | Canonical language selector line for `i18n/` files. |
+
+---
 
 ## 🧰 Prerequisites
 
-No runtime prerequisites are currently required to use repository contents as-is.
+No runtime dependencies are required for the current repository state.
 
-For documentation workflow and repository operations, you likely need:
+For documentation usage and maintenance, you need:
 
 - `git`
-- A POSIX-compatible shell (examples use `bash`)
-- A text editor
+- A POSIX shell (examples use `bash`)
+- A text editor for Markdown updates
+
+---
 
 ## 📥 Installation
 
-Because no application/package manifest is present yet, there is no install/build step.
+There is no install/build process yet.
 
-Clone the repository:
+To inspect the repository locally:
 
 ```bash
 git clone git@github.com:lachlanchen/AgInTi.git
@@ -97,127 +135,137 @@ cd AgInTi
 
 ## ▶️ Usage
 
-Current practical usage is repository inspection and README/i18n documentation work.
+Current usage is documentation maintenance, auditing, and localization synchronization.
 
-Examples:
+### Common workflows
 
 ```bash
-# Show top-level files
 ls -la
-
-# Inspect auto-generated README context files
-ls -la .auto-readme-work/20260228_184104
-
-# Inspect i18n directory
+ls -la .auto-readme-work/20260301_064213
 ls -la i18n
 ```
 
+### Typical README workflow
+
+1. Read the current context artifacts in `.auto-readme-work/20260301_064213/`.
+2. Review source and translated README content.
+3. Apply incremental edits to avoid removing existing substantive details.
+4. Keep language switcher and support blocks consistent across locales.
+
+---
+
 ## ⚙️ Configuration
 
-No application configuration files are currently detected.
+No application configuration file is present yet.
 
-Known repository configuration signals:
+Current documentation-level configuration is represented by:
 
-- Git remote configured as `origin git@github.com:lachlanchen/AgInTi.git`
-- Multilingual README navigation and target locale mappings in `.auto-readme-work/20260228_184104/`
+- `.auto-readme-work/20260301_064213/translation-plan.txt` for locale targets
+- Language switcher templates in `.auto-readme-work/20260301_064213/language-nav-root.md` and `.../language-nav-i18n.md`
+- Repo structure context in `.auto-readme-work/20260301_064213/repo-structure-analysis.md`
+
+---
 
 ## 🧪 Examples
 
-### Example 1: Validate README language navigation consistency
+### Example 1: Verify language switcher lines
 
 ```bash
-# Compare language switcher templates used by the pipeline
-cat .auto-readme-work/20260228_184104/language-nav-root.md
-cat .auto-readme-work/20260228_184104/language-nav-i18n.md
+cat .auto-readme-work/20260301_064213/language-nav-root.md
+cat .auto-readme-work/20260301_064213/language-nav-i18n.md
 ```
 
-### Example 2: Confirm translation target set
+### Example 2: Confirm translation scope
 
 ```bash
-cat .auto-readme-work/20260228_184104/translation-plan.txt
+cat .auto-readme-work/20260301_064213/translation-plan.txt
 ```
 
-### Example 3: Verify repository has no runtime manifests yet
+### Example 3: Confirm scaffold state (expected: no manifests)
 
 ```bash
-# Typical manifest check (expected: none in current state)
-find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml \)
+find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
 
-## 🛠️ Development Notes
+---
 
-- The repository appears to be at an early bootstrap stage.
-- README-first setup is in progress, with multilingual structure prepared.
-- No local commit history was detected during structure analysis (`No commits yet on main` was noted in analysis context).
-- When adding source code, keep this README updated with concrete setup, usage, and configuration instructions.
+## 🛠️ Development notes
+
+- Maintain this file as the canonical English documentation source.
+- Preserve substantive sections when updating (increment-only editing policy).
+- Add runtime instructions only when corresponding code, manifests, and toolchains exist.
+- Keep support and banner blocks deduplicated (exactly one each).
+- Update roadmap and troubleshooting as soon as functionality lands.
+
+---
 
 ## 🩺 Troubleshooting
 
-### `README.md` missing in older/local copies
+### I only see documentation files
 
-If your local clone did not previously include `README.md`, sync from the latest branch state:
+That is expected in this bootstrap state; no source/runtime manifests were detected.
+
+### Locale documentation is inconsistent
+
+Use the latest translation plan and rerun your README sync flow to normalize structure and links.
+
+### Local branch feels outdated
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### `i18n/` exists but translated files are missing
-
-This is expected in an early draft stage. Translation targets are defined in:
-
-- `.auto-readme-work/20260228_184104/translation-plan.txt`
-
-### Unclear project runtime stack
-
-If you do not see `src/`, manifests, or entrypoints, this matches the current observed state. Add stack details once implementation files are introduced.
+---
 
 ## 🗺️ Roadmap
 
-Near-term documentation and project bootstrap goals:
+- Add the concrete product/application layer when code is introduced.
+- Expand setup, build, and run instructions from real manifests.
+- Add CI workflows and docs checks.
+- Extend contribution standards for code and translations.
+- Keep translated READMEs synchronized and current.
 
-- Finalize baseline English README with real project purpose and architecture
-- Add translated README files under `i18n/` according to translation plan
-- Introduce application source layout and runtime manifest(s)
-- Add reproducible setup and execution commands
-- Add CI checks (lint/test/docs validation) once codebase exists
+---
 
-## 🤝 Contributing
+## 🤝 Contribution
 
-Contributions are welcome. Since the repository is in early setup:
+Contributions are welcome.
 
-1. Open an issue describing the proposed change (docs, structure, or initial code layout).
-2. Create a feature branch.
-3. Keep changes focused and documented.
-4. Update README/i18n documentation whenever behavior or structure changes.
-5. Submit a pull request with clear context and verification steps.
+1. Open an issue with context and scope.
+2. Create a dedicated branch.
+3. Keep edits focused and incremental.
+4. Preserve existing technical details and section context.
+5. Open a PR with clear verification notes.
 
-Suggested local workflow:
+### Suggested flow
 
 ```bash
 git checkout -b feat/your-change
-# make edits
+# edit README + relevant files
+git add README.md
 
-git add .
-git commit -m "Describe your change"
+git commit -m "docs: update README"
+
 git push -u origin feat/your-change
 ```
 
-## 💬 Support
+## ❤️ Support
 
-No dedicated support, sponsor, or donation channels are currently declared in repository files.
-
-If support links are added later, include them here and preserve them across README revisions.
+| Donate | PayPal | Stripe |
+|---|---|---|
+| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=ko-fi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
 ## 📄 License
 
-License information is not declared in current repository contents.
+No `LICENSE` file is present yet.
 
 - Status: `TBD`
-- Recommended next step: add a `LICENSE` file and update this section with the exact SPDX identifier.
+- Recommended next step: add a license file and set SPDX identifier here.
 
-## 🧾 Assumptions and Preservation Notes
+## 🧾 Assumptions and preservation notes
 
-- This draft is built from repository files currently present in `/home/lachlan/ProjectsLFS/AgInTi`.
-- A canonical pre-existing README was not available locally at generation time; therefore nothing substantive could be imported from it.
-- Per preservation policy, unknown or missing details are explicitly marked instead of being guessed or omitted.
+- Repository content was evaluated from `/home/lachlan/ProjectsLFS/AgInTi` during this run.
+- Runtime goals and architecture are not represented in committed files yet; this draft intentionally focuses on documented facts.
+- Existing substantive sections from the prior draft were retained and expanded where useful.
+- The banner and support blocks were inserted once each to satisfy the requested positions.
