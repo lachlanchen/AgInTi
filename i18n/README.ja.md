@@ -5,83 +5,81 @@
 
 # AgInTi
 
-[![Status](https://img.shields.io/badge/status-initializing-orange)](#aginti)
-[![Docs](https://img.shields.io/badge/docs-readme_draft-blue)](#aginti)
-[![Repository%20Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
-[![i18n](https://img.shields.io/badge/i18n-planned-0ea5e9)](#aginti)
-[![License](https://img.shields.io/badge/license-TBD-lightgrey)](#aginti)
+[![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
+[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#documentation-inputs-and-generated-artifacts)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
 
-*ドキュメントファーストのブートストラップリポジトリ • READMEファーストワークフロー • アクティブな多言語計画。*
+ドキュメントを最初に整備し、完全な英語版 README と同時更新された多言語ドキュメントを維持するためのリポジトリ・ブートストラップです。
 
-| フォーカス | 現在の状態 |
+## 🧭 クイックナビゲーション
+
+| 種別 | 行き先 |
 |---|---|
-| コア成熟度 | Bootstrapスキャフォールド（`README`-first） |
-| ローカリゼーション | `i18n/` で10言語を維持 |
-| パイプライン情報源 | `.auto-readme-work/20260301_064213/` |
+| リポジトリのワークフロー | [スコープとスナップショット](#-scope-and-snapshot) |
+| 使用例 | [Usage](#-usage) |
+| 寄稿ガイド | [Contribution](#-contribution) |
+| このプロジェクトのサポート | [Support](#-support) |
 
 ---
 
-## 📌 Overview
+[![Pipeline](https://img.shields.io/badge/Pipeline-.auto--readme--work-0f172a?style=flat-square&logo=githubactions&logoColor=white)](./.auto-readme-work)
+[![Locales](https://img.shields.io/badge/Locales-10%20files-22c55e?style=flat-square&logo=googletranslate&logoColor=white)](./i18n)
+[![Scope](https://img.shields.io/badge/Scope-Documentation-0ea5e9?style=flat-square&logo=mdbook&logoColor=white)](#documentation-inputs-and-generated-artifacts)
 
-AgInTi は現在、READMEファーストワークフローと多言語ドキュメント計画を備えた、ドキュメント優先のブートストラップリポジトリです。
+## 📌 一覧
 
-このドラフト時点では、リポジトリ内容はランタイム製品よりも、ドキュメント調整と語学対応準備に焦点を当てています。
+| 🎯 フォーカス | 🧩 現在の値 |
+| --- | --- |
+| リポジトリの目的 | 多言語 README 同期のためのドキュメント・ブートストラップ |
+| コア原則 | インクリメンタル編集で主要履歴を維持 |
+| 現在の状態 | リポジトリスナップショットで実行時アプリ/サービスは検出されていません |
 
-- ✅ まだトップレベルのソースツリーは検出されていません。
-- ✅ `i18n/` には README の各言語版が格納されています。
-- ✅ `.auto-readme-work/20260301_064213/` が今回の実行時のアクティブなパイプラインコンテキストを保持しています。
-- ✅ `.auto-readme-work/20260228_184104/` は履歴として保持されています。
+---
 
-### Repository snapshot
+| ✅ スナップショット | 📌 現在の状態 |
+| --- | --- |
+| リポジトリフェーズ | `.auto-readme-work/` が主導するブートストラップスコープ |
+| ローカライゼーション | 10 の翻訳 README |
+| 検証済み実行 | 実行可能なアプリやサービスは検出されていません |
+
+## 📌 概要
+
+AgInTi は **documentation-bootstrap** リポジトリです。
+
+このリポジトリは README ファーストのドキュメント化、ローカリゼーション基盤、そして一貫した多言語ドキュメントを生成するための反復的ワークフロー成果物に焦点を当てています。
+
+- ✅ まだトップレベルの実行時ソースツリーは検出されていません。
+- ✅ `i18n/` には 10 の翻訳 README が含まれています。
+- ✅ `.auto-readme-work/` は反復的ドキュメント更新のためのパイプライン成果物を保持しています。
+- ✅ インクリメンタル更新で既存の実質的な内容が保持されています。
+
+## ✅ スコープとスナップショット
 
 | 項目 | 現在の状態 |
 |---|---|
-| 🧩 ソースコード | まだ検出されていません |
-| ⚙️ ランタイムマニフェスト | まだ検出されていません |
-| 🧪 CIワークフロー | まだ検出されていません |
-| 🧭 ドキュメントワークスペース | `.auto-readme-work/20260301_064213/` |
-| 🌐 翻訳済みドキュメント | `i18n/` 内の10言語 |
+| 🧩 ソースコード | 検出されません |
+| 🧪 テスト/CI | 検出されません |
+| 📘 ドキュメントワークフロー | `.auto-readme-work/` 駆動 |
+| 🌐 ローカライズド文書 | 10 言語を維持 |
+| 🔒 ライセンスファイル | このスナップショットには存在しません |
 
----
+## ✨ 特徴
 
-## 🚦 Project status
+- README ファーストのリポジトリ文書化戦略。
+- ルートとローカライズページ向けの正準リンクを持つ言語認識ワークフロー。
+- 定義済み位置でバナーとサポートブロックを重複なしで維持。
+- 既存の重要セクションを保持するインクリメンタル更新。
+- ドキュメント貢献者向けの実用的な検査スニペット。
 
-このREADMEは、増分のみで更新可能な、リポジトリ実態を反映した最初の完全な英語ドラフトです。
-
-- 状態は依然としてブートストラップ／ドキュメント志向です。
-- 既存の実質的なセクションは置換ではなく保持・拡張されています。
-- 不明点は明示し、推測ベースの主張は避けています。
-
-将来の更新では、別ブランチや履歴にある正規のREADMEが存在する場合、それを増分的に統合すべきです。
-
----
-
-## ✨ Features
-
-- ドキュメントファーストのリポジトリ構成
-- `.auto-readme-work/` 配下での多言語READMEパイプラインを一元管理
-- 明示的な言語切り替えテンプレートと翻訳マッピングファイル
-- リポジトリ検証や点検のための実用的なコマンドスニペット
-- サポートバナー/バナーの重複排除を含むREADME更新を厳格に追跡
-
-## 🗂️ Project structure
+## 🗂️ プロジェクト構造
 
 ```text
 AgInTi/
-├── .auto-readme-work/
-│   ├── 20260301_064213/
-│   │   ├── language-nav-root.md
-│   │   ├── language-nav-i18n.md
-│   │   ├── pipeline-context.md
-│   │   ├── repo-structure-analysis.md
-│   │   └── translation-plan.txt
-│   └── 20260228_184104/
-│       ├── language-nav-root.md
-│       ├── language-nav-i18n.md
-│       ├── pipeline-context.md
-│       ├── repo-structure-analysis.md
-│       ├── translated-files.txt
-│       └── translation-plan.txt
+├── README.md
+├── README.md.auto-readme-support
+├── README.md.auto-readme-support.filtered
 ├── i18n/
 │   ├── README.ar.md
 │   ├── README.de.md
@@ -93,167 +91,173 @@ AgInTi/
 │   ├── README.vi.md
 │   ├── README.zh-Hans.md
 │   └── README.zh-Hant.md
-└── README.md
+└── .auto-readme-work/
+    ├── 20260228_184104/
+    ├── 20260301_064213/
+    ├── 20260301_064740/
+    ├── 20260301_065835/
+    └── 20260301_070633/
 ```
 
-### Key documentation inputs
+## 🧱 アーキテクチャとワークフローモデル
 
-| ファイル | 用途 |
+現時点では「アーキテクチャ」は、このリポジトリのドキュメントパイプラインを指します。
+
+1. 制約とコンテキストは各実行ごとに `.auto-readme-work/<run-id>/pipeline-context.md` として生成されます。
+2. 言語ナビゲータのテンプレートが `language-nav-root.md` / `language-nav-i18n.md` によって作成されます。
+3. README の実質的な履歴を保ったまま、インクリメンタルな編集が適用されます。
+4. ローカライズ済みファイルは同一の構造テンプレートから同期されます。
+
+## 📚 ドキュメント入力と生成成果物
+
+| ファイル | 目的 |
 |---|---|
-| `.auto-readme-work/20260301_064213/pipeline-context.md` | この実行時の制約とプロンプトの文脈 |
-| `.auto-readme-work/20260301_064213/repo-structure-analysis.md` | 検出された構成と未対応項目のスナップショット |
-| `.auto-readme-work/20260301_064213/translation-plan.txt` | ロケールとファイルの対応表 |
-| `.auto-readme-work/20260301_064213/language-nav-root.md` | `README.md` 用の標準言語セレクタ行 |
-| `.auto-readme-work/20260301_064213/language-nav-i18n.md` | `i18n/` 用の標準言語セレクタ行 |
+| `.auto-readme-work/20260301_070633/pipeline-context.md` | 今回の実行の制約と指示 |
+| `.auto-readme-work/20260301_070633/translation-plan.txt` | 多言語同期のロケール対応表 |
+| `.auto-readme-work/20260301_070633/language-nav-root.md` | `README.md` の正規言語ナビゲーション行 |
+| `.auto-readme-work/20260301_070633/language-nav-i18n.md` | 翻訳済み README の正規言語ナビゲーション行 |
+| `.auto-readme-work/20260301_070633/repo-structure-analysis.md` | 本生成パスで使われたリポジトリスナップショット |
+| `README.md.auto-readme-support*` | 過去のブートストラップ時に使用されたサポートマニフェスト |
 
----
+## 🧭 リポジトリワークフローの目標
 
-## 🧰 Prerequisites
+このリポジトリは意図的に軽量です。長期目標は、技術コンテキスト・リンク・構造を毀損せずに、ルート README と翻訳版を継続的に同期し続けることです。
 
-現在のリポジトリ状態では、ランタイム依存は不要です。
+## 🧰 前提条件
 
-ドキュメントの使用とメンテナンスには以下が必要です。
+- リポジトリへアクセスするための `git`。
+- POSIX シェル（例は `bash`）。
+- Markdown 対応エディタ。
 
-- `git`
-- POSIX準拠シェル（例: `bash`）
-- Markdown 更新用のテキストエディタ
+### 実行時の前提
 
----
+本リポジトリのスナップショットでは実行可能な成果物が検出されていないため、ビルド/ランタイム要件は未定義です。
 
-## 📥 Installation
+## 📥 インストール
 
-まだインストール／ビルドプロセスはありません。
-
-ローカルでリポジトリを確認するには:
+バイナリのインストールやビルド手順はまだありません。
 
 ```bash
+# リポジトリをクローンする
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
-## ▶️ Usage
+## ▶️ 使い方
 
-現在の用途は、ドキュメント保守、監査、ローカライズ同期です。
+現時点での利用は、ドキュメント保守と多言語の整合性維持に集中しています。
 
-### Common workflows
+### 共通コマンド
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260301_064213
+ls -la .auto-readme-work/20260301_070633
 ls -la i18n
 ```
 
-### Typical README workflow
+### README 同期の一般的なワークフロー
 
-1. `.auto-readme-work/20260301_064213/` の現在のコンテキスト成果物を読む。
-2. 元のREADMEと翻訳README内容を確認する。
-3. 既存の実質情報を削除しない増分編集を適用する。
-4. 言語セレクタとサポート欄をロケール間で一貫させる。
+1. `.auto-readme-work/20260301_070633/pipeline-context.md` で実行コンテキストを確認します。
+2. `.auto-readme-work/20260301_070633/language-nav-*.md` の言語セレクター用テンプレートを確認します。
+3. `README.md` をインクリメンタルに編集し、実質的な既存セクションは削除しません。
+4. バナーとサポートブロックは一意に保ち、必要な位置に配置します。
+5. 必要に応じて、`i18n/README.*.md` を同一構造へ揃えます。
 
----
+## ⚙️ 設定
 
-## ⚙️ Configuration
+アプリケーション設定はまだありません。リポジトリレベルのドキュメント動作は、`.auto-readme-work/` のワークフロー成果物と `i18n/` のロケールファイルで定義されています。
 
-まだアプリケーション設定ファイルは存在しません。
+- `pipeline-context.md`（制約と目標）
+- `translation-plan.txt`（ロケール範囲とマッピング）
+- `language-nav-root.md` と `language-nav-i18n.md`（ナビゲーション整合）
+- `README.md.auto-readme-support*`（スカフォールディングヘルパー）
 
-現時点のドキュメントレベル設定は以下で表現されます。
+## 🧪 例
 
-- 言語ターゲット向けの `.auto-readme-work/20260301_064213/translation-plan.txt`
-- `.auto-readme-work/20260301_064213/language-nav-root.md` と `.../language-nav-i18n.md` の言語セレクタテンプレート
-- `.auto-readme-work/20260301_064213/repo-structure-analysis.md` のリポジトリ構成コンテキスト
-
----
-
-## 🧪 Examples
-
-### Example 1: 言語セレクタ行の検証
+### 例 1: 言語セレクター行の確認
 
 ```bash
-cat .auto-readme-work/20260301_064213/language-nav-root.md
-cat .auto-readme-work/20260301_064213/language-nav-i18n.md
+cat .auto-readme-work/20260301_070633/language-nav-root.md
+cat .auto-readme-work/20260301_070633/language-nav-i18n.md
 ```
 
-### Example 2: 翻訳対象の確認
+### 例 2: 対応ロケールと翻訳ファイルの確認
 
 ```bash
-cat .auto-readme-work/20260301_064213/translation-plan.txt
+cat .auto-readme-work/20260301_070633/translation-plan.txt
 ```
 
-### Example 3: スキャフォールド状態の確認（期待値: マニフェストなし）
+### 例 3: スキャフォールディング状態の確認
 
 ```bash
-find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
+find . -maxdepth 2 \
+  \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
 
----
+## 🛠️ 開発ノート
 
-## 🛠️ Development notes
+- インクリメンタル編集を使って既存の技術文脈を維持します。
+- 具体的な成果物が存在しない限り、実行/ビルド手順を追加しないでください。
+- バナーとサポートセクションを1つだけ表示されるようにしてください。
+- リポジトリの挙動が不明な場合は前提条件を明示します。
+- コマンド例は既存のファイルとディレクトリに紐づけてください。
 
-- このファイルを英語版ドキュメントの正本として維持します。
-- 更新時には実質的なセクションを保持してください（増分のみ編集ポリシー）。
-- コード・マニフェスト・ツールチェーンが存在した場合のみ実行時の手順を追加します。
-- サポート欄とバナー欄は重複なく維持します（それぞれ1つだけ）。
-- 機能が実装され次第、ロードマップとトラブルシューティングを更新します。
+## 🩺 トラブルシューティング
 
----
+### Markdown ファイルしか見えない
 
-## 🩺 Troubleshooting
+これはこのブートストラップ段階では想定通りです。
 
-### ドキュメントファイルのみ表示される場合
+### 言語切替の表示が不一致
 
-このブートストラップ状態では想定される挙動です。ソースやランタイムのマニフェストは検出されていません。
+各 `README.*.md` をルートの言語行と `.auto-readme-work/20260301_070633/` 内の最新パイプラインコンテキストで比較してください。
 
-### ロケール文書が不整合な場合
-
-最新の翻訳計画を使い、README同期フローを再実行して構成とリンクを正規化してください。
-
-### ローカルブランチが古いように感じる場合
+### 私のブランチが遅れている
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
----
+### コード手順を追加したい
 
-## 🗺️ Roadmap
+具体的なマニフェスト（例: `package.json`、`pyproject.toml`、`Cargo.toml` など）を追加し、資産の存在を確認してから、ビルド/実行コマンドを追加してください。
 
-- コード追加時に具体的なプロダクト／アプリケーション層を追加する。
-- 実在するマニフェストを用いたセットアップ、ビルド、実行手順を拡張する。
-- CIワークフローとドキュメントチェックを追加する。
-- コードと翻訳のための貢献基準を拡張する。
-- 翻訳READMEを同期し、最新状態を維持する。
+## 🗺️ ロードマップ
 
----
+- 具体的なアプリケーション/実行時コンポーネントを導入する。
+- コードとツールが存在したら、インストール、実行、デプロイのガイダンスを拡張する。
+- Markdown 品質とロケール一致性のための CI チェックを追加する。
+- 明示的なバージョン付きパイプラインで翻訳プロセスの再現性を維持する。
+- 将来のコード貢献者とドキュメント貢献者の両方向けのガイダンスを追加する。
 
-## 🤝 Contribution
+## 🤝 貢献
 
-貢献歓迎です。
+コントリビューションを歓迎します。
 
-1. コンテキストとスコープを明記したIssueを開く。
-2. 専用ブランチを作成する。
-3. 編集は焦点を絞った増分で行う。
-4. 既存の技術的詳細とセクション文脈を保持する。
-5. 検証結果を明記してPRを作成する。
+1. 変更内容を説明した Issue を作成します。
+2. 専用ブランチを作成します。
+3. 変更は最小限かつインクリメンタルに保ちます。
+4. 既存の意味あるセクションを保持します。
+5. 簡潔な検証ノート付きで pull request を提出します。
 
-### Suggested flow
+### 推奨フロー
 
 ```bash
-git checkout -b feat/your-change
-# edit README + relevant files
+git checkout -b docs/your-update
+# edit README.md and/or i18n/
 git add README.md
-
-git commit -m "docs: update README"
-
-git push -u origin feat/your-change
+git commit -m "docs: refine README draft"
+git push -u origin docs/your-update
 ```
+
+## 📄 ライセンス
+
+このリポジトリのスナップショットには、まだライセンスは含まれていません。
+
 
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |
-|---|---|---|
-| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=ko-fi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
-
-## 📄 License
-
-`LICENSE` ファイルはまだ存在しません。
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

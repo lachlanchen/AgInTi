@@ -5,85 +5,79 @@
 
 # AgInTi
 
-[![Status](https://img.shields.io/badge/status-initializing-orange)](#aginti)
-[![Docs](https://img.shields.io/badge/docs-readme_draft-blue)](#aginti)
-[![Repository%20Stage](https://img.shields.io/badge/stage-bootstrap-yellow)](#aginti)
-[![i18n](https://img.shields.io/badge/i18n-planned-0ea5e9)](#aginti)
-[![License](https://img.shields.io/badge/license-TBD-lightgrey)](#aginti)
+[![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
+[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#documentation-inputs-and-generated-artifacts)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
 
-*Dépôt bootstrap orienté documentation • Workflow « README-first » • planification multilingue active.*
+Référentiel de documentation-first pour maintenir un README principal en anglais complet et une documentation multilingue synchronisée.
 
-| Focus | Current state |
+## 🧭 Navigation rapide
+
+| Type | Destination |
 |---|---|
-| Maturité du cœur | Échafaudage bootstrap (`README`-first) |
-| Localisation | 10 locales maintenues dans `i18n/` |
-| Contexte du pipeline | `.auto-readme-work/20260301_064213/` |
+| Flux du dépôt | [Portée et instantané](#-scope-and-snapshot) |
+| Cas d'utilisation | [Utilisation](#-usage) |
+| Guide de contribution | [Contribution](#-contribution) |
+| Soutien au projet | [Support](#-support) |
 
 ---
+
+[![Pipeline](https://img.shields.io/badge/Pipeline-.auto--readme--work-0f172a?style=flat-square&logo=githubactions&logoColor=white)](./.auto-readme-work)
+[![Locales](https://img.shields.io/badge/Locales-10%20files-22c55e?style=flat-square&logo=googletranslate&logoColor=white)](./i18n)
+[![Scope](https://img.shields.io/badge/Scope-Documentation-0ea5e9?style=flat-square&logo=mdbook&logoColor=white)](#documentation-inputs-and-generated-artifacts)
 
 ## 📌 Vue d'ensemble
 
-AgInTi est actuellement un dépôt « bootstrap » de documentation avec un workflow centré sur le README et une planification de documentation multilingue.
+| 🎯 Focus | 🧩 Valeur actuelle |
+| --- | --- |
+| Objectif du dépôt | Scaffolding de documentation pour synchronisation multilingue des README |
+| Invariant central | Les mises à jour incrémentielles préservent l'historique de fond |
+| État actuel | Aucun runtime/app détecté dans l'instantané du dépôt |
 
-Au moment de cette ébauche, le contenu du dépôt est centré sur la coordination documentaire et la préparation linguistique, pas encore sur un produit exécutable :
+| ✅ Snapshot | 📌 État actuel |
+| --- | --- |
+| Phase du dépôt | Scaffolding de démarrage piloté par `.auto-readme-work/` |
+| Localisations | 10 variantes de README traduites |
+| Runtime vérifié | Aucun runtime exécutable détecté |
 
-- ✅ Aucun arbre source de haut niveau n'est encore détecté.
-- ✅ `i18n/` contient des variantes de README traduites.
-- ✅ `.auto-readme-work/20260301_064213/` stocke le contexte de pipeline actif pour cette passe.
-- ✅ `.auto-readme-work/20260228_184104/` est conservé comme artefact historique.
+## 📌 Présentation
 
-### Instantané du dépôt
+AgInTi est un dépôt de **documentation-bootstrap**.
+
+Le dépôt se concentre sur la documentation-first, l’ossature de localisations et les artefacts de workflow itératif utilisés pour générer une documentation multilingue cohérente.
+
+- ✅ Aucun arbre de code source principal n'est détecté actuellement.
+- ✅ `i18n/` contient 10 variantes de README traduites.
+- ✅ `.auto-readme-work/` stocke les artefacts de pipeline pour des mises à jour de documentation incrémentielles.
+- ✅ Le contenu substantiel existant est préservé via des mises à jour incrémentielles.
+
+## ✅ Portée et instantané
 
 | Élément | État actuel |
 |---|---|
-| 🧩 Code source | Non détecté pour l’instant |
-| ⚙️ Manifeste d’exécution | Non détecté pour l’instant |
-| 🧪 Workflows CI | Non détectés pour l’instant |
-| 🧭 Espace de travail documentation | `.auto-readme-work/20260301_064213/` |
-| 🌐 Documents traduits | 10 locales dans `i18n/` |
-
----
-
-## 🚦 État du projet
-
-Ce README est une ébauche anglaise complète incrémentale et fidèle à l’état réel du dépôt.
-
-- L’état reste orienté bootstrap/documentation.
-- Les sections existantes substantielles ont été conservées et enrichies plutôt que remplacées.
-- Les zones inconnues sont explicitement signalées et les affirmations spéculatives évitées.
-
-Si un README de référence existe dans une autre branche ou dans l’historique, les mises à jour futures doivent le fusionner incrémentalement.
-
----
+| 🧩 Code source | Non détecté |
+| 🧪 Tests/CI | Non détecté |
+| 📘 Workflow documentaire | Piloté par `.auto-readme-work/` |
+| 🌐 Docs localisées | 10 locales maintenues |
+| 🔒 Fichier de licence | Non présent dans cet instantané |
 
 ## ✨ Fonctionnalités
 
-- Répertoire orienté documentation « README-first »
-- Pipeline centralisé de gestion des README multilingues dans `.auto-readme-work/`
-- Modèles de switcher linguistique explicites et fichiers de mappage de traduction
-- Extraits de commandes pratiques pour l’inspection et la validation du dépôt
-- Processus de mise à jour README strictement tracé avec dédoublonnage des blocs de support et de bannière
-
----
+- Stratégie de documentation centrée sur le README-first.
+- Workflow sensible aux langues avec liens canoniques pour la page racine et les pages localisées.
+- Blocs de bannière et de support dédupliqués à des positions définies.
+- Mises à jour incrémentielles qui préservent les sections substantielles.
+- Extraits de vérification pratiques pour les contributeurs à la documentation.
 
 ## 🗂️ Structure du projet
 
 ```text
 AgInTi/
-├── .auto-readme-work/
-│   ├── 20260301_064213/
-│   │   ├── language-nav-root.md
-│   │   ├── language-nav-i18n.md
-│   │   ├── pipeline-context.md
-│   │   ├── repo-structure-analysis.md
-│   │   └── translation-plan.txt
-│   └── 20260228_184104/
-│       ├── language-nav-root.md
-│       ├── language-nav-i18n.md
-│       ├── pipeline-context.md
-│       ├── repo-structure-analysis.md
-│       ├── translated-files.txt
-│       └── translation-plan.txt
+├── README.md
+├── README.md.auto-readme-support
+├── README.md.auto-readme-support.filtered
 ├── i18n/
 │   ├── README.ar.md
 │   ├── README.de.md
@@ -95,167 +89,172 @@ AgInTi/
 │   ├── README.vi.md
 │   ├── README.zh-Hans.md
 │   └── README.zh-Hant.md
-└── README.md
+└── .auto-readme-work/
+    ├── 20260228_184104/
+    ├── 20260301_064213/
+    ├── 20260301_064740/
+    ├── 20260301_065835/
+    └── 20260301_070633/
 ```
 
-### Références de documentation clés
+## 🧱 Modèle d'architecture et de workflow
+
+À ce stade, « architecture » correspond au pipeline de documentation du dépôt :
+
+1. Le contexte et les contraintes sont produits à chaque exécution dans `.auto-readme-work/<run-id>/pipeline-context.md`.
+2. Les modèles de sélecteur de langue sont produits dans `language-nav-root.md` / `language-nav-i18n.md`.
+3. Les modifications du README sont appliquées de manière incrémentielle pour garder intacte l'histoire substantielle.
+4. Les fichiers localisés sont synchronisés depuis le même modèle structurel.
+
+## 📚 Entrées de documentation et artefacts générés
 
 | Fichier | Objectif |
 |---|---|
-| `.auto-readme-work/20260301_064213/pipeline-context.md` | Contraintes de génération et contexte de prompt pour cette exécution. |
-| `.auto-readme-work/20260301_064213/repo-structure-analysis.md` | Instantané de la structure détectée et des lacunes projet. |
-| `.auto-readme-work/20260301_064213/translation-plan.txt` | Mapping locale → fichier pour les variantes traduites. |
-| `.auto-readme-work/20260301_064213/language-nav-root.md` | Ligne canonique de sélection linguistique pour `README.md`. |
-| `.auto-readme-work/20260301_064213/language-nav-i18n.md` | Ligne canonique de sélection linguistique pour les fichiers de `i18n/`. |
+| `.auto-readme-work/20260301_070633/pipeline-context.md` | Contraintes et instructions pour cette passe. |
+| `.auto-readme-work/20260301_070633/translation-plan.txt` | Cartographie des locales pour la synchronisation multilingue. |
+| `.auto-readme-work/20260301_070633/language-nav-root.md` | Ligne de navigation des langues canonique pour `README.md`. |
+| `.auto-readme-work/20260301_070633/language-nav-i18n.md` | Ligne de navigation des langues canonique pour les READMEs traduits. |
+| `.auto-readme-work/20260301_070633/repo-structure-analysis.md` | Instantané du dépôt utilisé pour ce cycle de génération. |
+| `README.md.auto-readme-support*` | Manifestes de support auxiliaires utilisés lors des passages précédents du bootstrap. |
 
----
+## 🧭 Objectifs du workflow du dépôt
+
+Ce dépôt est volontairement minimal. L'objectif à long terme est de garder le README racine et les variantes traduites synchronisés sans régression de contexte technique, de liens et de structure.
 
 ## 🧰 Prérequis
 
-Aucune dépendance d’exécution n’est requise pour l’état actuel du dépôt.
+- `git` pour l'accès au dépôt.
+- Un shell POSIX (les exemples utilisent `bash`).
+- Un éditeur Markdown-aware.
 
-Pour l’usage et la maintenance de la documentation, vous avez besoin de :
+### Hypothèses d'exécution
 
-- `git`
-- Un shell POSIX (les exemples utilisent `bash`)
-- Un éditeur de texte pour les mises à jour Markdown
-
----
+Aucune exigence de build/runtime n'est encore définie car aucun manifeste de produit exécutable n'a été détecté dans cet instantané de dépôt.
 
 ## 📥 Installation
 
-Il n’existe pas encore de processus d’installation/compilation.
-
-Pour inspecter le dépôt localement :
+Aucun processus d'installation binaire ou de build n'existe pour l'instant.
 
 ```bash
+# Clone the repository
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
 ## ▶️ Utilisation
 
-L’usage actuel est la maintenance documentaire, l’audit et la synchronisation de la localisation.
+L'utilisation actuelle se concentre sur la maintenance de la documentation et la cohérence multilingue.
 
-### Workflow courant
+### Commandes courantes
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260301_064213
+ls -la .auto-readme-work/20260301_070633
 ls -la i18n
 ```
 
-### Workflow README typique
+### Workflow typique de synchronisation du README
 
-1. Lire les artefacts de contexte actuels dans `.auto-readme-work/20260301_064213/`.
-2. Consulter le README source et les versions traduites.
-3. Appliquer des modifications incrémentales pour éviter la suppression de détails substantiels existants.
-4. Conserver la cohérence du switcher linguistique et des blocs support/bannière entre les locales.
-
----
+1. Consultez le contexte d'exécution dans `.auto-readme-work/20260301_070633/pipeline-context.md`.
+2. Vérifiez les modèles de sélecteur de langue dans `.auto-readme-work/20260301_070633/language-nav-*.md`.
+3. Modifiez `README.md` de manière incrémentielle ; ne supprimez pas les sections substantielles.
+4. Gardez les blocs de bannière et de support uniques et placés aux positions requises.
+5. Alignez les fichiers localisés sous `i18n/README.*.md` à la même structure si nécessaire.
 
 ## ⚙️ Configuration
 
-Aucun fichier de configuration applicative n’est encore présent.
+Aucune configuration applicative n'existe encore. Le comportement documentaire du dépôt est défini par les artefacts de workflow dans `.auto-readme-work/` et les fichiers de locale dans `i18n/`.
 
-La configuration au niveau documentation est représentée par :
-
-- `.auto-readme-work/20260301_064213/translation-plan.txt` pour les cibles locales
-- Les modèles de switcher linguistique dans `.auto-readme-work/20260301_064213/language-nav-root.md` et `.../language-nav-i18n.md`
-- Le contexte de structure du dépôt dans `.auto-readme-work/20260301_064213/repo-structure-analysis.md`
-
----
+- `pipeline-context.md` (contraintes et objectifs)
+- `translation-plan.txt` (étendue et mappage des locales)
+- `language-nav-root.md` et `language-nav-i18n.md` (cohérence de navigation)
+- `README.md.auto-readme-support*` (assistants de scaffold)
 
 ## 🧪 Exemples
 
-### Exemple 1 : Vérifier les lignes de switcher linguistique
+### Exemple 1 : Vérifier les lignes du sélecteur de langue
 
 ```bash
-cat .auto-readme-work/20260301_064213/language-nav-root.md
-cat .auto-readme-work/20260301_064213/language-nav-i18n.md
+cat .auto-readme-work/20260301_070633/language-nav-root.md
+cat .auto-readme-work/20260301_070633/language-nav-i18n.md
 ```
 
-### Exemple 2 : Confirmer la portée de traduction
+### Exemple 2 : Valider les locales prises en charge et les fichiers de traduction
 
 ```bash
-cat .auto-readme-work/20260301_064213/translation-plan.txt
+cat .auto-readme-work/20260301_070633/translation-plan.txt
 ```
 
-### Exemple 3 : Vérifier l’état du scaffold (résultat attendu : aucun manifeste)
+### Exemple 3 : Confirmer l'état du scaffold
 
 ```bash
-find . -maxdepth 2 \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
+find . -maxdepth 2 \
+  \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
-
----
 
 ## 🛠️ Notes de développement
 
-- Maintenir ce fichier comme source de documentation canonique en anglais.
-- Préserver les sections substantielles lors des mises à jour (politique de modification incrémentale).
-- Ajouter des instructions runtime uniquement quand les fichiers de code, manifestes et chaînes de compilation correspondantes existent.
-- Garder un seul bloc support et un seul bloc bannière (strictement dédoublonnés).
-- Mettre à jour la feuille de route et le dépannage dès que la fonctionnalité devient disponible.
-
----
+- Utilisez des modifications incrémentielles pour préserver le contexte technique existant.
+- N'ajoutez pas d'étapes d'installation/build tant que des manifestes concrets ne sont pas présents.
+- Assurez-vous que les sections banner et support n'apparaissent qu'une seule fois.
+- Énoncez vos hypothèses quand le comportement du dépôt est inconnu.
+- Conservez les exemples de commandes liés à des fichiers et répertoires existants.
 
 ## 🩺 Dépannage
 
-### Je ne vois que des fichiers de documentation
+### Je ne vois que des fichiers markdown
 
-C’est attendu dans cet état bootstrap ; aucun manifeste source/runtime n’a été détecté.
+C'est normal dans cette phase de bootstrap.
 
-### La documentation locale est incohérente
+### Le sélecteur de langue semble incohérent
 
-Utilisez le plan de traduction le plus récent et relancez votre flux de synchronisation README pour normaliser la structure et les liens.
+Comparez chaque `README.*.md` avec la ligne de langues principale et les derniers fichiers de contexte de pipeline dans `.auto-readme-work/20260301_070633/`.
 
-### La branche locale semble périmée
+### Ma branche est en retard
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
----
+### Je veux ajouter des instructions de code
+
+Ajoutez uniquement des commandes de build/exécution après avoir ajouté des manifestes concrets (par exemple `package.json`, `pyproject.toml`, `Cargo.toml`, etc.) et confirmé la présence de ces actifs dans le dépôt.
 
 ## 🗺️ Feuille de route
 
-- Ajouter la couche produit/application concrète lorsque le code sera introduit.
-- Étendre les instructions d’installation, build et run depuis de vrais manifestes.
-- Ajouter des workflows CI et des contrôles de docs.
-- Étendre les standards de contribution pour le code et les traductions.
-- Maintenir les README traduits synchronisés et à jour.
-
----
+- Introduire des composants concrets d'application/runtime.
+- Étendre les guides d'installation, d'exécution et de déploiement une fois que le code et les outils existeront.
+- Ajouter des contrôles CI pour la qualité Markdown et la parité des locales.
+- Garder le processus de traduction reproductible via des pipelines versionnés explicites.
+- Ajouter des recommandations de contribution pour la documentation et les futurs contributeurs au code.
 
 ## 🤝 Contribution
 
 Les contributions sont les bienvenues.
 
-1. Ouvrir une issue avec le contexte et la portée.
-2. Créer une branche dédiée.
-3. Garder les modifications ciblées et incrémentales.
-4. Préserver les détails techniques existants et le contexte des sections.
-5. Ouvrir une PR avec des notes de vérification claires.
+1. Ouvrez un ticket décrivant le changement.
+2. Créez une branche dédiée.
+3. Gardez les changements minimaux et incrémentiels.
+4. Préservez les sections existantes pertinentes.
+5. Soumettez une pull request avec des notes de vérification concises.
 
 ### Flux suggéré
 
 ```bash
-git checkout -b feat/your-change
-# edit README + relevant files
+git checkout -b docs/your-update
+# edit README.md et/ou i18n/
 git add README.md
-
-git commit -m "docs: update README"
-
-git push -u origin feat/your-change
+git commit -m "docs: refine README draft"
+git push -u origin docs/your-update
 ```
 
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |
-|---|---|---|
-| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=ko-fi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
 ## 📄 License
 
-No `LICENSE` file is present yet.
+La licence n'est pas encore incluse dans l'instantané de ce dépôt.
