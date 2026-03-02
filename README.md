@@ -5,7 +5,7 @@
 
 # AgInTi
 
-[![Principle: Sear Creation](https://img.shields.io/badge/Principle-Sear%20Creation-ef4444?style=flat-square&logo=databricks&logoColor=white)](#-overview)
+[![Principle: Self Creation](https://img.shields.io/badge/Principle-Self%20Creation-ef4444?style=flat-square&logo=databricks&logoColor=white)](#-overview)
 [![Principle: Self-Healing](https://img.shields.io/badge/Principle-Self--Healing-10b981?style=flat-square&logo=dependabot&logoColor=white)](#-features)
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architecture)
 
