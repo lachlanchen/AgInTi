@@ -6,7 +6,7 @@
     <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="70%">
   </a>
   <a href="../logos/aginti-logo-wordmark.png">
-    <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="26%">
+    <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="15%">
   </a>
 </p>
 
