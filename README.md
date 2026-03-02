@@ -6,26 +6,26 @@
 # AgInTi
 
 [![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
-[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
-[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#project-structure)
-[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
-[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
-[![Principle-Sear%20Creation-ef4444?style=flat-square&logo=firefox&logoColor=white)](#overview)
-[![Principle-Self--Healing-10b981?style=flat-square&logo=wrench&logoColor=white)](#features)
-[![Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=chainlink&logoColor=white)](#architecture)
+[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=readme&logoColor=white)](#aginti)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#-project-structure)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#-scope-and-snapshot)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=open-source-initiative&logoColor=white)](#-license)
+[![Principle: Sear Creation](https://img.shields.io/badge/Principle-Sear%20Creation-ef4444?style=flat-square&logo=databricks&logoColor=white)](#-overview)
+[![Principle: Self-Healing](https://img.shields.io/badge/Principle-Self--Healing-10b981?style=flat-square&logo=dependabot&logoColor=white)](#-features)
+[![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architecture)
 
-Documentation-first repository scaffold for maintaining a complete English README and synchronized multilingual documentation, guided by three operating principles: **sear creation tools**, **self-healing tools**, and **chain of prompt tools**.
+Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: **sear creation tools**, **self-healing tools**, and **chain of prompt tools**.
 
 ## 🧭 Quick Navigation
 
 | Type | Destination |
 | --- | --- |
-| Project summary | [Overview](#overview) |
-| Core capabilities | [Features](#features) |
-| Pipeline design | [Architecture](#architecture) |
+| Project summary | [Overview](#-overview) |
+| Core capabilities | [Features](#-features) |
+| Pipeline design | [Architecture](#-architecture) |
 | Philosophy baseline | [Philosophy at a glance](#philosophy-at-a-glance) |
-| Contributor workflow | [Development Notes](#development-notes) |
-| Future direction | [Roadmap](#roadmap) |
+| Contributor workflow | [Development Notes](#-development-notes) |
+| Future direction | [Roadmap](#-roadmap) |
 | Support this project | [Support](#-support) |
 
 ---
@@ -39,27 +39,27 @@ Documentation-first repository scaffold for maintaining a complete English READM
 | Tests/CI pipelines | Not detected in current snapshot |
 | Localized docs | 10 locale files under `i18n/` |
 | Pipeline artifacts | Timestamped runs under `.auto-readme-work/` |
-| License file | Not present as standalone file (README badge: TBD) |
+| License file | Not present as standalone file (README badge shows `TBD`) |
 | Philosophy baseline | Sear creation + self-healing + chain of prompt tools |
 
 ## 🌍 Overview
 
-AgInTi currently operates as a README lifecycle and localization pipeline rather than a runtime application. The root `README.md` is the canonical source, and localized variants in `i18n/` are synchronized from that canonical structure.
+AgInTi currently functions as a README lifecycle and localization pipeline, not as a runtime application. The root `README.md` is the canonical source, and localized variants in `i18n/` are synchronized from that canonical structure.
 
-The project philosophy is explicit and operational, not decorative. Each README update should satisfy all three principles:
+The project philosophy is operational rather than decorative. Each README update is expected to satisfy all three principles:
 
-1. **Sear creation tools**: intentionally sharp creation workflows that produce high-signal, practical documentation from constrained repository evidence.
-2. **Self-healing tools**: repair-oriented mechanisms that correct drift, remove duplication, and restore structural consistency.
+1. **Sear creation tools**: intentionally sharp creation workflows that generate high-signal documentation from constrained repository evidence.
+2. **Self-healing tools**: repair-oriented mechanisms that remove drift, duplication, and structural inconsistency.
 3. **Chain of prompt tools**: staged, traceable prompt flows that preserve context-to-output lineage across pipeline runs.
 
-This repository keeps substantive historical content through incremental updates while preserving links, commands, and support metadata.
+This repository preserves meaningful historical content through incremental edits while retaining critical links, commands, and support metadata.
 
 ### Philosophy at a glance
 
 | Principle | Intent | Operational outcome |
 | --- | --- | --- |
 | **Sear creation tools** | Produce high-signal documentation from constrained evidence. | Sections stay practical, specific, and repository-grounded. |
-| **Self-healing tools** | Repair drift, duplication, and stale structure. | Canonical and localized READMEs remain aligned and clean. |
+| **Self-healing tools** | Repair drift, duplication, and stale structure. | Canonical and localized READMEs stay aligned and clean. |
 | **Chain of prompt tools** | Keep generation stages explicit and traceable. | Pipeline artifacts preserve reproducible context and handoffs. |
 
 ## ✨ Features
@@ -68,11 +68,11 @@ This repository keeps substantive historical content through incremental updates
 - Multilingual synchronization across 10 i18n README variants.
 - Pipeline-driven authoring via `.auto-readme-work/<run-id>/` artifacts.
 - Single-banner and single-support-panel invariants to prevent duplicate visual blocks.
-- Incremental-update discipline that preserves meaningful technical history.
+- Incremental-update discipline that preserves substantive technical history.
 
 ### Principle-to-feature mapping
 
-| Core principle | How it appears in current features |
+| Core principle | Current manifestation |
 | --- | --- |
 | **Sear creation tools** | Precise README drafting from repo-grounded evidence and stable section scaffolds. |
 | **Self-healing tools** | Deduplication checks for repeated banner/support blocks, stale references, and structure drift. |
@@ -101,20 +101,24 @@ AgInTi/
     ├── 20260301_065835/
     ├── 20260301_070633/
     ├── 20260302_120620/
-    └── 20260302_124338/
+    ├── 20260302_124338/
+    ├── 20260302_140150/
+    └── 20260302_140358/
 ```
 
 ## 🏗️ Architecture
 
-At this stage, architecture means documentation pipeline architecture, not application runtime architecture.
+At this stage, architecture means documentation pipeline architecture, not runtime service architecture.
 
 ### Pipeline flow
 
-1. A run-specific context is recorded in `.auto-readme-work/<run-id>/pipeline-context.md`.
-2. Language navigation templates are generated (`language-nav-root.md` and `language-nav-i18n.md`).
-3. Canonical README content is updated incrementally in `README.md`.
-4. Localized README files in `i18n/` are aligned to canonical structure.
-5. Structural quality checks enforce deduplication, link consistency, and technical-detail preservation.
+```mermaid
+flowchart LR
+    A[Capture run context\n.auto-readme-work/<run-id>/pipeline-context.md] --> B[Analyze repository state\nrepo-structure-analysis.md]
+    B --> C[Draft canonical README\nREADME.md]
+    C --> D[Align i18n READMEs\ni18n/README.*.md]
+    D --> E[Validate quality gates\nlinks, duplicates, structure parity]
+```
 
 ### Core principles in architecture
 
@@ -126,8 +130,8 @@ At this stage, architecture means documentation pipeline architecture, not appli
 
 | Stage | Sear creation tools | Self-healing tools | Chain of prompt tools |
 | --- | --- | --- | --- |
-| Context capture | Define sharp generation constraints. | Flag missing/invalid inputs early. | Preserve source prompt and run metadata. |
-| Canonical drafting | Build complete README sections from repo evidence. | Prevent regressions and accidental content loss. | Keep stage outputs linked to prior artifacts. |
+| Context capture | Define sharp generation constraints. | Flag missing or invalid inputs early. | Preserve source prompt and run metadata. |
+| Canonical drafting | Build complete README sections from repository evidence. | Prevent regressions and accidental content loss. | Keep stage outputs linked to prior artifacts. |
 | i18n alignment | Maintain structure and technical parity across locales. | Correct drift between root and i18n files. | Carry canonical intent into each localized variant. |
 | Final verification | Enforce readability and detail preservation. | Remove duplicate banner/support blocks and stale references. | Leave an auditable artifact trail for the run. |
 
@@ -135,12 +139,12 @@ At this stage, architecture means documentation pipeline architecture, not appli
 
 | File | Purpose |
 | --- | --- |
-| `.auto-readme-work/20260302_124338/pipeline-context.md` | Source constraints and goals for this generation pass. |
-| `.auto-readme-work/20260302_124338/repo-structure-analysis.md` | Repository scan summary and inferred technical state. |
-| `.auto-readme-work/20260302_124338/language-nav-root.md` | Canonical language options line for root `README.md`. |
-| `.auto-readme-work/20260302_124338/language-nav-i18n.md` | Canonical language options line for i18n README files. |
-| `.auto-readme-work/20260302_124338/translation-plan.txt` | Locale mapping and i18n target file plan. |
-| `.auto-readme-work/<older-run-id>/...` | Historical run context for prior README pipeline passes. |
+| `.auto-readme-work/20260302_140358/pipeline-context.md` | Source constraints and goals for this generation pass. |
+| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Repository scan summary and inferred technical state. |
+| `.auto-readme-work/20260302_140358/language-nav-root.md` | Canonical language options line for root `README.md`. |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Canonical language options line for i18n README files. |
+| `.auto-readme-work/20260302_140358/translation-plan.txt` | Locale mapping and i18n target file plan. |
+| `.auto-readme-work/<older-run-id>/...` | Historical context from prior pipeline runs. |
 
 ## 🔧 Prerequisites
 
@@ -151,7 +155,7 @@ At this stage, architecture means documentation pipeline architecture, not appli
 ### Assumptions
 
 - No runnable service or application manifest is present in this repository snapshot.
-- Installation/build/start instructions are therefore documentation-workflow oriented.
+- Installation, build, and start guidance is therefore documentation-workflow oriented.
 
 ## 📥 Installation
 
@@ -164,22 +168,22 @@ cd AgInTi
 
 ## ▶️ Usage
 
-Current usage is documentation maintenance and multilingual synchronization.
+Current usage centers on documentation maintenance and multilingual synchronization.
 
 ### Common inspection commands
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260302_124338
+ls -la .auto-readme-work/20260302_140358
 ls -la i18n
 ```
 
 ### Canonical README synchronization workflow
 
-1. Read `.auto-readme-work/20260302_124338/pipeline-context.md`.
-2. Verify language selector templates from `language-nav-root.md` and `language-nav-i18n.md`.
-3. Update `README.md` incrementally as source of truth.
-4. Align `i18n/README.*.md` files with the same structure and key technical details.
+1. Read `.auto-readme-work/20260302_140358/pipeline-context.md`.
+2. Verify language selector templates in `language-nav-root.md` and `language-nav-i18n.md`.
+3. Update `README.md` incrementally as the source of truth.
+4. Align `i18n/README.*.md` files to the same structure and key technical details.
 5. Confirm there is exactly one banner and exactly one support panel.
 
 ## ⚙️ Configuration
@@ -196,14 +200,14 @@ No runtime configuration exists yet. Documentation behavior is driven by reposit
 ### Example 1: Verify language navigation templates
 
 ```bash
-cat .auto-readme-work/20260302_124338/language-nav-root.md
-cat .auto-readme-work/20260302_124338/language-nav-i18n.md
+cat .auto-readme-work/20260302_140358/language-nav-root.md
+cat .auto-readme-work/20260302_140358/language-nav-i18n.md
 ```
 
 ### Example 2: Check locale plan
 
 ```bash
-cat .auto-readme-work/20260302_124338/translation-plan.txt
+cat .auto-readme-work/20260302_140358/translation-plan.txt
 ```
 
 ### Example 3: Confirm runtime-manifest absence (current snapshot)
@@ -235,8 +239,8 @@ That is expected for the current bootstrap phase.
 
 Use the canonical templates in:
 
-- `.auto-readme-work/20260302_124338/language-nav-root.md`
-- `.auto-readme-work/20260302_124338/language-nav-i18n.md`
+- `.auto-readme-work/20260302_140358/language-nav-root.md`
+- `.auto-readme-work/20260302_140358/language-nav-i18n.md`
 
 ### My branch is behind
 
@@ -247,14 +251,14 @@ git pull --ff-only
 
 ### I want to add runtime instructions
 
-Add build/run instructions only after introducing concrete manifests (for example: `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) and confirming paths in this repository.
+Add build and run instructions only after introducing concrete manifests (for example: `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) and confirming their paths in this repository.
 
 ## 🗺️ Roadmap
 
 1. Strengthen **sear creation tools** with standardized README drafting templates, section quality gates, and clearer evidence-to-output checks.
 2. Expand **self-healing tools** with automated checks for duplicate blocks, locale drift, broken internal anchors, and stale run references.
 3. Formalize **chain of prompt tools** across run stages for reproducible context, generation, translation, and verification traces.
-4. Add a single-command documentation maintenance flow once repo scripts are introduced.
+4. Add a single-command documentation maintenance flow once repository scripts are introduced.
 5. Add CI checks for markdown quality, link integrity, and i18n structure parity.
 6. Introduce concrete runtime components when source manifests and entrypoints are added.
 7. Publish a stable licensing decision and add a standalone license file.
@@ -295,4 +299,4 @@ git push -u origin docs/your-update
 
 ## 📄 License
 
-TBD. A standalone license file is planned but not yet present in the current snapshot.
+TBD. A standalone license file is planned but is not yet present in the current snapshot.

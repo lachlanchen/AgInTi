@@ -6,83 +6,78 @@
 # AgInTi
 
 [![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
-[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
-[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#project-structure)
-[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
-[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
-[![Principle-Sear%20Creation-ef4444?style=flat-square&logo=firefox&logoColor=white)](#overview)
-[![Principle-Self--Healing-10b981?style=flat-square&logo=wrench&logoColor=white)](#features)
-[![Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=chainlink&logoColor=white)](#architecture)
+[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=readme&logoColor=white)](#aginti)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#-projektstruktur)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#-umfang-und-aktueller-stand)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=open-source-initiative&logoColor=white)](#-lizenz)
+[![Principle: Sear Creation](https://img.shields.io/badge/Principle-Sear%20Creation-ef4444?style=flat-square&logo=databricks&logoColor=white)](#-uberblick)
+[![Principle: Self-Healing](https://img.shields.io/badge/Principle-Self--Healing-10b981?style=flat-square&logo=dependabot&logoColor=white)](#-funktionen)
+[![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architektur)
 
-Dokumentationsorientiertes Repository-Scaffold zur Pflege einer vollständigen englischen README und synchronisierter mehrsprachiger Dokumentation, geführt von drei Leitprinzipien: **sear creation tools**, **self-healing tools** und **chain of prompt tools**.
+Dokumentationsorientiertes Repository-Grundgerüst zur Pflege einer kanonischen englischen README und synchronisierter mehrsprachiger Dokumentation, geführt von drei Leitprinzipien: **Sear Creation Tools**, **Self-Healing Tools** und **Chain of Prompt Tools**.
 
-## 🧭 Schnellnavigation
+## 🧭 Schnelle Navigation
 
 | Typ | Ziel |
 | --- | --- |
-| Projektzusammenfassung | [Überblick](#overview) |
-| Kernfähigkeiten | [Features](#features) |
-| Pipeline-Design | [Architektur](#architecture) |
-| Philosophische Basis | [Philosophie auf einen Blick](#philosophy-at-a-glance) |
-| Workflow für Mitwirkende | [Entwicklungsnotizen](#development-notes) |
-| Zukünftige Ausrichtung | [Roadmap](#roadmap) |
-| Projekt unterstützen | [Support](#-support) |
+| Projektzusammenfassung | [Überblick](#-uberblick) |
+| Kernfähigkeiten | [Funktionen](#-funktionen) |
+| Pipeline-Design | [Architektur](#-architektur) |
+| Philosophische Basis | [Philosophie auf einen Blick](#philosophie-auf-einen-blick) |
+| Workflow für Mitwirkende | [Entwicklungsnotizen](#-entwicklungsnotizen) |
+| Zukunftsrichtung | [Roadmap](#-roadmap) |
+| Dieses Projekt unterstützen | [Support](#-support) |
 
 ---
 
-<a id="scope-and-snapshot"></a>
-## 📌 Umfang und Snapshot
+## 📌 Umfang und aktueller Stand
 
 | Element | Aktueller Stand |
 | --- | --- |
-| Repository-Phase | Bootstrap-Scaffold für Dokumentation |
-| Laufzeitcode | Im aktuellen Snapshot nicht erkannt |
+| Repository-Phase | Documentation bootstrap scaffold |
+| Laufzeit-Code | Im aktuellen Snapshot nicht erkannt |
 | Tests/CI-Pipelines | Im aktuellen Snapshot nicht erkannt |
 | Lokalisierte Doku | 10 Locale-Dateien unter `i18n/` |
-| Pipeline-Artefakte | Zeitgestempelte Läufe unter `.auto-readme-work/` |
-| Lizenzdatei | Nicht als eigenständige Datei vorhanden (README-Badge: TBD) |
+| Pipeline-Artefakte | Zeitgestempelte Runs unter `.auto-readme-work/` |
+| Lizenzdatei | Nicht als eigenständige Datei vorhanden (README-Badge zeigt `TBD`) |
 | Philosophische Basis | Sear creation + self-healing + chain of prompt tools |
 
-<a id="overview"></a>
-## 🌍 Überblick
+## 🌍 Uberblick
 
-AgInTi fungiert derzeit als README-Lifecycle- und Lokalisierungs-Pipeline statt als Laufzeitanwendung. Die `README.md` im Root ist die kanonische Quelle, und lokalisierte Varianten in `i18n/` werden an dieser Struktur ausgerichtet.
+AgInTi fungiert derzeit als README-Lifecycle- und Lokalisierungs-Pipeline, nicht als Laufzeitanwendung. Die zentrale Quelle ist die `README.md` im Wurzelverzeichnis; lokalisierte Varianten in `i18n/` werden auf Basis dieser Struktur synchronisiert.
 
-Die Projektphilosophie ist explizit und operativ, nicht dekorativ. Jedes README-Update sollte alle drei Prinzipien erfüllen:
+Die Projektphilosophie ist operativ statt dekorativ. Jedes README-Update soll alle drei Prinzipien erfüllen:
 
-1. **Sear creation tools**: gezielt scharfe Erstellungs-Workflows, die aus eingeschränkter Repository-Evidenz praxisnahe Dokumentation mit hoher Signalstärke erzeugen.
-2. **Self-healing tools**: reparaturorientierte Mechanismen, die Drift korrigieren, Duplikate entfernen und strukturelle Konsistenz wiederherstellen.
-3. **Chain of prompt tools**: gestufte, nachvollziehbare Prompt-Flows, die die Herkunft von Kontext zu Ausgabe über Pipeline-Läufe hinweg erhalten.
+1. **Sear creation tools**: bewusst präzise Erstellungs-Workflows, die aus begrenzter Repository-Evidenz signalstarke Dokumentation erzeugen.
+2. **Self-healing tools**: reparaturorientierte Mechanismen, die Drift, Duplikate und strukturelle Inkonsistenzen entfernen.
+3. **Chain of prompt tools**: gestufte, nachvollziehbare Prompt-Flows, die die Herkunft von Kontext zu Ergebnis über Pipeline-Runs hinweg erhalten.
 
-Dieses Repository bewahrt substanzielle historische Inhalte durch inkrementelle Updates und erhält dabei Links, Befehle und Support-Metadaten.
+Dieses Repository bewahrt durch inkrementelle Bearbeitung relevante historische Inhalte und behält gleichzeitig kritische Links, Befehle und Support-Metadaten bei.
 
-<a id="philosophy-at-a-glance"></a>
 ### Philosophie auf einen Blick
 
-| Prinzip | Zweck | Operatives Ergebnis |
+| Prinzip | Absicht | Operatives Ergebnis |
 | --- | --- | --- |
-| **Sear creation tools** | Hochwertige Dokumentation aus begrenzter Evidenz erzeugen. | Abschnitte bleiben praxisnah, konkret und repository-basiert. |
-| **Self-healing tools** | Drift, Duplikate und veraltete Strukturen reparieren. | Kanonische und lokalisierte READMEs bleiben sauber und ausgerichtet. |
-| **Chain of prompt tools** | Generierungsstufen explizit und nachvollziehbar halten. | Pipeline-Artefakte bewahren reproduzierbaren Kontext und Übergaben. |
+| **Sear creation tools** | Signalstarke Dokumentation aus begrenzter Evidenz erzeugen. | Abschnitte bleiben praxisnah, konkret und repository-basiert. |
+| **Self-healing tools** | Drift, Duplikate und veraltete Struktur beheben. | Kanonische und lokalisierte READMEs bleiben ausgerichtet und sauber. |
+| **Chain of prompt tools** | Generierungsstufen explizit und nachvollziehbar halten. | Pipeline-Artefakte bewahren reproduzierbare Kontexte und Übergaben. |
 
-<a id="features"></a>
-## ✨ Features
+## ✨ Funktionen
 
 - README-first-Dokumentationsstrategie mit einem kanonischen Root-Dokument.
 - Mehrsprachige Synchronisierung über 10 i18n-README-Varianten.
-- Pipeline-gesteuerte Erstellung über Artefakte in `.auto-readme-work/<run-id>/`.
-- Invarianten für genau ein Banner und genau ein Support-Panel, um doppelte visuelle Blöcke zu vermeiden.
-- Disziplinierte inkrementelle Updates, die bedeutende technische Historie erhalten.
+- Pipeline-gesteuerte Pflege über Artefakte in `.auto-readme-work/<run-id>/`.
+- Invarianten mit genau einem Banner und einem Support-Panel zur Vermeidung doppelter visueller Blöcke.
+- Inkrementelle Aktualisierungsdisziplin, die fachlich relevante technische Historie bewahrt.
 
-### Abbildung von Prinzipien auf Features
+### Prinzip-zu-Funktion-Mapping
 
-| Kernprinzip | Erscheinungsform in den aktuellen Features |
+| Kernprinzip | Aktuelle Ausprägung |
 | --- | --- |
-| **Sear creation tools** | Präzises README-Drafting aus repository-basierter Evidenz und stabilen Abschnitts-Scaffolds. |
-| **Self-healing tools** | Deduplizierungs-Checks für wiederholte Banner-/Support-Blöcke, veraltete Referenzen und Strukturdrift. |
-| **Chain of prompt tools** | Lauf-spezifische Artefaktkette (`pipeline-context`, Nav-Templates, Übersetzungsplan) für reproduzierbare Ausgabe. |
+| **Sear creation tools** | Präzises README-Drafting aus repository-basierter Evidenz und stabilen Abschnittsgerüsten. |
+| **Self-healing tools** | Deduplizierungsprüfungen für wiederholte Banner-/Support-Blöcke, veraltete Referenzen und Strukturdrift. |
+| **Chain of prompt tools** | Run-spezifische Artefaktkette (`pipeline-context`, Navigationsvorlagen, Übersetzungsplan) für reproduzierbare Ausgaben. |
 
-<a id="project-structure"></a>
 ## 🗂️ Projektstruktur
 
 ```text
@@ -106,183 +101,185 @@ AgInTi/
     ├── 20260301_065835/
     ├── 20260301_070633/
     ├── 20260302_120620/
-    └── 20260302_124338/
+    ├── 20260302_124338/
+    ├── 20260302_140150/
+    └── 20260302_140358/
 ```
 
-<a id="architecture"></a>
 ## 🏗️ Architektur
 
-In diesem Stadium bedeutet Architektur Pipeline-Architektur für Dokumentation, nicht Laufzeitarchitektur einer Anwendung.
+In diesem Stadium bedeutet Architektur Dokumentations-Pipeline-Architektur, nicht Laufzeit-Service-Architektur.
 
 ### Pipeline-Ablauf
 
-1. Ein lauf-spezifischer Kontext wird in `.auto-readme-work/<run-id>/pipeline-context.md` festgehalten.
-2. Vorlagen für Sprach-Navigation werden erzeugt (`language-nav-root.md` und `language-nav-i18n.md`).
-3. Kanonischer README-Inhalt wird inkrementell in `README.md` aktualisiert.
-4. Lokalisierte README-Dateien in `i18n/` werden an die kanonische Struktur angeglichen.
-5. Struktur-Qualitätsprüfungen erzwingen Deduplizierung, Link-Konsistenz und Erhalt technischer Details.
+```mermaid
+flowchart LR
+    A[Capture run context\n.auto-readme-work/<run-id>/pipeline-context.md] --> B[Analyze repository state\nrepo-structure-analysis.md]
+    B --> C[Draft canonical README\nREADME.md]
+    C --> D[Align i18n READMEs\ni18n/README.*.md]
+    D --> E[Validate quality gates\nlinks, duplicates, structure parity]
+```
 
 ### Kernprinzipien in der Architektur
 
-- **Sear creation tools**: angewendet bei der Inhaltserstellung, damit Abschnitte konkret, vollständig und repository-genau bleiben.
-- **Self-healing tools**: angewendet bei der Validierung, um doppelte Blöcke zu entfernen, veraltete Laufreferenzen zu reparieren und strukturelle Parität wiederherzustellen.
-- **Chain of prompt tools**: angewendet über Artefakte hinweg, damit jede Generierungsstufe explizit und auditierbar bleibt.
+- **Sear creation tools**: während der Inhaltserstellung angewendet, um Abschnitte konkret, vollständig und repository-genau zu halten.
+- **Self-healing tools**: während der Validierung angewendet, um doppelte Blöcke zu entfernen, veraltete Run-Referenzen zu reparieren und strukturelle Parität wiederherzustellen.
+- **Chain of prompt tools**: über Artefakte hinweg angewendet, damit jede Generierungsstufe explizit und auditierbar bleibt.
 
-### Prinzip-Checkpoints je Pipeline-Phase
+### Prinzip-Checkpoints pro Pipeline-Stufe
 
-| Phase | Sear creation tools | Self-healing tools | Chain of prompt tools |
+| Stufe | Sear creation tools | Self-healing tools | Chain of prompt tools |
 | --- | --- | --- | --- |
-| Kontexterfassung | Scharfe Generierungsgrenzen definieren. | Fehlende/ungültige Inputs früh markieren. | Quell-Prompt und Lauf-Metadaten erhalten. |
-| Kanonisches Drafting | Vollständige README-Abschnitte aus Repository-Evidenz erstellen. | Regressionen und versehentlichen Inhaltsverlust verhindern. | Phasenausgaben mit vorherigen Artefakten verknüpfen. |
-| i18n-Angleichung | Struktur und technische Parität über Locales halten. | Drift zwischen Root- und i18n-Dateien korrigieren. | Kanonische Intention in jede lokalisierte Variante übertragen. |
-| Finale Verifikation | Lesbarkeit und Detailerhalt erzwingen. | Doppelte Banner-/Support-Blöcke und veraltete Referenzen entfernen. | Auditierbare Artefaktspur für den Lauf hinterlassen. |
+| Kontext-Erfassung | Präzise Generierungsgrenzen definieren. | Fehlende oder ungültige Eingaben früh markieren. | Quell-Prompt und Run-Metadaten bewahren. |
+| Kanonisches Drafting | Vollständige README-Abschnitte aus Repository-Evidenz aufbauen. | Regressionen und versehentlichen Inhaltsverlust verhindern. | Stage-Ausgaben mit vorherigen Artefakten verknüpfen. |
+| i18n-Ausrichtung | Struktur- und Technikparität über alle Locales halten. | Drift zwischen Root- und i18n-Dateien korrigieren. | Kanonische Intention in jede lokalisierte Variante übertragen. |
+| Finale Verifikation | Lesbarkeit und Detailtreue durchsetzen. | Doppelte Banner-/Support-Blöcke und veraltete Referenzen entfernen. | Einen auditierbaren Artefaktpfad für den Run hinterlassen. |
 
-## 🧾 Dokumentations-Inputs und generierte Artefakte
+## 🧾 Dokumentationseingaben und generierte Artefakte
 
 | Datei | Zweck |
 | --- | --- |
-| `.auto-readme-work/20260302_124338/pipeline-context.md` | Quellvorgaben und Ziele für diesen Generierungsdurchlauf. |
-| `.auto-readme-work/20260302_124338/repo-structure-analysis.md` | Zusammenfassung des Repository-Scans und abgeleiteter technischer Stand. |
-| `.auto-readme-work/20260302_124338/language-nav-root.md` | Kanonische Sprachoptionszeile für die Root-`README.md`. |
-| `.auto-readme-work/20260302_124338/language-nav-i18n.md` | Kanonische Sprachoptionszeile für i18n-README-Dateien. |
-| `.auto-readme-work/20260302_124338/translation-plan.txt` | Locale-Mapping und i18n-Zieldateiplan. |
-| `.auto-readme-work/<older-run-id>/...` | Historischer Laufkontext aus früheren README-Pipeline-Durchläufen. |
+| `.auto-readme-work/20260302_140358/pipeline-context.md` | Quellgrenzen und Ziele für diesen Generierungslauf. |
+| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Repository-Scan-Zusammenfassung und abgeleiteter technischer Stand. |
+| `.auto-readme-work/20260302_140358/language-nav-root.md` | Kanonische Sprachzeile für die Root-`README.md`. |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Kanonische Sprachzeile für i18n-README-Dateien. |
+| `.auto-readme-work/20260302_140358/translation-plan.txt` | Locale-Mapping und i18n-Zieldateiplan. |
+| `.auto-readme-work/<older-run-id>/...` | Historischer Kontext aus früheren Pipeline-Runs. |
 
 ## 🔧 Voraussetzungen
 
 - `git`
-- POSIX-Shell (Beispiele nutzen `bash`)
+- POSIX-Shell (Beispiele verwenden `bash`)
 - Markdown-fähiger Editor
 
 ### Annahmen
 
-- In diesem Repository-Snapshot ist kein ausführbarer Service und kein Anwendungsmanifest vorhanden.
-- Installations-/Build-/Start-Anleitungen sind deshalb auf Dokumentations-Workflows ausgerichtet.
+- In diesem Repository-Snapshot ist kein lauffähiger Service und kein Anwendungsmanifest vorhanden.
+- Hinweise zu Installation, Build und Start sind deshalb auf den Dokumentations-Workflow ausgerichtet.
 
 ## 📥 Installation
 
-Es ist noch kein Binärpaket oder Laufzeit-Build-Schritt definiert.
+Derzeit sind weder Binärpaket noch Laufzeit-Build-Schritt definiert.
 
 ```bash
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
-## ▶️ Nutzung
+## ▶️ Verwendung
 
-Die aktuelle Nutzung ist Dokumentationspflege und mehrsprachige Synchronisierung.
+Die aktuelle Nutzung konzentriert sich auf Dokumentationspflege und mehrsprachige Synchronisierung.
 
-### Häufige Inspektionsbefehle
+### Gängige Prüf-Befehle
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260302_124338
+ls -la .auto-readme-work/20260302_140358
 ls -la i18n
 ```
 
-### Workflow zur Synchronisierung der kanonischen README
+### Synchronisierungs-Workflow für die kanonische README
 
-1. Lies `.auto-readme-work/20260302_124338/pipeline-context.md`.
-2. Prüfe Sprachselektor-Vorlagen aus `language-nav-root.md` und `language-nav-i18n.md`.
-3. Aktualisiere `README.md` inkrementell als Source of Truth.
-4. Gleiche `i18n/README.*.md`-Dateien an dieselbe Struktur und dieselben wichtigen technischen Details an.
-5. Bestätige, dass es genau ein Banner und genau ein Support-Panel gibt.
+1. Lies `.auto-readme-work/20260302_140358/pipeline-context.md`.
+2. Prüfe Sprachselektor-Vorlagen in `language-nav-root.md` und `language-nav-i18n.md`.
+3. Aktualisiere `README.md` inkrementell als Quelle der Wahrheit.
+4. Richte `i18n/README.*.md` auf dieselbe Struktur und zentrale technische Details aus.
+5. Stelle sicher, dass es genau ein Banner und genau ein Support-Panel gibt.
 
 ## ⚙️ Konfiguration
 
-Es gibt noch keine Laufzeitkonfiguration. Das Dokumentationsverhalten wird durch Repository-Artefakte gesteuert.
+Es gibt derzeit keine Laufzeitkonfiguration. Das Dokumentationsverhalten wird durch Repository-Artefakte gesteuert.
 
-- `pipeline-context.md`: Laufziele und Randbedingungen.
+- `pipeline-context.md`: Run-Ziele und Einschränkungen.
 - `repo-structure-analysis.md`: Snapshot-Evidenz und Lücken.
 - `language-nav-root.md` und `language-nav-i18n.md`: Navigationskonsistenz.
 - `translation-plan.txt`: Locale-Ziele und Mapping.
 
 ## 🧪 Beispiele
 
-### Beispiel 1: Vorlagen für Sprach-Navigation prüfen
+### Beispiel 1: Sprach-Navigationsvorlagen prüfen
 
 ```bash
-cat .auto-readme-work/20260302_124338/language-nav-root.md
-cat .auto-readme-work/20260302_124338/language-nav-i18n.md
+cat .auto-readme-work/20260302_140358/language-nav-root.md
+cat .auto-readme-work/20260302_140358/language-nav-i18n.md
 ```
 
 ### Beispiel 2: Locale-Plan prüfen
 
 ```bash
-cat .auto-readme-work/20260302_124338/translation-plan.txt
+cat .auto-readme-work/20260302_140358/translation-plan.txt
 ```
 
-### Beispiel 3: Fehlen von Runtime-Manifests bestätigen (aktueller Snapshot)
+### Beispiel 3: Abwesenheit von Laufzeit-Manifesten prüfen (aktueller Snapshot)
 
 ```bash
 find . -maxdepth 2 \
   \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
 
-<a id="development-notes"></a>
 ## 🛠️ Entwicklungsnotizen
 
-- Erhalte substanzielle Abschnitte und Links aus der Historie der kanonischen README.
-- Bevorzuge inkrementelle Edits statt destruktiver Neuschreibungen.
-- Halte genau ein Banner und genau einen Support-Block.
-- Halte Root- und i18n-README-Strukturen synchron.
-- Nenne Annahmen klar, wenn Laufzeit- oder Infrastrukturdetails unbekannt sind.
-- Nutze die Triade der Philosophie als aktive Leitplanken:
-  - **Sear creation tools** für Drafting mit hoher Signalstärke.
+- Bewahre inhaltlich relevante Abschnitte und Links aus der Historie der kanonischen README.
+- Bevorzuge inkrementelle Änderungen statt destruktiver Neuschreibungen.
+- Halte genau einen Banner- und einen Support-Block.
+- Halte die Strukturen von Root- und i18n-READMEs synchron.
+- Benenne Annahmen klar, wenn Laufzeit- oder Infrastrukturdetails unbekannt sind.
+- Nutze die Philosophie-Trias als aktive Leitplanken:
+  - **Sear creation tools** für signalstarkes Drafting.
   - **Self-healing tools** für Konsistenzreparatur.
-  - **Chain of prompt tools** für reproduzierbare Übergaben zwischen Pipeline-Phasen.
+  - **Chain of prompt tools** für reproduzierbare Übergaben zwischen Pipeline-Stufen.
 
 ## 🚑 Fehlerbehebung
 
 ### Ich sehe nur Markdown-Dateien und Pipeline-Artefakte
 
-Das ist in der aktuellen Bootstrap-Phase erwartbar.
+Das ist für die aktuelle Bootstrap-Phase erwartetes Verhalten.
 
-### Sprachselektor-Zeilen unterscheiden sich zwischen Dateien
+### Die Sprachselektor-Zeilen unterscheiden sich zwischen Dateien
 
 Nutze die kanonischen Vorlagen in:
 
-- `.auto-readme-work/20260302_124338/language-nav-root.md`
-- `.auto-readme-work/20260302_124338/language-nav-i18n.md`
+- `.auto-readme-work/20260302_140358/language-nav-root.md`
+- `.auto-readme-work/20260302_140358/language-nav-i18n.md`
 
-### Mein Branch ist nicht aktuell
+### Mein Branch ist hinter dem Remote-Stand
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### Ich möchte Laufzeitanleitungen ergänzen
+### Ich möchte Laufzeitanweisungen ergänzen
 
-Füge Build-/Run-Anleitungen erst hinzu, nachdem konkrete Manifeste (zum Beispiel `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) eingeführt wurden und die Pfade in diesem Repository bestätigt sind.
+Ergänze Build- und Laufzeitanweisungen erst, nachdem konkrete Manifeste eingeführt wurden (zum Beispiel: `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) und ihre Pfade in diesem Repository bestätigt sind.
 
 ## 🗺️ Roadmap
 
-1. **Sear creation tools** mit standardisierten README-Drafting-Templates, Abschnitts-Qualitäts-Gates und klareren Evidenz-zu-Ausgabe-Checks stärken.
-2. **Self-healing tools** mit automatisierten Checks für doppelte Blöcke, Locale-Drift, defekte interne Anker und veraltete Laufreferenzen ausbauen.
-3. **Chain of prompt tools** über Laufphasen hinweg formalisieren, um reproduzierbare Spuren für Kontext, Generierung, Übersetzung und Verifikation zu schaffen.
-4. Einen Single-Command-Flow für Dokumentationspflege hinzufügen, sobald Repository-Skripte eingeführt sind.
-5. CI-Checks für Markdown-Qualität, Link-Integrität und i18n-Strukturparität ergänzen.
-6. Konkrete Laufzeitkomponenten einführen, wenn Source-Manifeste und Entry-Points hinzugefügt werden.
-7. Eine stabile Lizenzentscheidung veröffentlichen und eine eigenständige Lizenzdatei ergänzen.
+1. **Sear creation tools** mit standardisierten README-Drafting-Vorlagen, Qualitäts-Gates pro Abschnitt und klareren Evidenz-zu-Ergebnis-Prüfungen stärken.
+2. **Self-healing tools** mit automatisierten Checks für doppelte Blöcke, veraltete Anchor-Prüfungen und Locale-Drift-Reparatur ausbauen.
+3. **Chain of prompt tools** über Run-Stufen hinweg formalisieren, um reproduzierbare Kontexte, Generierung, Übersetzung und Verifikation nachzuverfolgen.
+4. Einen Single-Command-Flow für die Dokumentationspflege ergänzen, sobald Repository-Skripte eingeführt sind.
+5. CI-Prüfungen für Markdown-Qualität, Link-Integrität und i18n-Strukturparität hinzufügen.
+6. Konkrete Laufzeitkomponenten einführen, sobald Quellmanifeste und Entrypoints ergänzt sind.
+7. Eine stabile Lizenzentscheidung veröffentlichen und eine eigenständige Lizenzdatei hinzufügen.
 
-### Roadmap nach Prinzipfokus
+### Roadmap nach Prinzip-Fokus
 
 | Fokusbereich | Kurzfristiges Ziel |
 | --- | --- |
-| **Sear creation tools** | Drafting-Templates und evidenzbasierte Abschnitts-Prompts verbessern. |
-| **Self-healing tools** | Duplikaterkennung, Prüfungen auf veraltete Anker und Locale-Drift-Reparatur automatisieren. |
-| **Chain of prompt tools** | Artefaktverträge pro Laufphase für reproduzierbare mehrsprachige Ausgaben standardisieren. |
+| **Sear creation tools** | Drafting-Vorlagen und evidenzbasierte Abschnitts-Prompts verbessern. |
+| **Self-healing tools** | Duplikaterkennung, Prüfungen auf veraltete Anchors und Reparatur von Locale-Drift automatisieren. |
+| **Chain of prompt tools** | Artefaktverträge je Run-Stufe für reproduzierbare mehrsprachige Ausgaben standardisieren. |
 
-## 🤝 Beitrag
+## 🤝 Mitwirken
 
 Beiträge sind willkommen.
 
-1. Öffne ein Issue, das die geplante Änderung beschreibt.
+1. Eröffne ein Issue mit der geplanten Änderung.
 2. Erstelle einen fokussierten Branch.
-3. Halte Doku-Edits inkrementell und repository-genau.
-4. Erhalte wichtige Links, Befehle und substanzielle historische Kontexte.
-5. Öffne einen Pull Request mit knappen Verifikationsnotizen.
+3. Halte Dokumentationsänderungen inkrementell und repository-genau.
+4. Bewahre wichtige Links, Befehle und relevante historische Inhalte.
+5. Eröffne einen Pull Request mit knappen Verifikationsnotizen.
 
 ### Empfohlener Ablauf
 

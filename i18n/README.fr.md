@@ -6,79 +6,79 @@
 # AgInTi
 
 [![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
-[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
-[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#project-structure)
-[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
-[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
-[![Principle-Sear%20Creation-ef4444?style=flat-square&logo=firefox&logoColor=white)](#overview)
-[![Principle-Self--Healing-10b981?style=flat-square&logo=wrench&logoColor=white)](#features)
-[![Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=chainlink&logoColor=white)](#architecture)
+[![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=readme&logoColor=white)](#aginti)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#-structure-du-projet)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#-périmètre-et-état-actuel)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=open-source-initiative&logoColor=white)](#-licence)
+[![Principle: Sear Creation](https://img.shields.io/badge/Principle-Sear%20Creation-ef4444?style=flat-square&logo=databricks&logoColor=white)](#-aperçu)
+[![Principle: Self-Healing](https://img.shields.io/badge/Principle-Self--Healing-10b981?style=flat-square&logo=dependabot&logoColor=white)](#-fonctionnalités)
+[![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architecture)
 
-Dépôt orienté documentation en priorité, conçu pour maintenir un README anglais complet et une documentation multilingue synchronisée, guidée par trois principes de fonctionnement : **sear creation tools**, **self-healing tools** et **chain of prompt tools**.
+Structure de dépôt orientée documentation pour maintenir un README anglais canonique et une documentation multilingue synchronisée, guidée par trois principes opérationnels : **sear creation tools**, **self-healing tools** et **chain of prompt tools**.
 
-## 🧭 Quick Navigation
+## 🧭 Navigation rapide
 
 | Type | Destination |
 | --- | --- |
-| Résumé du projet | [Overview](#overview) |
-| Capacités principales | [Features](#features) |
-| Conception du pipeline | [Architecture](#architecture) |
-| Base philosophique | [Philosophy at a glance](#philosophy-at-a-glance) |
-| Flux contributeur | [Development Notes](#development-notes) |
-| Direction future | [Roadmap](#roadmap) |
+| Résumé du projet | [Aperçu](#-aperçu) |
+| Capacités principales | [Fonctionnalités](#-fonctionnalités) |
+| Conception du pipeline | [Architecture](#-architecture) |
+| Base philosophique | [Philosophie en un coup d’œil](#philosophie-en-un-coup-dœil) |
+| Flux contributeur | [Notes de développement](#-notes-de-développement) |
+| Direction future | [Feuille de route](#-feuille-de-route) |
 | Soutenir le projet | [Support](#-support) |
 
 ---
 
-## 📌 Scope and Snapshot
+## 📌 Périmètre et état actuel
 
-| Item | Current state |
+| Élément | État actuel |
 | --- | --- |
-| Phase du dépôt | Documentation bootstrap scaffold |
-| Code d'exécution | Non détecté dans l'instantané actuel |
-| Tests/pipelines CI | Non détectés dans l'instantané actuel |
+| Phase du dépôt | Structure initiale de documentation |
+| Code d’exécution | Non détecté dans l’instantané actuel |
+| Tests/pipelines CI | Non détectés dans l’instantané actuel |
 | Docs localisées | 10 fichiers de locale sous `i18n/` |
-| Artéfacts pipeline | Exécutions horodatées sous `.auto-readme-work/` |
-| Fichier de licence | Absent en fichier autonome (badge README : TBD) |
+| Artefacts du pipeline | Exécutions horodatées sous `.auto-readme-work/` |
+| Fichier de licence | Absent en fichier autonome (badge README `TBD`) |
 | Base philosophique | Sear creation + self-healing + chain of prompt tools |
 
-## 🌍 Overview
+## 🌍 Aperçu
 
-AgInTi fonctionne actuellement comme un pipeline de cycle de vie README et de localisation, plutôt que comme une application d'exécution. Le `README.md` racine est la source canonique, et les variantes localisées dans `i18n/` sont synchronisées depuis cette structure canonique.
+AgInTi fonctionne actuellement comme pipeline de cycle de vie du README et de localisation, et non comme application d’exécution. Le `README.md` racine est la source canonique, et les variantes localisées dans `i18n/` sont synchronisées à partir de cette structure canonique.
 
-La philosophie du projet est explicite et opérationnelle, pas décorative. Chaque mise à jour du README doit satisfaire les trois principes suivants :
+La philosophie du projet est opérationnelle, pas décorative. Chaque mise à jour du README doit satisfaire les trois principes :
 
-1. **Sear creation tools** : des workflows de création volontairement affûtés qui produisent une documentation pratique et à fort signal à partir d'éléments de dépôt contraints.
-2. **Self-healing tools** : des mécanismes orientés réparation qui corrigent les dérives, éliminent les duplications et restaurent la cohérence structurelle.
-3. **Chain of prompt tools** : des flux de prompts par étapes et traçables qui préservent la filiation contexte-vers-sortie à travers les exécutions du pipeline.
+1. **Sear creation tools** : workflows de création volontairement affûtés qui produisent une documentation à fort signal à partir d’indices de dépôt contraints.
+2. **Self-healing tools** : mécanismes de réparation qui éliminent dérive, duplication et incohérences structurelles.
+3. **Chain of prompt tools** : flux de prompts par étapes et traçables, qui préservent la filiation contexte-vers-sortie entre les exécutions du pipeline.
 
-Ce dépôt conserve le contenu historique substantiel via des mises à jour incrémentales, tout en préservant les liens, commandes et métadonnées de support.
+Ce dépôt préserve un historique utile via des modifications incrémentales, tout en conservant les liens, commandes et métadonnées de support critiques.
 
-### Philosophy at a glance
+### Philosophie en un coup d’œil
 
-| Principle | Intent | Operational outcome |
+| Principe | Intention | Résultat opérationnel |
 | --- | --- | --- |
 | **Sear creation tools** | Produire une documentation à fort signal depuis des preuves contraintes. | Les sections restent pratiques, spécifiques et ancrées dans le dépôt. |
 | **Self-healing tools** | Réparer la dérive, la duplication et les structures obsolètes. | Les README canonique et localisés restent alignés et propres. |
-| **Chain of prompt tools** | Garder des étapes de génération explicites et traçables. | Les artéfacts du pipeline conservent un contexte et des relais reproductibles. |
+| **Chain of prompt tools** | Garder les étapes de génération explicites et traçables. | Les artefacts du pipeline conservent un contexte et des relais reproductibles. |
 
-## ✨ Features
+## ✨ Fonctionnalités
 
-- Stratégie documentaire README-first avec un document racine canonique.
+- Stratégie documentation d’abord avec un document racine canonique.
 - Synchronisation multilingue sur 10 variantes README i18n.
-- Rédaction pilotée par pipeline via les artéfacts `.auto-readme-work/<run-id>/`.
-- Invariants « une seule bannière » et « un seul panneau de support » pour éviter les blocs visuels dupliqués.
-- Discipline de mise à jour incrémentale qui préserve l'historique technique utile.
+- Rédaction pilotée par pipeline via les artefacts `.auto-readme-work/<run-id>/`.
+- Invariants « bannière unique » et « panneau de support unique » pour éviter les blocs visuels dupliqués.
+- Discipline de mise à jour incrémentale qui préserve l’historique technique substantiel.
 
-### Principle-to-feature mapping
+### Correspondance principe → fonctionnalité
 
-| Core principle | How it appears in current features |
+| Principe central | Manifestation actuelle |
 | --- | --- |
-| **Sear creation tools** | Rédaction README précise à partir de preuves ancrées dépôt et de gabarits de section stables. |
-| **Self-healing tools** | Vérifications de déduplication pour blocs bannière/support répétés, références obsolètes et dérive structurelle. |
-| **Chain of prompt tools** | Chaîne d'artéfacts spécifique à l'exécution (`pipeline-context`, modèles de navigation, plan de traduction) pour une sortie reproductible. |
+| **Sear creation tools** | Rédaction README précise à partir d’indices du dépôt et de gabarits de section stables. |
+| **Self-healing tools** | Contrôles de déduplication des blocs bannière/support, des références obsolètes et des dérives de structure. |
+| **Chain of prompt tools** | Chaîne d’artefacts propre à chaque exécution (`pipeline-context`, modèles de navigation, plan de traduction) pour une sortie reproductible. |
 
-## 🗂️ Project Structure
+## 🗂️ Structure du projet
 
 ```text
 AgInTi/
@@ -101,183 +101,187 @@ AgInTi/
     ├── 20260301_065835/
     ├── 20260301_070633/
     ├── 20260302_120620/
-    └── 20260302_124338/
+    ├── 20260302_124338/
+    ├── 20260302_140150/
+    └── 20260302_140358/
 ```
 
 ## 🏗️ Architecture
 
-À ce stade, l'architecture signifie l'architecture du pipeline de documentation, et non une architecture d'exécution applicative.
+À ce stade, l’architecture désigne l’architecture du pipeline de documentation, et non celle d’un service d’exécution.
 
-### Pipeline flow
+### Flux du pipeline
 
-1. Un contexte spécifique à l'exécution est enregistré dans `.auto-readme-work/<run-id>/pipeline-context.md`.
-2. Les modèles de navigation linguistique sont générés (`language-nav-root.md` et `language-nav-i18n.md`).
-3. Le contenu README canonique est mis à jour de manière incrémentale dans `README.md`.
-4. Les fichiers README localisés dans `i18n/` sont alignés sur la structure canonique.
-5. Des contrôles qualité structurels imposent la déduplication, la cohérence des liens et la préservation des détails techniques.
+```mermaid
+flowchart LR
+    A[Capture run context\n.auto-readme-work/<run-id>/pipeline-context.md] --> B[Analyze repository state\nrepo-structure-analysis.md]
+    B --> C[Draft canonical README\nREADME.md]
+    C --> D[Align i18n READMEs\ni18n/README.*.md]
+    D --> E[Validate quality gates\nlinks, duplicates, structure parity]
+```
 
-### Core principles in architecture
+### Principes centraux dans l’architecture
 
-- **Sear creation tools** : appliqué pendant la construction du contenu pour garder des sections concrètes, complètes et fidèles au dépôt.
-- **Self-healing tools** : appliqué pendant la validation pour supprimer les blocs dupliqués, corriger les références d'exécution obsolètes et restaurer la parité structurelle.
-- **Chain of prompt tools** : appliqué à travers les artéfacts pour que chaque étape de génération reste explicite et auditable.
+- **Sear creation tools** : appliqués pendant la construction du contenu pour garder des sections concrètes, complètes et fidèles au dépôt.
+- **Self-healing tools** : appliqués pendant la validation pour supprimer les blocs dupliqués, réparer les références d’exécution obsolètes et restaurer la parité structurelle.
+- **Chain of prompt tools** : appliqués sur l’ensemble des artefacts afin que chaque étape de génération reste explicite et auditable.
 
-### Principle checkpoints by pipeline stage
+### Points de contrôle par étape du pipeline
 
-| Stage | Sear creation tools | Self-healing tools | Chain of prompt tools |
+| Étape | Sear creation tools | Self-healing tools | Chain of prompt tools |
 | --- | --- | --- | --- |
-| Context capture | Définir des contraintes de génération nettes. | Signaler tôt les entrées manquantes/invalides. | Préserver le prompt source et les métadonnées d'exécution. |
-| Canonical drafting | Construire des sections README complètes depuis les preuves du dépôt. | Éviter les régressions et les pertes de contenu accidentelles. | Garder les sorties d'étape liées aux artéfacts précédents. |
-| i18n alignment | Maintenir structure et parité technique entre locales. | Corriger la dérive entre fichiers racine et i18n. | Porter l'intention canonique dans chaque variante localisée. |
-| Final verification | Imposer lisibilité et préservation des détails. | Supprimer bannière/support dupliqués et références obsolètes. | Laisser une trace d'artéfacts auditable pour l'exécution. |
+| Capture du contexte | Définir des contraintes de génération nettes. | Signaler tôt les entrées manquantes ou invalides. | Préserver le prompt source et les métadonnées d’exécution. |
+| Rédaction canonique | Construire des sections README complètes à partir des preuves du dépôt. | Éviter les régressions et pertes de contenu accidentelles. | Relier les sorties d’étape aux artefacts précédents. |
+| Alignement i18n | Maintenir la parité de structure et de technique entre les locales. | Corriger la dérive entre la racine et les fichiers i18n. | Porter l’intention canonique dans chaque variante localisée. |
+| Vérification finale | Imposer lisibilité et préservation du détail. | Supprimer les bannières/panneaux de support en double et les références obsolètes. | Laisser une trace d’artefacts auditable pour l’exécution. |
 
-## 🧾 Documentation Inputs and Generated Artifacts
+## 🧾 Entrées de documentation et artefacts générés
 
-| File | Purpose |
+| Fichier | Objectif |
 | --- | --- |
-| `.auto-readme-work/20260302_124338/pipeline-context.md` | Contraintes source et objectifs pour cette passe de génération. |
-| `.auto-readme-work/20260302_124338/repo-structure-analysis.md` | Résumé du scan du dépôt et état technique inféré. |
-| `.auto-readme-work/20260302_124338/language-nav-root.md` | Ligne canonique d'options de langue pour `README.md` racine. |
-| `.auto-readme-work/20260302_124338/language-nav-i18n.md` | Ligne canonique d'options de langue pour les README i18n. |
-| `.auto-readme-work/20260302_124338/translation-plan.txt` | Mapping des locales et plan des fichiers i18n cibles. |
-| `.auto-readme-work/<older-run-id>/...` | Contexte historique d'exécution pour les passes pipeline README précédentes. |
+| `.auto-readme-work/20260302_140358/pipeline-context.md` | Contraintes et objectifs source pour cette passe de génération. |
+| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Résumé du scan du dépôt et état technique inféré. |
+| `.auto-readme-work/20260302_140358/language-nav-root.md` | Ligne canonique d’options de langue pour `README.md` racine. |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Ligne canonique d’options de langue pour les README i18n. |
+| `.auto-readme-work/20260302_140358/translation-plan.txt` | Mappage des locales et plan des fichiers i18n cibles. |
+| `.auto-readme-work/<older-run-id>/...` | Contexte historique des exécutions précédentes du pipeline. |
 
-## 🔧 Prerequisites
+## 🔧 Prérequis
 
 - `git`
 - Shell POSIX (les exemples utilisent `bash`)
 - Éditeur compatible Markdown
 
-### Assumptions
+### Hypothèses
 
-- Aucun service exécutable ou manifeste applicatif n'est présent dans cet instantané du dépôt.
-- Les instructions d'installation/build/start sont donc orientées workflow documentaire.
+- Aucun service exécutable ni manifeste d’application n’est présent dans cet instantané du dépôt.
+- Les instructions d’installation, de build et de démarrage sont donc orientées workflow documentaire.
 
 ## 📥 Installation
 
-Aucun package binaire ni étape de build d'exécution n'est encore défini.
+Aucun package binaire ni étape de build d’exécution n’est défini pour le moment.
 
 ```bash
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
-## ▶️ Usage
+## ▶️ Utilisation
 
-L'usage actuel concerne la maintenance documentaire et la synchronisation multilingue.
+L’usage actuel se concentre sur la maintenance documentaire et la synchronisation multilingue.
 
-### Common inspection commands
+### Commandes d’inspection courantes
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260302_124338
+ls -la .auto-readme-work/20260302_140358
 ls -la i18n
 ```
 
-### Canonical README synchronization workflow
+### Workflow de synchronisation du README canonique
 
-1. Lire `.auto-readme-work/20260302_124338/pipeline-context.md`.
-2. Vérifier les modèles de sélecteur de langue depuis `language-nav-root.md` et `language-nav-i18n.md`.
+1. Lire `.auto-readme-work/20260302_140358/pipeline-context.md`.
+2. Vérifier les modèles de sélecteur de langue dans `language-nav-root.md` et `language-nav-i18n.md`.
 3. Mettre à jour `README.md` de façon incrémentale comme source de vérité.
 4. Aligner les fichiers `i18n/README.*.md` sur la même structure et les mêmes détails techniques clés.
-5. Confirmer qu'il y a exactement une bannière et exactement un panneau de support.
+5. Confirmer qu’il y a exactement une bannière et exactement un panneau de support.
 
 ## ⚙️ Configuration
 
-Aucune configuration d'exécution n'existe encore. Le comportement documentaire est piloté par les artéfacts du dépôt.
+Aucune configuration d’exécution n’existe encore. Le comportement documentaire est piloté par les artefacts du dépôt.
 
-- `pipeline-context.md` : objectifs et contraintes d'exécution.
-- `repo-structure-analysis.md` : preuves d'instantané et écarts.
+- `pipeline-context.md` : objectifs et contraintes d’exécution.
+- `repo-structure-analysis.md` : preuves de l’instantané et lacunes.
 - `language-nav-root.md` et `language-nav-i18n.md` : cohérence de navigation.
-- `translation-plan.txt` : cibles de locales et mapping.
+- `translation-plan.txt` : locales cibles et mappage.
 
-## 🧪 Examples
+## 🧪 Exemples
 
-### Example 1: Verify language navigation templates
-
-```bash
-cat .auto-readme-work/20260302_124338/language-nav-root.md
-cat .auto-readme-work/20260302_124338/language-nav-i18n.md
-```
-
-### Example 2: Check locale plan
+### Exemple 1 : vérifier les modèles de navigation de langue
 
 ```bash
-cat .auto-readme-work/20260302_124338/translation-plan.txt
+cat .auto-readme-work/20260302_140358/language-nav-root.md
+cat .auto-readme-work/20260302_140358/language-nav-i18n.md
 ```
 
-### Example 3: Confirm runtime-manifest absence (current snapshot)
+### Exemple 2 : vérifier le plan de locales
+
+```bash
+cat .auto-readme-work/20260302_140358/translation-plan.txt
+```
+
+### Exemple 3 : confirmer l’absence de manifeste d’exécution (instantané actuel)
 
 ```bash
 find . -maxdepth 2 \
   \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
 
-## 🛠️ Development Notes
+## 🛠️ Notes de développement
 
-- Préserver les sections substantielles et les liens issus de l'historique README canonique.
-- Préférer des modifications incrémentales plutôt que des réécritures destructrices.
+- Préserver les sections et liens substantiels de l’historique du README canonique.
+- Préférer les modifications incrémentales aux réécritures destructrices.
 - Conserver une seule bannière et un seul bloc de support.
-- Garder les structures README racine et i18n synchronisées.
-- Énoncer clairement les hypothèses lorsque des détails d'exécution ou d'infrastructure sont inconnus.
-- Appliquer le triptyque philosophique comme garde-fou actif :
+- Maintenir la synchronisation des structures README racine et i18n.
+- Énoncer clairement les hypothèses quand les détails runtime ou infrastructure sont inconnus.
+- Appliquer la triade philosophique comme garde-fous actifs :
   - **Sear creation tools** pour une rédaction à fort signal.
   - **Self-healing tools** pour la réparation de cohérence.
-  - **Chain of prompt tools** pour un relais reproductible entre étapes pipeline.
+  - **Chain of prompt tools** pour des relais reproductibles entre les étapes du pipeline.
 
-## 🚑 Troubleshooting
+## 🚑 Dépannage
 
-### I only see Markdown files and pipeline artifacts
+### Je ne vois que des fichiers Markdown et des artefacts de pipeline
 
-C'est attendu pour la phase bootstrap actuelle.
+C’est attendu dans la phase actuelle d’amorçage.
 
-### Language selector lines differ between files
+### Les lignes de sélection de langue diffèrent selon les fichiers
 
-Utiliser les modèles canoniques dans :
+Utilisez les modèles canoniques dans :
 
-- `.auto-readme-work/20260302_124338/language-nav-root.md`
-- `.auto-readme-work/20260302_124338/language-nav-i18n.md`
+- `.auto-readme-work/20260302_140358/language-nav-root.md`
+- `.auto-readme-work/20260302_140358/language-nav-i18n.md`
 
-### My branch is behind
+### Ma branche a du retard
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### I want to add runtime instructions
+### Je veux ajouter des instructions runtime
 
-Ajouter des instructions build/run uniquement après avoir introduit des manifestes concrets (par exemple : `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) et confirmé les chemins dans ce dépôt.
+Ajoutez des instructions de build et d’exécution uniquement après avoir introduit des manifestes concrets (par exemple : `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) et confirmé leurs chemins dans ce dépôt.
 
-## 🗺️ Roadmap
+## 🗺️ Feuille de route
 
-1. Renforcer **sear creation tools** avec des gabarits standardisés de rédaction README, des garde-fous qualité par section et des contrôles plus clairs preuve-vers-sortie.
-2. Étendre **self-healing tools** avec des vérifications automatisées des blocs dupliqués, de la dérive de locales, des ancres internes cassées et des références d'exécution obsolètes.
-3. Formaliser **chain of prompt tools** entre les étapes d'exécution pour des traces reproductibles de contexte, génération, traduction et vérification.
-4. Ajouter un flux de maintenance documentaire en une seule commande dès l'introduction de scripts du dépôt.
-5. Ajouter des contrôles CI pour la qualité Markdown, l'intégrité des liens et la parité structurelle i18n.
-6. Introduire des composants d'exécution concrets lorsque les manifestes source et points d'entrée seront ajoutés.
+1. Renforcer les **sear creation tools** avec des modèles de rédaction README standardisés, des garde-fous de qualité par section et des vérifications plus nettes entre preuve et sortie.
+2. Étendre les **self-healing tools** avec des contrôles automatisés des blocs dupliqués, de la dérive des locales, des ancres internes cassées et des références d’exécution obsolètes.
+3. Formaliser les **chain of prompt tools** sur les étapes d’exécution pour des traces reproductibles de contexte, génération, traduction et vérification.
+4. Ajouter un flux de maintenance documentaire en une seule commande une fois les scripts du dépôt introduits.
+5. Ajouter des contrôles CI pour la qualité Markdown, l’intégrité des liens et la parité structurelle i18n.
+6. Introduire des composants runtime concrets quand des manifestes sources et points d’entrée seront ajoutés.
 7. Publier une décision de licence stable et ajouter un fichier de licence autonome.
 
-### Roadmap by principle focus
+### Feuille de route par priorité de principe
 
-| Focus area | Near-term target |
+| Domaine de focus | Cible à court terme |
 | --- | --- |
-| **Sear creation tools** | Améliorer les gabarits de rédaction et les prompts de section appuyés sur des preuves. |
-| **Self-healing tools** | Automatiser la détection de doublons, les vérifications d'ancres obsolètes et la réparation de dérive des locales. |
-| **Chain of prompt tools** | Standardiser les contrats d'artéfacts par étape d'exécution pour des sorties multilingues reproductibles. |
+| **Sear creation tools** | Améliorer les modèles de rédaction et les prompts de section basés sur des preuves. |
+| **Self-healing tools** | Automatiser la détection des doublons, les contrôles d’ancres obsolètes et la réparation de dérive des locales. |
+| **Chain of prompt tools** | Standardiser les contrats d’artefacts par étape d’exécution pour des sorties multilingues reproductibles. |
 
 ## 🤝 Contribution
 
-Les contributions sont bienvenues.
+Les contributions sont les bienvenues.
 
-1. Ouvrir une issue décrivant le changement visé.
-2. Créer une branche ciblée.
-3. Garder des modifications documentaires incrémentales et fidèles au dépôt.
-4. Préserver les liens, commandes et contexte historique substantiel importants.
-5. Ouvrir une pull request avec des notes de vérification concises.
+1. Ouvrez une issue décrivant le changement visé.
+2. Créez une branche ciblée.
+3. Gardez les modifications documentaires incrémentales et fidèles au dépôt.
+4. Préservez les liens importants, les commandes et le contexte historique substantiel.
+5. Ouvrez une pull request avec des notes de vérification concises.
 
-### Suggested flow
+### Flux suggéré
 
 ```bash
 git checkout -b docs/your-update
@@ -287,12 +291,13 @@ git commit -m "docs: refine README content"
 git push -u origin docs/your-update
 ```
 
+## 📄 Licence
+
+TBD. Un fichier de licence autonome est prévu, mais n’est pas encore présent dans l’instantané actuel.
+
+
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
 | [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
-
-## 📄 License
-
-TBD. Un fichier de licence autonome est prévu, mais n'est pas encore présent dans l'instantané actuel.
