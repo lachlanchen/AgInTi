@@ -65,6 +65,7 @@ run_queries() {
       --scroll-steps 4 \
       --scroll-pause 1.0 \
       --no-auto-attach \
+      --headless \
       --output-dir "$WEB_DIR" \
       --run-id "$run_label" \
       >"$WEB_DIR/${run_label}.log" 2>&1; then
@@ -72,6 +73,7 @@ run_queries() {
         --query "$q" \
         --kind auto \
         --top-results 5 \
+        --headless \
         --output-dir "$WEB_DIR" \
         --run-id "${run_label}-fallback" \
         --no-codex \
@@ -83,6 +85,7 @@ run_queries() {
         --query "$q" \
         --kind auto \
         --top-results 5 \
+        --headless \
         --output-dir "$WEB_DIR" \
         --run-id "${run_label}-fallback2" \
         --no-codex \
