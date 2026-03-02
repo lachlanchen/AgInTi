@@ -305,8 +305,35 @@ This repository includes these root submodules:
 - [AutoAppDev](https://github.com/lachlanchen/AutoAppDev)
 - [AutoNovelWriter](https://github.com/lachlanchen/AutoNovelWriter)
 - [OrganoidAgent](https://github.com/lachlanchen/OrganoidAgent)
-- [LazyingArtBot](https://github.com/lachlanchen/LazyingArtBot)
 - [PaperAgent](https://github.com/lachlanchen/PaperAgent)
+- [LifeReverseEngineering](https://github.com/lachlanchen/LifeReverseEngineering)
+
+Nested structure for LRE:
+
+- `AgInTi/LifeReverseEngineering/learn` -> [LazyLearn](https://github.com/lachlanchen/LazyLearn)
+- `AgInTi/LifeReverseEngineering/earn` -> [LazyEarn](https://github.com/lachlanchen/LazyEarn)
+- `AgInTi/LifeReverseEngineering/IDEAS` -> [IDEAS](https://github.com/lachlanchen/IDEAS)
+
+## 🧠 LRE Deep Research Prompt Tools
+
+AgInTi now includes a LAB-compatible prompt-tool bundle under:
+
+- `AgInTi/lab_prompt_tools/`
+
+LRE-specific tools:
+
+- `lab_prompt_tools/lre/prompt_lre_profile_research.sh`
+- `lab_prompt_tools/lre/prompt_lre_book_finder.sh`
+- `lab_prompt_tools/lre/prompt_lre_investment_finder.sh`
+- `lab_prompt_tools/lre/prompt_lre_self_evolve.sh`
+- `lab_prompt_tools/lre/run_lre_deep_research.sh`
+
+Quick run:
+
+```bash
+cd AgInTi
+lab_prompt_tools/lre/run_lre_deep_research.sh --model gpt-5.3-codex-spark --reasoning high
+```
 
 ## ❤️ Support
 

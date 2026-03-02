@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "theme": {
+            "type": "string"
+          },
+          "why_fit": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "action_30d": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "author",
+          "theme",
+          "why_fit",
+          "priority",
+          "action_30d"
+        ]
+      }
+    }
+  },
+  "required": [
+    "summary",
+    "recommendations"
+  ]
+}

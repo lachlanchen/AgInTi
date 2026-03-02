@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "diagnosis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "query_strategy_updates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prompt_patch": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "script_patch": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_experiment": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "diagnosis",
+    "query_strategy_updates",
+    "prompt_patch",
+    "script_patch",
+    "next_experiment"
+  ]
+}
