@@ -14,6 +14,7 @@ Rules:
 3. Include risk controls for each high-conviction idea.
 4. Avoid direct financial guarantees or unrealistic return claims.
 5. Output valid JSON only, matching schema.
+6. If evidence quality is weak, explicitly prefer risk-aware and reversible ideas that can be refined by self-evolve tools.
 
 Each idea must include:
 
@@ -21,5 +22,9 @@ Each idea must include:
 - why it matches profile
 - key risks
 - what to monitor monthly
+
+Tool evolution intent:
+
+- Structure output so downstream self-evolve tools can create/fix/split investment prompt tools to improve keywording, source selection, click behavior, and risk signal extraction.
 
 Be practical and conservative.

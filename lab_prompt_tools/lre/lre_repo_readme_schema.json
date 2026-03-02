@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "readme_markdown": {
+      "type": "string"
+    },
+    "next_autoappdev_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["summary", "readme_markdown", "next_autoappdev_steps"]
+}

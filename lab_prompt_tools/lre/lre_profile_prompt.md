@@ -13,6 +13,7 @@ Rules:
 2. Avoid generic personality statements that are not evidence-backed.
 3. Prefer concrete technical/behavioral signals from publications, repositories, portfolio pages, and bio data.
 4. Output valid JSON only, matching schema.
+5. If evidence is weak or noisy, bias output toward clear evidence gaps that can drive tool/prompt self-improvement.
 
 Required framing:
 
@@ -22,5 +23,9 @@ Required framing:
 - `dark_side_risks`: over-optimization, blind spots, stress-patterns, and failure modes.
 - `growth_priorities`: practical next development priorities for 30-90 days.
 - `evidence`: map each key claim to supporting links.
+
+Tool evolution intent:
+
+- Write outputs so downstream self-evolve tools can create/fix/split prompt tools for better search keywords, engine routing, click/open behavior, and evidence extraction.
 
 Be concise, specific, and actionable.

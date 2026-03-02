@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "website_markdown": {
+      "type": "string"
+    },
+    "next_autoappdev_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["summary", "website_markdown", "next_autoappdev_steps"]
+}

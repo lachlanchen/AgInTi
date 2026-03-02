@@ -12,6 +12,7 @@ PROFILE_JSON=""
 SKIP_WEBSEARCH=0
 AUTO_HEAL=1
 QUERY_FILE="${SCRIPT_DIR}/investment_queries.txt"
+SELF_EVOLVE_PROMPT_FILE="${SCRIPT_DIR}/lre_self_evolve_investments_prompt.md"
 
 usage() {
   cat <<'USAGE'
@@ -24,6 +25,7 @@ Options:
   --model <name>          Codex model (default: gpt-5.3-codex)
   --reasoning <level>     Codex reasoning (default: high)
   --query-file <path>     Query file (default: lre/investment_queries.txt)
+  --self-evolve-prompt <path>  Self-evolve prompt (default: lre_self_evolve_investments_prompt.md)
   --skip-websearch        Skip websearch stage
   --no-auto-heal          Disable self-heal query evolution
   --help
@@ -73,6 +75,7 @@ while [[ $# -gt 0 ]]; do
     --model) shift; MODEL="${1:-}";;
     --reasoning) shift; REASONING="${1:-}";;
     --query-file) shift; QUERY_FILE="${1:-}";;
+    --self-evolve-prompt) shift; SELF_EVOLVE_PROMPT_FILE="${1:-}";;
     --skip-websearch) SKIP_WEBSEARCH=1;;
     --no-auto-heal) AUTO_HEAL=0;;
     -h|--help) usage; exit 0;;
@@ -92,6 +95,8 @@ fi
 RUN_DIR="${OUTPUT_DIR}/${RUN_ID}"
 WEB_DIR="${RUN_DIR}/websearch"
 CODEX_DIR="${RUN_DIR}/codex"
+SELF_HEAL_LOG="${RUN_DIR}/invest_self_heal.log"
+SELF_HEAL_RESULT="${RUN_DIR}/invest_self_heal_result.json"
 mkdir -p "$WEB_DIR" "$CODEX_DIR"
 
 if [[ "$SKIP_WEBSEARCH" -eq 0 ]]; then
@@ -125,20 +130,62 @@ print("1" if data.get("weak_signal") else "0")
 PY
 )"
     if [[ "$WEAK_SIGNAL" == "1" ]]; then
+      HEAL_RUN_ID="${RUN_ID}-invest-heal"
+      HEAL_RESULT_PATH="${HOME}/.openclaw/workspace/LRE/self_evolve_runs/${HEAL_RUN_ID}/codex/latest-result.json"
       "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
         --tool-name "lre-investment-websearch" \
         --feedback "Investment/news search signal weak. Improve with concise macro/theme/risk-oriented queries." \
         --query-file "$QUERY_FILE" \
+        --prompt-file "$SELF_EVOLVE_PROMPT_FILE" \
+        --label "lre-invest-heal" \
         --apply \
         --model "$MODEL" \
         --reasoning "$REASONING" \
-        --run-id "${RUN_ID}-invest-heal" \
+        --run-id "$HEAL_RUN_ID" \
         --output-dir "${HOME}/.openclaw/workspace/LRE/self_evolve_runs" \
-        >"$RUN_DIR/invest_self_heal.log" 2>&1 || true
+        >"$SELF_HEAL_LOG" 2>&1 || true
+      if [[ -f "$HEAL_RESULT_PATH" ]]; then
+        cp "$HEAL_RESULT_PATH" "$SELF_HEAL_RESULT"
+      else
+        cat > "$SELF_HEAL_RESULT" <<EOF
+{"status":"failed","reason":"missing_self_evolve_result","expected":"$HEAL_RESULT_PATH"}
+EOF
+      fi
       QUERIES=("${(@f)$(load_queries "$QUERY_FILE")}")
       run_queries "invest-heal" "${QUERIES[@]:0:4}"
+    else
+      HEAL_RUN_ID="${RUN_ID}-invest-review"
+      HEAL_RESULT_PATH="${HOME}/.openclaw/workspace/LRE/self_evolve_runs/${HEAL_RUN_ID}/codex/latest-result.json"
+      "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
+        --tool-name "lre-investment-websearch" \
+        --feedback "Signal is strong. Propose incremental tool/prompt improvements to keep investment search quality improving." \
+        --query-file "$QUERY_FILE" \
+        --prompt-file "$SELF_EVOLVE_PROMPT_FILE" \
+        --label "lre-invest-review" \
+        --model "$MODEL" \
+        --reasoning "$REASONING" \
+        --run-id "$HEAL_RUN_ID" \
+        --output-dir "${HOME}/.openclaw/workspace/LRE/self_evolve_runs" \
+        >"$SELF_HEAL_LOG" 2>&1 || true
+      if [[ -f "$HEAL_RESULT_PATH" ]]; then
+        cp "$HEAL_RESULT_PATH" "$SELF_HEAL_RESULT"
+      else
+        cat > "$SELF_HEAL_RESULT" <<EOF
+{"status":"failed","reason":"missing_self_evolve_result","expected":"$HEAL_RESULT_PATH"}
+EOF
+      fi
     fi
+  else
+    echo "self-heal skipped: auto-heal disabled" > "$SELF_HEAL_LOG"
+    cat > "$SELF_HEAL_RESULT" <<'EOF'
+{"status":"skipped","reason":"auto_heal_disabled"}
+EOF
   fi
+else
+  echo "self-heal skipped: websearch skipped" > "$SELF_HEAL_LOG"
+  cat > "$SELF_HEAL_RESULT" <<'EOF'
+{"status":"skipped","reason":"websearch_skipped"}
+EOF
 fi
 
 INPUT_JSON="${RUN_DIR}/investments_input.json"
@@ -198,3 +245,5 @@ cp "$INVEST_MD" "$LATEST_DIR/investments.md"
 echo "run_dir=$RUN_DIR"
 echo "investments_result=${CODEX_DIR}/latest-result.json"
 echo "investments_markdown=$INVEST_MD"
+echo "investments_self_heal_log=$SELF_HEAL_LOG"
+echo "investments_self_heal_result=$SELF_HEAL_RESULT"

@@ -13,3 +13,7 @@ Rules:
 3. Each idea must include a 7-day first experiment.
 4. Keep recommendations grounded in user profile and evidence signals.
 5. Output valid JSON only, matching schema.
+6. If evidence quality is weak, favor smaller experiments and explicit assumptions that self-evolve tools can improve next run.
+
+Tool evolution intent:
+- Structure output so downstream self-evolve tools can create/fix/split ideas prompt tools to improve keyword generation, search routing, click strategy, and evidence summarization.

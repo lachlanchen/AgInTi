@@ -61,6 +61,9 @@ Core scripts:
 - `lre/prompt_lre_investment_finder.sh`
 - `lre/prompt_lre_ideas_finder.sh`
 - `lre/prompt_lre_self_evolve.sh`
+- `lre/prompt_lre_repo_autoreadme.sh`
+- `lre/prompt_lre_repo_autowebsite.sh`
+- `lre/run_lre_autoappdev.sh`
 - `lre/run_lre_deep_research.sh`
 
 Prompt + schema assets:
@@ -70,6 +73,12 @@ Prompt + schema assets:
 - `lre/lre_investments_prompt.md`, `lre/lre_investments_schema.json`
 - `lre/lre_ideas_prompt.md`, `lre/lre_ideas_schema.json`
 - `lre/lre_self_evolve_prompt.md`, `lre/lre_self_evolve_schema.json`
+- `lre/lre_self_evolve_profile_prompt.md`
+- `lre/lre_self_evolve_books_prompt.md`
+- `lre/lre_self_evolve_investments_prompt.md`
+- `lre/lre_self_evolve_ideas_prompt.md`
+- `lre/lre_repo_readme_prompt.md`, `lre/lre_repo_readme_schema.json`
+- `lre/lre_repo_website_prompt.md`, `lre/lre_repo_website_schema.json`
 
 Design intent:
 
@@ -78,6 +87,7 @@ Design intent:
 - Produce profile insights from interests, strengths, weaknesses, and dark-side risks.
 - Recommend books and investment theses linked to evidence.
 - Keep a self-evolve loop that updates query and prompt strategy after each run.
+- Keep autoappdev loops that refresh README and website landing pages in AgInTi/LRE/LazyLearn/LazyEarn/IDEAS.
 
 ## AutoLife prompt suite (delegation-first)
 

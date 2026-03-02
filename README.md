@@ -327,6 +327,9 @@ LRE-specific tools:
 - `lab_prompt_tools/lre/prompt_lre_investment_finder.sh`
 - `lab_prompt_tools/lre/prompt_lre_ideas_finder.sh`
 - `lab_prompt_tools/lre/prompt_lre_self_evolve.sh`
+- `lab_prompt_tools/lre/prompt_lre_repo_autoreadme.sh`
+- `lab_prompt_tools/lre/prompt_lre_repo_autowebsite.sh`
+- `lab_prompt_tools/lre/run_lre_autoappdev.sh`
 - `lab_prompt_tools/lre/run_lre_deep_research.sh`
 
 Quick run:

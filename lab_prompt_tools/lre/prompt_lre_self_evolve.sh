@@ -12,6 +12,8 @@ TOOL_NAME="lre"
 FEEDBACK=""
 LATEST_OUTPUT_PATH=""
 QUERY_FILE=""
+PROMPT_FILE="$PROMPT_TOOLS_DIR/lre/lre_self_evolve_prompt.md"
+LABEL="lre-self-evolve"
 APPLY=0
 
 usage() {
@@ -23,6 +25,8 @@ Options:
   --feedback <text>          Required feedback string
   --latest-output <path>     Optional latest result JSON path
   --query-file <path>        Optional query file for auto-heal updates
+  --prompt-file <path>       Prompt file override (default: lre_self_evolve_prompt.md)
+  --label <name>             Codex runner label (default: lre-self-evolve)
   --apply                    Apply recommended_queries into query-file (dedupe append)
   --output-dir <path>        Output root (default: ~/.openclaw/workspace/LRE/self_evolve_runs)
   --run-id <id>              Run id (default: timestamp)
@@ -38,6 +42,8 @@ while [[ $# -gt 0 ]]; do
     --feedback) shift; FEEDBACK="${1:-}";;
     --latest-output) shift; LATEST_OUTPUT_PATH="${1:-}";;
     --query-file) shift; QUERY_FILE="${1:-}";;
+    --prompt-file) shift; PROMPT_FILE="${1:-}";;
+    --label) shift; LABEL="${1:-}";;
     --apply) APPLY=1;;
     --output-dir) shift; OUTPUT_DIR="${1:-}";;
     --run-id) shift; RUN_ID="${1:-}";;
@@ -98,11 +104,11 @@ PY
 python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --input-json "$INPUT_JSON" \
   --output-dir "$CODEX_DIR" \
-  --prompt-file "$PROMPT_TOOLS_DIR/lre/lre_self_evolve_prompt.md" \
+  --prompt-file "$PROMPT_FILE" \
   --schema "$PROMPT_TOOLS_DIR/lre/lre_self_evolve_schema.json" \
   --model "$MODEL" \
   --reasoning "$REASONING" \
-  --label lre-self-evolve \
+  --label "$LABEL" \
   --skip-git-check
 
 RESULT_PATH="${CODEX_DIR}/latest-result.json"
@@ -150,3 +156,4 @@ fi
 
 echo "run_dir=$RUN_DIR"
 echo "self_evolve_result=$RESULT_PATH"
+echo "self_evolve_prompt=$PROMPT_FILE"
