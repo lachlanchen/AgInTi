@@ -10,3 +10,6 @@
 [submodule "PaperAgent"]
 	path = PaperAgent
 	url = git@github.com:lachlanchen/PaperAgent.git
+[submodule "LifeReverseEngineering"]
+	path = LifeReverseEngineering
+	url = git@github.com:lachlanchen/LifeReverseEngineering.git
