@@ -28,4 +28,5 @@ Rules:
 - make a concrete decision to update prompt tools when evidence quality is weak; do not stay in analysis-only mode.
 
 Must include:
+
 - `recommended_queries`: 3-8 concise search queries to improve signal quality.

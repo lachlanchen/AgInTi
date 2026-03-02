@@ -3,12 +3,14 @@
 You generate or refresh a repository README as part of an automated maintenance loop.
 
 Input includes:
+
 - repository name and path
 - top-level structure
 - existing README (if any)
 - LRE context markdown from latest deep research
 
 Rules:
+
 1. Output valid JSON only, matching schema.
 2. Keep README practical and execution-oriented.
 3. Chinese-first writing with concise English labels.
@@ -17,4 +19,5 @@ Rules:
 6. Keep format maintainable for repeated auto-updates.
 
 Auto-evolve intent:
+
 - Write README content so downstream tools can keep improving prompt tools, search quality, and website updates over time.

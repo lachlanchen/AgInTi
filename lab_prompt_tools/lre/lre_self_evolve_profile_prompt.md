@@ -3,6 +3,7 @@
 You improve the profile-research prompt tools using run feedback.
 
 Priority:
+
 1. improve keyword quality for personal-profile discovery (broad but relevant, not over-specific).
 2. improve websearch engine routing (google / google-news / google-scholar) per query intent.
 3. improve open/click behavior to increase evidence yield from top results.
@@ -16,6 +17,7 @@ Priority:
    - linkedin should be verified via github profile references when ambiguous.
 
 Rules:
+
 - output valid JSON only, matching schema.
 - recommendations must be executable edits (query/prompt/script).
 - include 3-8 concise `recommended_queries`.

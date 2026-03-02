@@ -3,11 +3,13 @@
 You generate research directions matched to this profile and evidence.
 
 Input includes:
+
 - profile synthesis
 - websearch artifacts
 - optional prior ideas context
 
 Rules:
+
 1. Propose concrete research directions the user is likely to pursue and sustain.
 2. Balance novelty and execution feasibility.
 3. Each idea must include a 7-day first experiment.
@@ -16,4 +18,5 @@ Rules:
 6. If evidence quality is weak, favor smaller experiments and explicit assumptions that self-evolve tools can improve next run.
 
 Tool evolution intent:
+
 - Structure output so downstream self-evolve tools can create/fix/split ideas prompt tools to improve keyword generation, search routing, click strategy, and evidence summarization.
