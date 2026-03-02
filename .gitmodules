@@ -1,3 +1,6 @@
 [submodule "AutoAppDev"]
 	path = AutoAppDev
 	url = git@github.com:lachlanchen/AutoAppDev.git
+[submodule "AutoNovelWriter"]
+	path = AutoNovelWriter
+	url = git@github.com:lachlanchen/AutoNovelWriter.git
