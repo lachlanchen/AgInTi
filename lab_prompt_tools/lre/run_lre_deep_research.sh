@@ -67,40 +67,75 @@ fi
 LOG_DIR="${OUTPUT_ROOT}/logs/${RUN_ID}"
 mkdir -p "$LOG_DIR"
 
-"$SCRIPT_DIR/prompt_lre_profile_research.sh" \
+if ! perl -e 'alarm shift; exec @ARGV' 600 "$SCRIPT_DIR/prompt_lre_profile_research.sh" \
   --output-dir "${OUTPUT_ROOT}/profile_runs" \
   "${COMMON_ARGS[@]}" \
-  >"${LOG_DIR}/01_profile.log" 2>&1
+  >"${LOG_DIR}/01_profile.log" 2>&1; then
+  perl -e 'alarm shift; exec @ARGV' 300 "$SCRIPT_DIR/prompt_lre_profile_research.sh" \
+    --output-dir "${OUTPUT_ROOT}/profile_runs" \
+    --run-id "$RUN_ID" \
+    --model "$MODEL" \
+    --reasoning "$REASONING" \
+    --skip-websearch \
+    >"${LOG_DIR}/01_profile_fallback.log" 2>&1 || true
+fi
 PROFILE_JSON="${OUTPUT_ROOT}/profile_runs/${RUN_ID}/codex/latest-result.json"
 PROFILE_MD="${OUTPUT_ROOT}/profile_runs/${RUN_ID}/profile.md"
 PROFILE_SELF_HEAL_JSON="${OUTPUT_ROOT}/profile_runs/${RUN_ID}/profile_self_heal_result.json"
 PROFILE_SELF_HEAL_LOG="${OUTPUT_ROOT}/profile_runs/${RUN_ID}/profile_self_heal.log"
 
-"$SCRIPT_DIR/prompt_lre_book_finder.sh" \
+if ! perl -e 'alarm shift; exec @ARGV' 600 "$SCRIPT_DIR/prompt_lre_book_finder.sh" \
   --output-dir "${OUTPUT_ROOT}/book_runs" \
   --profile-json "$PROFILE_JSON" \
   "${COMMON_ARGS[@]}" \
-  >"${LOG_DIR}/02_books.log" 2>&1
+  >"${LOG_DIR}/02_books.log" 2>&1; then
+  perl -e 'alarm shift; exec @ARGV' 300 "$SCRIPT_DIR/prompt_lre_book_finder.sh" \
+    --output-dir "${OUTPUT_ROOT}/book_runs" \
+    --profile-json "$PROFILE_JSON" \
+    --run-id "$RUN_ID" \
+    --model "$MODEL" \
+    --reasoning "$REASONING" \
+    --skip-websearch \
+    >"${LOG_DIR}/02_books_fallback.log" 2>&1 || true
+fi
 BOOKS_JSON="${OUTPUT_ROOT}/book_runs/${RUN_ID}/codex/latest-result.json"
 BOOKS_MD="${OUTPUT_ROOT}/book_runs/${RUN_ID}/books.md"
 BOOKS_SELF_HEAL_JSON="${OUTPUT_ROOT}/book_runs/${RUN_ID}/books_self_heal_result.json"
 BOOKS_SELF_HEAL_LOG="${OUTPUT_ROOT}/book_runs/${RUN_ID}/books_self_heal.log"
 
-"$SCRIPT_DIR/prompt_lre_investment_finder.sh" \
+if ! perl -e 'alarm shift; exec @ARGV' 600 "$SCRIPT_DIR/prompt_lre_investment_finder.sh" \
   --output-dir "${OUTPUT_ROOT}/investment_runs" \
   --profile-json "$PROFILE_JSON" \
   "${COMMON_ARGS[@]}" \
-  >"${LOG_DIR}/03_investments.log" 2>&1
+  >"${LOG_DIR}/03_investments.log" 2>&1; then
+  perl -e 'alarm shift; exec @ARGV' 300 "$SCRIPT_DIR/prompt_lre_investment_finder.sh" \
+    --output-dir "${OUTPUT_ROOT}/investment_runs" \
+    --profile-json "$PROFILE_JSON" \
+    --run-id "$RUN_ID" \
+    --model "$MODEL" \
+    --reasoning "$REASONING" \
+    --skip-websearch \
+    >"${LOG_DIR}/03_investments_fallback.log" 2>&1 || true
+fi
 INVEST_JSON="${OUTPUT_ROOT}/investment_runs/${RUN_ID}/codex/latest-result.json"
 INVEST_MD="${OUTPUT_ROOT}/investment_runs/${RUN_ID}/investments.md"
 INVEST_SELF_HEAL_JSON="${OUTPUT_ROOT}/investment_runs/${RUN_ID}/invest_self_heal_result.json"
 INVEST_SELF_HEAL_LOG="${OUTPUT_ROOT}/investment_runs/${RUN_ID}/invest_self_heal.log"
 
-"$SCRIPT_DIR/prompt_lre_ideas_finder.sh" \
+if ! perl -e 'alarm shift; exec @ARGV' 600 "$SCRIPT_DIR/prompt_lre_ideas_finder.sh" \
   --output-dir "${OUTPUT_ROOT}/ideas_runs" \
   --profile-json "$PROFILE_JSON" \
   "${COMMON_ARGS[@]}" \
-  >"${LOG_DIR}/04_ideas.log" 2>&1
+  >"${LOG_DIR}/04_ideas.log" 2>&1; then
+  perl -e 'alarm shift; exec @ARGV' 300 "$SCRIPT_DIR/prompt_lre_ideas_finder.sh" \
+    --output-dir "${OUTPUT_ROOT}/ideas_runs" \
+    --profile-json "$PROFILE_JSON" \
+    --run-id "$RUN_ID" \
+    --model "$MODEL" \
+    --reasoning "$REASONING" \
+    --skip-websearch \
+    >"${LOG_DIR}/04_ideas_fallback.log" 2>&1 || true
+fi
 IDEAS_JSON="${OUTPUT_ROOT}/ideas_runs/${RUN_ID}/codex/latest-result.json"
 IDEAS_MD="${OUTPUT_ROOT}/ideas_runs/${RUN_ID}/ideas.md"
 IDEAS_SELF_HEAL_JSON="${OUTPUT_ROOT}/ideas_runs/${RUN_ID}/ideas_self_heal_result.json"
@@ -163,12 +198,12 @@ PY
   cp "$PROFILE_SELF_HEAL_LOG" "$REPO_DIR/LifeReverseEngineering/tools/lre/profile_self_heal_latest.log"
 } >"${LOG_DIR}/06_repo_sync.log" 2>&1
 
-"$SCRIPT_DIR/run_lre_autoappdev.sh" \
+perl -e 'alarm shift; exec @ARGV' 600 "$SCRIPT_DIR/run_lre_autoappdev.sh" \
   --context-file "$REPORT_MD" \
   --run-id "$RUN_ID" \
   --model "$MODEL" \
   --reasoning "$REASONING" \
-  >"${LOG_DIR}/07_autoappdev.log" 2>&1
+  >"${LOG_DIR}/07_autoappdev.log" 2>&1 || true
 
 EMAIL_INSTRUCTION="${REPORT_DIR}/email_instruction_${RUN_ID}.txt"
 cat > "$EMAIL_INSTRUCTION" <<EOF
@@ -187,7 +222,7 @@ EOF
 
 EMAIL_LOG="${REPORT_DIR}/email_${RUN_ID}.log"
 if [[ "$SEND_EMAIL" -eq 1 ]]; then
-  cat "$EMAIL_INSTRUCTION" | python3 "$PROMPT_TOOLS_DIR/runtime/codex-email-cli.py" \
+  perl -e 'alarm shift; exec @ARGV' 300 python3 "$PROMPT_TOOLS_DIR/runtime/codex-email-cli.py" \
     --to "$TO_ADDR" \
     --from "$FROM_ADDR" \
     --model "$MODEL" \
@@ -195,15 +230,17 @@ if [[ "$SEND_EMAIL" -eq 1 ]]; then
     --prompt-tools-dir "$PROMPT_TOOLS_DIR/runtime" \
     --skip-git-check \
     --send \
+    <"$EMAIL_INSTRUCTION" \
     >"$EMAIL_LOG" 2>&1
 else
-  cat "$EMAIL_INSTRUCTION" | python3 "$PROMPT_TOOLS_DIR/runtime/codex-email-cli.py" \
+  perl -e 'alarm shift; exec @ARGV' 300 python3 "$PROMPT_TOOLS_DIR/runtime/codex-email-cli.py" \
     --to "$TO_ADDR" \
     --from "$FROM_ADDR" \
     --model "$MODEL" \
     --reasoning "$REASONING" \
     --prompt-tools-dir "$PROMPT_TOOLS_DIR/runtime" \
     --skip-git-check \
+    <"$EMAIL_INSTRUCTION" \
     >"$EMAIL_LOG" 2>&1
 fi
 

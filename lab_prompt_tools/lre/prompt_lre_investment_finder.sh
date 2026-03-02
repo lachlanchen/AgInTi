@@ -51,7 +51,12 @@ run_queries() {
   local -a queries=("$@")
   local i=1
   for q in "${queries[@]}"; do
-    perl -e 'alarm shift; exec @ARGV' 240 "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
+    local run_label
+    local run_path
+    local has_json
+    run_label="${prefix}-${i}"
+    run_path="$WEB_DIR/$run_label"
+    if ! perl -e 'alarm shift; exec @ARGV' 45 "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
       --query "$q" \
       --engine "google-news" \
       --results 8 \
@@ -61,8 +66,28 @@ run_queries() {
       --scroll-pause 1.0 \
       --no-auto-attach \
       --output-dir "$WEB_DIR" \
-      --run-id "${prefix}-${i}" \
-      >"$WEB_DIR/${prefix}-${i}.log" 2>&1 || true
+      --run-id "$run_label" \
+      >"$WEB_DIR/${run_label}.log" 2>&1; then
+      "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_batch.sh" \
+        --query "$q" \
+        --kind news \
+        --top-results 5 \
+        --output-dir "$WEB_DIR" \
+        --run-id "${run_label}-fallback" \
+        --no-codex \
+        >>"$WEB_DIR/${run_label}.log" 2>&1 || true
+    fi
+    has_json="$(find "$run_path" -name 'query-*.json' -print -quit 2>/dev/null || true)"
+    if [[ -z "$has_json" ]]; then
+      "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_batch.sh" \
+        --query "$q" \
+        --kind news \
+        --top-results 5 \
+        --output-dir "$WEB_DIR" \
+        --run-id "${run_label}-fallback2" \
+        --no-codex \
+        >>"$WEB_DIR/${run_label}.log" 2>&1 || true
+    fi
     i=$((i + 1))
   done
 }

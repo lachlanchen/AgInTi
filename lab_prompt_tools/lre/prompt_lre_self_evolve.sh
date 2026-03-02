@@ -112,7 +112,70 @@ python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --skip-git-check
 
 RESULT_PATH="${CODEX_DIR}/latest-result.json"
+VALIDATION_PATH="${RUN_DIR}/self_evolve_validation.json"
+VALID_MATCH="$(python3 - "$RESULT_PATH" "$VALIDATION_PATH" <<'PY'
+import json
+import pathlib
+import sys
+
+result_path = pathlib.Path(sys.argv[1])
+validation_path = pathlib.Path(sys.argv[2])
+issues = []
+match = True
+data = {}
+
+if not result_path.exists():
+    match = False
+    issues.append("missing_result_json")
+else:
+    try:
+        data = json.loads(result_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        match = False
+        issues.append(f"invalid_json:{exc}")
+        data = {}
+
+required = [
+    "analysis",
+    "query_strategy_updates",
+    "prompt_patch",
+    "script_patch",
+    "recommended_queries",
+    "next_experiment",
+]
+for key in required:
+    if key not in data:
+        match = False
+        issues.append(f"missing_field:{key}")
+
+rq = data.get("recommended_queries", [])
+if not isinstance(rq, list):
+    match = False
+    issues.append("recommended_queries_not_array")
+else:
+    if len(rq) < 3 or len(rq) > 8:
+        match = False
+        issues.append("recommended_queries_out_of_range")
+    for idx, item in enumerate(rq):
+        if not str(item).strip():
+            match = False
+            issues.append(f"recommended_queries_empty:{idx}")
+
+validation = {
+    "match": match,
+    "issues": issues,
+    "required_fields": required,
+    "recommended_queries_count": len(rq) if isinstance(rq, list) else 0,
+}
+validation_path.write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print("1" if match else "0")
+PY
+)"
+
 if [[ "$APPLY" -eq 1 ]]; then
+  if [[ "$VALID_MATCH" != "1" ]]; then
+    echo "applied_queries=0 (validation_failed)"
+  else
   python3 - "$RESULT_PATH" "$QUERY_FILE" <<'PY'
 import json
 import pathlib
@@ -152,8 +215,10 @@ if recommended:
 else:
     print("applied_queries=0")
 PY
+  fi
 fi
 
 echo "run_dir=$RUN_DIR"
 echo "self_evolve_result=$RESULT_PATH"
 echo "self_evolve_prompt=$PROMPT_FILE"
+echo "self_evolve_validation=$VALIDATION_PATH"
