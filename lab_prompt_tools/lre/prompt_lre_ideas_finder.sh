@@ -64,7 +64,7 @@ run_queries() {
   for q in "${queries[@]}"; do
     local engine
     engine="$(choose_engine "$q")"
-    "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
+    perl -e 'alarm shift; exec @ARGV' 240 "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
       --query "$q" \
       --engine "$engine" \
       --results 8 \

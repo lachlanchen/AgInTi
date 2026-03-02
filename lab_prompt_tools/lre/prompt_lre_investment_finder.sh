@@ -51,7 +51,7 @@ run_queries() {
   local -a queries=("$@")
   local i=1
   for q in "${queries[@]}"; do
-    "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
+    perl -e 'alarm shift; exec @ARGV' 240 "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
       --query "$q" \
       --engine "google-news" \
       --results 8 \
