@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architecture)
 
 這是一個以文件為先的倉庫骨架：維護一份英文標準 README，並同步多語系文件；其核心由三項運作原則驅動：**sear creation tools**、**self-healing tools**、以及 **chain of prompt tools**。
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Quick Navigation
 

@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](logos/aginti-logo-wordmark.png)](logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -18,6 +17,8 @@
 [![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=open-source-initiative&logoColor=white)](#-license)
 
 Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: **sear creation tools**, **self-healing tools**, and **chain of prompt tools**.
+
+[![AgInTi wordmark](logos/aginti-logo-wordmark.png)](logos/aginti-logo-wordmark.png)
 
 ## 🧭 Quick Navigation
 

@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-arquitectura)
 
 Andamiaje de repositorio centrado en documentación para mantener un README canónico en inglés y documentación multilingüe sincronizada, guiado por tres principios operativos: **sear creation tools**, **self-healing tools** y **chain of prompt tools**.
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Navegación Rápida
 

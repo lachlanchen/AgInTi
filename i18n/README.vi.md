@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-kien-truc)
 
 Khung repository theo hướng tài liệu, duy trì một README tiếng Anh chuẩn duy nhất và các tài liệu đa ngôn ngữ được đồng bộ, dựa trên ba nguyên tắc vận hành: **sear creation tools**, **self-healing tools** và **chain of prompt tools**.
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Điều hướng nhanh
 

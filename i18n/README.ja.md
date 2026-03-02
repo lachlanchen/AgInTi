@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-architecture)
 
 英語版 README を正典として維持し、多言語ドキュメントを同期するためのドキュメントファーストなリポジトリ基盤です。運用は **sear creation tools**、**self-healing tools**、**chain of prompt tools** の 3 原則に基づきます。
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Quick Navigation
 

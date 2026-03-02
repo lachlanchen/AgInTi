@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-архитектура)
 
 Репозиторий в формате documentation-first для поддержки одного канонического README на английском и синхронизированной многоязычной документации. Основан на трех рабочих принципах: **инструменты sear creation**, **инструменты self-healing** и **цепочка инструментов prompt**.
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Быстрая навигация
 

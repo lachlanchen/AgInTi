@@ -3,7 +3,6 @@
 
 [![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 # AgInTi
 
@@ -17,6 +16,8 @@
 [![Principle: Chain of Prompt Tools](https://img.shields.io/badge/Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=gitbook&logoColor=white)](#-المعمارية)
 
 مستودع تأسيسي يركّز على التوثيق أولًا للحفاظ على README إنجليزي واحد مرجعي ومزامنة وثائق متعددة اللغات، مستندًا إلى ثلاثة مبادئ تشغيلية: **أدوات الخلق الحاد (sear creation tools)**، و**أدوات المعالجة الذاتية (self-healing tools)**، و**سلسلة أدوات الموجّهات (chain of prompt tools)**.
+
+[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 تنقّل سريع
 
