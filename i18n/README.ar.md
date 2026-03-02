@@ -1,7 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+<table><tr><td><a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png"><img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" height="84"></a></td><td><a href="../logos/aginti-logo-wordmark.png"><img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" height="84"></a></td></tr></table>
 
 
 # AgInTi
@@ -17,7 +17,6 @@
 
 مستودع تأسيسي يركّز على التوثيق أولًا للحفاظ على README إنجليزي واحد مرجعي ومزامنة وثائق متعددة اللغات، مستندًا إلى ثلاثة مبادئ تشغيلية: **أدوات الخلق الحاد (sear creation tools)**، و**أدوات المعالجة الذاتية (self-healing tools)**، و**سلسلة أدوات الموجّهات (chain of prompt tools)**.
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 تنقّل سريع
 

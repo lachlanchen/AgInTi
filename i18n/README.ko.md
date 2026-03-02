@@ -1,7 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
-[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+<table><tr><td><a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png"><img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" height="84"></a></td><td><a href="../logos/aginti-logo-wordmark.png"><img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" height="84"></a></td></tr></table>
 
 
 # AgInTi
@@ -17,7 +17,6 @@
 
 하나의 정본 영어 README를 기준으로 다국어 문서를 동기화해 유지하기 위한 문서 우선 저장소 스캐폴드입니다. 이 프로젝트는 세 가지 운영 원칙인 **sear creation tools**, **self-healing tools**, **chain of prompt tools**를 중심으로 설계되었습니다.
 
-[![AgInTi wordmark](../logos/aginti-logo-wordmark.png)](../logos/aginti-logo-wordmark.png)
 
 ## 🧭 Quick Navigation
 
