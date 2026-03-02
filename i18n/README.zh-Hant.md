@@ -7,77 +7,82 @@
 
 [![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
 [![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
-[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#documentation-inputs-and-generated-artifacts)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#project-structure)
 [![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
 [![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
+[![Principle-Sear%20Creation-ef4444?style=flat-square&logo=firefox&logoColor=white)](#overview)
+[![Principle-Self--Healing-10b981?style=flat-square&logo=wrench&logoColor=white)](#features)
+[![Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=chainlink&logoColor=white)](#architecture)
 
-這是一個以 README 為先，維護完整英文 README 並同步多語文件的文件優先儲存庫腳手架。
+以文件為先的儲存庫框架，用於維護完整的英文 README 與同步的多語文件，並由三項運作原則引導：**sear creation tools**、**self-healing tools**、**chain of prompt tools**。
 
 ## 🧭 快速導覽
 
-| 類型 | 目標 |
-|---|---|
-| 儲存庫工作流程 | [範圍與快照](#-scope-and-snapshot) |
-| 使用範例 | [使用方法](#-usage) |
-| 貢獻指南 | [貢獻](#-contribution) |
-| 支援這個專案 | [Support](#-support) |
+| 類型 | 目的地 |
+| --- | --- |
+| 專案摘要 | [Overview](#overview) |
+| 核心能力 | [Features](#features) |
+| 流水線設計 | [Architecture](#architecture) |
+| 理念基線 | [Philosophy at a glance](#philosophy-at-a-glance) |
+| 貢獻者流程 | [Development Notes](#development-notes) |
+| 未來方向 | [Roadmap](#roadmap) |
+| 支持此專案 | [Support](#-support) |
 
 ---
 
-[![Pipeline](https://img.shields.io/badge/Pipeline-.auto--readme--work-0f172a?style=flat-square&logo=githubactions&logoColor=white)](./.auto-readme-work)
-[![Locales](https://img.shields.io/badge/Locales-10%20files-22c55e?style=flat-square&logo=googletranslate&logoColor=white)](./i18n)
-[![Scope](https://img.shields.io/badge/Scope-Documentation-0ea5e9?style=flat-square&logo=mdbook&logoColor=white)](#documentation-inputs-and-generated-artifacts)
-
-## 📌 總覽
-
-| 🎯 焦點 | 🧩 目前價值 |
-| --- | --- |
-| 儲存庫用途 | 用於多語 README 同步的文件腳手架 |
-| 核心不變條件 | 增量式編輯保留實質歷史 |
-| 目前狀態 | 此儲存庫快照未偵測到執行時應用或服務 |
-
-| ✅ 快照 | 📌 目前狀態 |
-| --- | --- |
-| 儲存庫階段 | 由 `.auto-readme-work/` 驅動的啟動式腳手架 |
-| 本地化版本 | 10 個已翻譯的 README 變體 |
-| 已驗證執行時 | 未偵測到可執行的應用或服務 |
-
-## 📌 概述
-
-AgInTi 是一個 **documentation-bootstrap**（文件啟動）儲存庫。
-
-此儲存庫專注於 README 優先的文件編寫、在地化腳手架，以及用於產生一致多語文件的迭代式工作流程。
-
-- ✅ 尚未偵測到頂層執行時原始碼樹。
-- ✅ `i18n/` 包含 10 個已翻譯的 README 版本。
-- ✅ `.auto-readme-work/` 儲存迭代文件更新的流程成果。
-- ✅ 以增量更新方式保留既有實質內容。
-
-## ✅ 範圍與快照
+## 📌 範圍與快照
 
 | 項目 | 目前狀態 |
-|---|---|
-| 🧩 原始碼 | 未偵測 |
-| 🧪 測試/CI | 未偵測 |
-| 📘 文件工作流程 | 由 `.auto-readme-work/` 驅動 |
-| 🌐 在地化文件 | 維護 10 種語言 |
-| 🔒 授權檔案 | 此快照中不存在 |
+| --- | --- |
+| 儲存庫階段 | 文件啟動框架 |
+| Runtime 程式碼 | 在目前快照中未偵測到 |
+| 測試/CI 流水線 | 在目前快照中未偵測到 |
+| 本地化文件 | `i18n/` 下有 10 個 locale 檔案 |
+| 流水線產物 | `.auto-readme-work/` 下有時間戳執行紀錄 |
+| 授權檔案 | 尚未以獨立檔案存在（README badge: TBD） |
+| 理念基線 | Sear creation + self-healing + chain of prompt tools |
 
-## ✨ 特性
+## 🌍 Overview
 
-- README-first 的文件策略。
-- 以語言感知的流程，並提供根文件與在地化頁面的標準連結。
-- 在定義位置去重 banner 與 support 區塊。
-- 增量更新能保留既有核心段落。
-- 為文件貢獻者提供可直接套用的檢查與驗證片段。
+AgInTi 目前是 README 生命週期與在地化流水線，而非執行階段應用程式。根目錄 `README.md` 是正典來源，`i18n/` 中的在地化版本會依此正典結構同步。
 
-## 🗂️ 專案結構
+專案理念是明確且可操作的，不是裝飾性口號。每次 README 更新都應同時滿足以下三項原則：
+
+1. **Sear creation tools**：有意識地採用銳利的創作工作流，從受限的儲存庫證據中產出高訊號、可落地的文件。
+2. **Self-healing tools**：以修復為導向的機制，用於修正漂移、移除重複並恢復結構一致性。
+3. **Chain of prompt tools**：分階段且可追溯的提示流程，確保在流水線執行中保留從上下文到輸出的脈絡血緣。
+
+此儲存庫透過增量更新保留實質歷史內容，同時維持連結、命令與支援中繼資料。
+
+### Philosophy at a glance
+
+| Principle | Intent | Operational outcome |
+| --- | --- | --- |
+| **Sear creation tools** | Produce high-signal documentation from constrained evidence. | Sections stay practical, specific, and repository-grounded. |
+| **Self-healing tools** | Repair drift, duplication, and stale structure. | Canonical and localized READMEs remain aligned and clean. |
+| **Chain of prompt tools** | Keep generation stages explicit and traceable. | Pipeline artifacts preserve reproducible context and handoffs. |
+
+## ✨ Features
+
+- 以 README 為核心的文件策略，並以根文件作為正典。
+- 10 個 i18n README 版本的多語同步。
+- 透過 `.auto-readme-work/<run-id>/` 產物進行流水線化撰寫。
+- 「單一 banner + 單一 support panel」不變式，避免重複視覺區塊。
+- 以增量更新紀律保留有意義的技術歷史。
+
+### Principle-to-feature mapping
+
+| Core principle | How it appears in current features |
+| --- | --- |
+| **Sear creation tools** | Precise README drafting from repo-grounded evidence and stable section scaffolds. |
+| **Self-healing tools** | Deduplication checks for repeated banner/support blocks, stale references, and structure drift. |
+| **Chain of prompt tools** | Run-specific artifact chain (`pipeline-context`, nav templates, translation plan) for reproducible output. |
+
+## 🗂️ Project Structure
 
 ```text
 AgInTi/
 ├── README.md
-├── README.md.auto-readme-support
-├── README.md.auto-readme-support.filtered
 ├── i18n/
 │   ├── README.ar.md
 │   ├── README.de.md
@@ -94,168 +99,200 @@ AgInTi/
     ├── 20260301_064213/
     ├── 20260301_064740/
     ├── 20260301_065835/
-    └── 20260301_070633/
+    ├── 20260301_070633/
+    ├── 20260302_120620/
+    └── 20260302_124338/
 ```
 
-## 🧱 架構與工作流程模型
+## 🏗️ Architecture
 
-在目前階段，「架構」指的是儲存庫的文件流程：
+在目前階段，architecture 指的是文件流水線架構，而不是應用程式執行架構。
 
-1. 每次執行都會在 `.auto-readme-work/<run-id>/pipeline-context.md` 產出情境與限制。
-2. 在 `language-nav-root.md` 與 `language-nav-i18n.md` 產生語言切換樣板。
-3. 以增量方式套用 README 編修，以保留實質歷史。
-4. 本地化檔案依同一結構化模板同步。
+### Pipeline flow
 
-## 📚 文件輸入與產生的成果
+1. 在 `.auto-readme-work/<run-id>/pipeline-context.md` 記錄每次執行的上下文。
+2. 產生語言導覽範本（`language-nav-root.md` 與 `language-nav-i18n.md`）。
+3. 以增量方式更新正典內容 `README.md`。
+4. 讓 `i18n/` 的在地化 README 檔案與正典結構對齊。
+5. 透過結構品質檢查來確保去重、連結一致與技術細節保留。
 
-| 檔案 | 用途 |
-|---|---|
-| `.auto-readme-work/20260301_070633/pipeline-context.md` | 本輪作業的限制與指示來源。 |
-| `.auto-readme-work/20260301_070633/translation-plan.txt` | 多語同步的語言映射。 |
-| `.auto-readme-work/20260301_070633/language-nav-root.md` | `README.md` 的標準語言切換列。 |
-| `.auto-readme-work/20260301_070633/language-nav-i18n.md` | 本地化 README 的標準語言切換列。 |
-| `.auto-readme-work/20260301_070633/repo-structure-analysis.md` | 本次產生所使用的儲存庫快照。 |
-| `README.md.auto-readme-support*` | 先前 bootstrap 輪次使用的支援清單。 |
+### Core principles in architecture
 
-## 🧭 儲存庫工作流程目標
+- **Sear creation tools**：套用於內容建構階段，使章節保持具體、完整且符合儲存庫現況。
+- **Self-healing tools**：套用於驗證階段，移除重複區塊、修復過期執行參照並恢復結構一致。
+- **Chain of prompt tools**：套用於整體產物鏈，讓每個生成階段都明確且可稽核。
 
-此儲存庫刻意設計得輕量。長期目標是在不回退技術上下文、連結與結構的前提下，讓根 README 與已翻譯版本持續同步。
+### Principle checkpoints by pipeline stage
 
-## 🧰 前置條件
+| Stage | Sear creation tools | Self-healing tools | Chain of prompt tools |
+| --- | --- | --- | --- |
+| Context capture | Define sharp generation constraints. | Flag missing/invalid inputs early. | Preserve source prompt and run metadata. |
+| Canonical drafting | Build complete README sections from repo evidence. | Prevent regressions and accidental content loss. | Keep stage outputs linked to prior artifacts. |
+| i18n alignment | Maintain structure and technical parity across locales. | Correct drift between root and i18n files. | Carry canonical intent into each localized variant. |
+| Final verification | Enforce readability and detail preservation. | Remove duplicate banner/support blocks and stale references. | Leave an auditable artifact trail for the run. |
 
-- `git`（供版本庫存取）。
-- POSIX shell（範例使用 `bash`）。
-- 支援 Markdown 的編輯器。
+## 🧾 Documentation Inputs and Generated Artifacts
 
-### 執行時假設
+| File | Purpose |
+| --- | --- |
+| `.auto-readme-work/20260302_124338/pipeline-context.md` | Source constraints and goals for this generation pass. |
+| `.auto-readme-work/20260302_124338/repo-structure-analysis.md` | Repository scan summary and inferred technical state. |
+| `.auto-readme-work/20260302_124338/language-nav-root.md` | Canonical language options line for root `README.md`. |
+| `.auto-readme-work/20260302_124338/language-nav-i18n.md` | Canonical language options line for i18n README files. |
+| `.auto-readme-work/20260302_124338/translation-plan.txt` | Locale mapping and i18n target file plan. |
+| `.auto-readme-work/<older-run-id>/...` | Historical run context for prior README pipeline passes. |
 
-目前尚未偵測到可執行產品資訊，因此尚未定義建置/執行需求。
+## 🔧 Prerequisites
 
-## 📥 安裝
+- `git`
+- POSIX shell (範例使用 `bash`)
+- 支援 Markdown 的編輯器
 
-目前尚未提供二進位安裝或建置流程。
+### Assumptions
+
+- 在目前儲存庫快照中，尚未發現可執行服務或應用程式 manifest。
+- 因此安裝/建置/啟動說明以文件工作流程為導向。
+
+## 📥 Installation
+
+目前尚未定義二進位套件或 runtime 建置步驟。
 
 ```bash
-# Clone the repository
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
-## ▶️ 用法
+## ▶️ Usage
 
-目前用途集中在文件維護與多語一致性。
+目前用法是維護文件與同步多語內容。
 
-### 常用指令
+### Common inspection commands
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260301_070633
+ls -la .auto-readme-work/20260302_124338
 ls -la i18n
 ```
 
-### 典型 README 同步流程
+### Canonical README synchronization workflow
 
-1. 查看 `.auto-readme-work/20260301_070633/pipeline-context.md` 中的執行情境。
-2. 檢查 `.auto-readme-work/20260301_070633/language-nav-*.md` 的語言切換樣板。
-3. 以增量方式編修 `README.md`，不要移除既有實質章節。
-4. 保持 banner 與 Support 區塊各保留一次且位於要求位置。
-5. 依需要將 `i18n/README.*.md` 對齊到同一結構。
+1. 讀取 `.auto-readme-work/20260302_124338/pipeline-context.md`。
+2. 檢查來自 `language-nav-root.md` 與 `language-nav-i18n.md` 的語言選單範本。
+3. 以 `README.md` 作為單一真實來源進行增量更新。
+4. 讓 `i18n/README.*.md` 與相同結構與關鍵技術細節對齊。
+5. 確認 banner 恰好一個、support panel 也恰好一個。
 
-## ⚙️ 組態
+## ⚙️ Configuration
 
-目前尚無應用程式組態。儲存庫層級的文件行為由 `.auto-readme-work/` 中的流程產物與 `i18n/` 中的語系檔案定義。
+目前尚無 runtime 設定。文件行為由儲存庫產物驅動。
 
-- `pipeline-context.md`（限制與目標）
-- `translation-plan.txt`（語系範圍與對照）
-- `language-nav-root.md` 與 `language-nav-i18n.md`（語言導覽一致性）
-- `README.md.auto-readme-support*`（腳手架輔助檔）
+- `pipeline-context.md`：執行目標與限制。
+- `repo-structure-analysis.md`：快照證據與缺口。
+- `language-nav-root.md` 與 `language-nav-i18n.md`：導覽一致性。
+- `translation-plan.txt`：語系目標與對應。
 
-## 🧪 範例
+## 🧪 Examples
 
-### 範例 1：檢查語言選擇器列
-
-```bash
-cat .auto-readme-work/20260301_070633/language-nav-root.md
-cat .auto-readme-work/20260301_070633/language-nav-i18n.md
-```
-
-### 範例 2：驗證支援語系與翻譯檔案
+### Example 1: Verify language navigation templates
 
 ```bash
-cat .auto-readme-work/20260301_070633/translation-plan.txt
+cat .auto-readme-work/20260302_124338/language-nav-root.md
+cat .auto-readme-work/20260302_124338/language-nav-i18n.md
 ```
 
-### 範例 3：確認腳手架狀態
+### Example 2: Check locale plan
+
+```bash
+cat .auto-readme-work/20260302_124338/translation-plan.txt
+```
+
+### Example 3: Confirm runtime-manifest absence (current snapshot)
 
 ```bash
 find . -maxdepth 2 \
   \( -name package.json -o -name pyproject.toml -o -name go.mod -o -name Cargo.toml -o -name pom.xml \)
 ```
 
-## 🛠️ 開發註記
+## 🛠️ Development Notes
 
-- 使用增量式編輯來保留既有技術上下文。
-- 在確認具體清單檔案存在前，不要加入建置/執行步驟。
-- 確保 banner 與 support 區塊只出現一次。
-- 當儲存庫行為尚未明確時，請註明假設。
-- 指令範例要對應現有檔案與目錄。
+- 保留正典 README 歷史中的實質段落與連結。
+- 優先採用增量編輯，避免破壞式重寫。
+- 僅保留一個 banner 與一個 support 區塊。
+- 維持 root 與 i18n README 結構同步。
+- 只要 runtime 或基礎設施細節未知，就要清楚註明假設。
+- 將三元理念作為主動護欄：
+  - **Sear creation tools** 用於高訊號草擬。
+  - **Self-healing tools** 用於一致性修復。
+  - **Chain of prompt tools** 用於在流水線階段之間可重現地交接。
 
-## 🩺 疑難排解
+## 🚑 Troubleshooting
 
-### 我只看到 Markdown 檔案
+### I only see Markdown files and pipeline artifacts
 
-在目前 bootstrap 階段這是預期行為。
+在目前的啟動階段，這是預期結果。
 
-### 語言切換器看起來不一致
+### Language selector lines differ between files
 
-請將每個 `README.*.md` 與根語言切換列，以及 `.auto-readme-work/20260301_070633/` 內最新的 pipeline context 檔案進行比對。
+請使用以下正典範本：
 
-### 我的分支落後
+- `.auto-readme-work/20260302_124338/language-nav-root.md`
+- `.auto-readme-work/20260302_124338/language-nav-i18n.md`
+
+### My branch is behind
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### 我想補充程式碼說明
+### I want to add runtime instructions
 
-僅在加入具體清單檔（例如 `package.json`、`pyproject.toml`、`Cargo.toml` 等）並確認這些資產在儲存庫中存在後，才新增建置/執行命令。
+僅在引入明確 manifest（例如：`package.json`、`pyproject.toml`、`go.mod`、`Cargo.toml`）並確認本儲存庫路徑後，再新增 build/run 說明。
 
-## 🗺️ 發展藍圖
+## 🗺️ Roadmap
 
-- 引入具體應用／執行時元件。
-- 在程式與工具鏈就緒後補充安裝、執行與部署文件。
-- 增加 CI 檢查，以確保 Markdown 品質與語系一致。
-- 透過明確版本化的流程保證翻譯可重現。
-- 為文件與未來程式碼貢獻者補上各自的貢獻指引。
+1. 強化 **sear creation tools**：導入標準化 README 草擬範本、章節品質閘門，以及更清楚的 evidence-to-output 檢查。
+2. 擴展 **self-healing tools**：加入自動檢查以偵測重複區塊、locale 漂移、失效內部錨點與過期執行參照。
+3. 正式化跨執行階段的 **chain of prompt tools**，確保上下文、生成、翻譯與驗證軌跡可重現。
+4. 在導入儲存庫腳本後，提供單一命令的文件維護流程。
+5. 新增 CI 檢查，涵蓋 Markdown 品質、連結完整性與 i18n 結構一致。
+6. 在加入來源 manifest 與 entrypoint 後，導入具體 runtime 元件。
+7. 公布穩定授權決策，並新增獨立授權檔案。
 
-## 🤝 貢獻
+### Roadmap by principle focus
 
-歡迎提交貢獻。
+| Focus area | Near-term target |
+| --- | --- |
+| **Sear creation tools** | Improve drafting templates and evidence-backed section prompts. |
+| **Self-healing tools** | Automate duplicate detection, stale anchor checks, and locale drift repair. |
+| **Chain of prompt tools** | Standardize run-stage artifact contracts for reproducible multilingual outputs. |
 
-1. 建立一則描述變更的 issue。
-2. 開啟專用分支。
-3. 保持修改精簡且為增量。
-4. 保留既有實質段落。
-5. 提交 pull request 並附上簡短驗證備註。
+## 🤝 Contribution
 
-### 建議流程
+歡迎貢獻。
+
+1. 開啟 issue 說明你打算做的變更。
+2. 建立聚焦的分支。
+3. 保持文件編輯為增量且與儲存庫現況一致。
+4. 保留重要連結、命令與實質歷史脈絡。
+5. 以精簡的驗證說明提交 pull request。
+
+### Suggested flow
 
 ```bash
 git checkout -b docs/your-update
-# edit README.md and/or i18n/
-git add README.md
-git commit -m "docs: refine README draft"
+# edit README.md and/or i18n/README.*.md
+git add README.md i18n/README.*.md
+git commit -m "docs: refine README content"
 git push -u origin docs/your-update
 ```
-
-## 📄 授權
-
-本儲存庫快照尚未包含授權文件。
-
 
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |
 | --- | --- | --- |
 | [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
+
+## 📄 License
+
+TBD。已規劃新增獨立授權檔案，但在目前快照中尚未提供。

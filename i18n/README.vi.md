@@ -7,79 +7,82 @@
 
 [![Repository](https://img.shields.io/badge/Repository-AgInTi-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/AgInTi)
 [![Docs](https://img.shields.io/badge/Docs-README%20Bootstrap-0ea5e9?style=for-the-badge&logo=mdbook&logoColor=white)](#aginti)
-[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#documentation-inputs-and-generated-artifacts)
-[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#scope-and-snapshot)
-[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#license)
+[![Localization](https://img.shields.io/badge/i18n-10%20locales-22c55e?style=for-the-badge&logo=googletranslate&logoColor=white)](#-cau-truc-du-an)
+[![Status](https://img.shields.io/badge/Stage-Documentation%20Pipeline-f59e0b?style=for-the-badge&logo=githubactions&logoColor=white)](#-pham-vi-va-anh-chup-hien-trang)
+[![License](https://img.shields.io/badge/License-TBD-94a3b8?style=for-the-badge&logo=readme&logoColor=white)](#-giay-phep)
+[![Principle-Sear%20Creation-ef4444?style=flat-square&logo=firefox&logoColor=white)](#-tong-quan)
+[![Principle-Self--Healing-10b981?style=flat-square&logo=wrench&logoColor=white)](#-tinh-nang)
+[![Principle-Chain%20of%20Prompt%20Tools-3b82f6?style=flat-square&logo=chainlink&logoColor=white)](#-kien-truc)
 
-Kho chứa tài liệu theo định hướng documentation-first để duy trì một README tiếng Anh đầy đủ và tài liệu đa ngôn ngữ được đồng bộ.
+Kho mã scaffold theo hướng tài liệu trước, dùng để duy trì một README tiếng Anh đầy đủ và bộ tài liệu đa ngôn ngữ luôn đồng bộ, được dẫn dắt bởi ba nguyên tắc vận hành cốt lõi: **sear creation tools**, **self-healing tools** và **chain of prompt tools**.
 
 ## 🧭 Điều hướng nhanh
 
-| Loại | Đích |
-|---|---|
-| Luồng làm việc repository | [Phạm vi và snapshot](#-scope-and-snapshot) |
-| Ví dụ sử dụng | [Usage](#-usage) |
-| Hướng dẫn đóng góp | [Contribution](#-contribution) |
-| Hỗ trợ dự án này | [Support](#-support) |
+| Loại | Đích đến |
+| --- | --- |
+| Tóm tắt dự án | [Tổng quan](#-tong-quan) |
+| Năng lực cốt lõi | [Tính năng](#-tinh-nang) |
+| Thiết kế pipeline | [Kiến trúc](#-kien-truc) |
+| Tóm tắt triết lý | [Triết lý trong một bảng](#triet-ly-trong-mot-bang) |
+| Quy trình cộng tác | [Ghi chú phát triển](#-ghi-chu-phat-trien) |
+| Định hướng tương lai | [Lộ trình](#-lo-trinh) |
+| Ủng hộ dự án | [Support](#-support) |
 
 ---
 
-[![Pipeline](https://img.shields.io/badge/Pipeline-.auto--readme--work-0f172a?style=flat-square&logo=githubactions&logoColor=white)](./.auto-readme-work)
-[![Locales](https://img.shields.io/badge/Locales-10%20files-22c55e?style=flat-square&logo=googletranslate&logoColor=white)](./i18n)
-[![Scope](https://img.shields.io/badge/Scope-Documentation-0ea5e9?style=flat-square&logo=mdbook&logoColor=white)](#documentation-inputs-and-generated-artifacts)
+## 📌 Phạm vi và ảnh chụp hiện trạng
 
-## 📌 Tóm tắt nhanh
-
-| 🎯 Trọng tâm | 🧩 Giá trị hiện tại |
+| Hạng mục | Trạng thái hiện tại |
 | --- | --- |
-| Mục tiêu repository | Khung tài liệu khởi tạo cho đồng bộ hóa README đa ngôn ngữ |
-| Nguyên tắc cốt lõi | Chỉnh sửa gia tăng giữ nguyên lịch sử nội dung | 
-| Trạng thái hiện tại | Không phát hiện ứng dụng hoặc dịch vụ chạy được trong snapshot repository |
+| Giai đoạn kho mã | Scaffold bootstrap cho tài liệu |
+| Mã runtime | Chưa phát hiện trong snapshot hiện tại |
+| Pipeline kiểm thử/CI | Chưa phát hiện trong snapshot hiện tại |
+| Tài liệu bản địa hóa | 10 tệp locale dưới `i18n/` |
+| Artifact pipeline | Các lần chạy có timestamp dưới `.auto-readme-work/` |
+| Tệp license | Chưa có tệp độc lập (badge README: TBD) |
+| Nền tảng triết lý | Sear creation + self-healing + chain of prompt tools |
 
----
+## 🌍 Tổng quan
 
-| ✅ Snapshot | 📌 Trạng thái hiện tại |
-| --- | --- |
-| Giai đoạn repository | Scaffold được điều phối bởi `.auto-readme-work/` |
-| Bản địa hóa | 10 biến thể README đã dịch |
-| Runtime đã xác nhận | Không phát hiện app/dịch vụ có thể chạy |
+Hiện tại, AgInTi hoạt động như một pipeline vòng đời README và bản địa hóa, thay vì một ứng dụng runtime. `README.md` ở thư mục gốc là nguồn chuẩn (canonical), và các bản dịch trong `i18n/` được đồng bộ từ cấu trúc chuẩn này.
 
-## 📌 Tổng quan
+Triết lý dự án là yếu tố vận hành rõ ràng, không phải trang trí. Mỗi lần cập nhật README cần đáp ứng đủ cả ba nguyên tắc:
 
-AgInTi là một repository **documentation-bootstrap**.
+1. **Sear creation tools**: quy trình tạo nội dung sắc bén, có chủ đích, tạo ra tài liệu thực dụng và giàu tín hiệu từ bằng chứng kho mã còn giới hạn.
+2. **Self-healing tools**: cơ chế thiên về sửa chữa để khắc phục độ lệch, loại bỏ trùng lặp và khôi phục tính nhất quán cấu trúc.
+3. **Chain of prompt tools**: luồng prompt theo từng giai đoạn, có thể truy vết, để giữ được quan hệ ngữ cảnh-đầu ra xuyên suốt các lần chạy pipeline.
 
-Repository tập trung vào tài liệu README-first, khung địa phương hóa, và pipeline làm việc lặp để sinh ra tài liệu đa ngôn ngữ nhất quán.
+Kho mã này giữ lại nội dung lịch sử quan trọng thông qua cập nhật tăng dần, đồng thời bảo toàn liên kết, lệnh và metadata hỗ trợ.
 
-- ✅ Chưa phát hiện cây mã nguồn runtime cấp top-level.
-- ✅ `i18n/` chứa 10 biến thể README đã dịch.
-- ✅ `.auto-readme-work/` lưu trữ artifacts pipeline cho các lần cập nhật tài liệu lặp.
-- ✅ Nội dung hiện hữu được giữ nguyên thông qua cập nhật gia tăng.
+### Triết lý trong một bảng
 
-## ✅ Phạm vi và snapshot
-
-| Mục | Trạng thái hiện tại |
-|---|---|
-| 🧩 Source code | Chưa phát hiện |
-| 🧪 Kiểm thử/CI | Chưa phát hiện |
-| 📘 Luồng tài liệu | Dựa vào `.auto-readme-work/` |
-| 🌐 Tài liệu đã địa phương hóa | Duy trì 10 locale |
-| 🔒 Tệp giấy phép | Không có trong snapshot hiện tại |
+| Nguyên tắc | Mục đích | Kết quả vận hành |
+| --- | --- | --- |
+| **Sear creation tools** | Tạo tài liệu giàu tín hiệu từ bằng chứng giới hạn. | Các mục luôn thực dụng, cụ thể và bám vào kho mã. |
+| **Self-healing tools** | Sửa lệch, trùng lặp và cấu trúc lỗi thời. | README chuẩn và README bản địa hóa luôn đồng bộ, gọn sạch. |
+| **Chain of prompt tools** | Giữ các giai đoạn sinh nội dung rõ ràng, truy vết được. | Artifact pipeline lưu lại ngữ cảnh và bàn giao có thể tái lập. |
 
 ## ✨ Tính năng
 
-- Chiến lược tài liệu theo hướng README-first.
-- Workflow nhận diện ngôn ngữ với liên kết canonical cho trang gốc và các trang bản địa hóa.
-- Dedupe banner và khối hỗ trợ ở đúng vị trí quy định.
-- Cập nhật gia tăng mà vẫn giữ các phần nội dung quan trọng.
-- Các snippet kiểm tra/điều tra thực tiễn cho người đóng góp tài liệu.
+- Chiến lược tài liệu README-first với tài liệu gốc chuẩn duy nhất.
+- Đồng bộ đa ngôn ngữ cho 10 biến thể README trong i18n.
+- Biên soạn theo pipeline thông qua artifact `.auto-readme-work/<run-id>/`.
+- Bất biến một banner và một support panel để tránh lặp khối hiển thị.
+- Kỷ luật cập nhật tăng dần nhằm giữ lại lịch sử kỹ thuật có giá trị.
+
+### Ánh xạ nguyên tắc vào tính năng
+
+| Nguyên tắc cốt lõi | Biểu hiện trong tính năng hiện tại |
+| --- | --- |
+| **Sear creation tools** | Soạn README chính xác từ bằng chứng kho mã và khung mục ổn định. |
+| **Self-healing tools** | Kiểm tra chống trùng cho banner/support lặp, tham chiếu cũ và trôi cấu trúc. |
+| **Chain of prompt tools** | Chuỗi artifact theo từng lần chạy (`pipeline-context`, template điều hướng, kế hoạch dịch) để tạo đầu ra có thể tái lập. |
 
 ## 🗂️ Cấu trúc dự án
 
 ```text
 AgInTi/
 ├── README.md
-├── README.md.auto-readme-support
-├── README.md.auto-readme-support.filtered
 ├── i18n/
 │   ├── README.ar.md
 │   ├── README.de.md
@@ -96,99 +99,114 @@ AgInTi/
     ├── 20260301_064213/
     ├── 20260301_064740/
     ├── 20260301_065835/
-    └── 20260301_070633/
+    ├── 20260301_070633/
+    ├── 20260302_120620/
+    └── 20260302_124338/
 ```
 
-## 🧱 Mô hình kiến trúc và workflow
+## 🏗️ Kiến trúc
 
-Ở giai đoạn này, “kiến trúc” là pipeline tài liệu của repository:
+Ở giai đoạn này, kiến trúc ở đây là kiến trúc pipeline tài liệu, không phải kiến trúc runtime ứng dụng.
 
-1. Mỗi lần chạy tạo context và ràng buộc tại `.auto-readme-work/<run-id>/pipeline-context.md`.
-2. Các template chuyển đổi ngôn ngữ được tạo trong `language-nav-root.md` / `language-nav-i18n.md`.
-3. README được chỉnh sửa theo kiểu incremental để giữ nguyên lịch sử nội dung nền tảng.
-4. Các file đã bản địa hóa được đồng bộ từ cùng một template cấu trúc.
+### Luồng pipeline
 
-## 📚 Đầu vào tài liệu và artifacts đã sinh
+1. Ngữ cảnh theo từng lần chạy được ghi vào `.auto-readme-work/<run-id>/pipeline-context.md`.
+2. Tạo template điều hướng ngôn ngữ (`language-nav-root.md` và `language-nav-i18n.md`).
+3. Nội dung README chuẩn được cập nhật tăng dần trong `README.md`.
+4. Các README bản địa hóa trong `i18n/` được căn chỉnh theo cấu trúc chuẩn.
+5. Kiểm tra chất lượng cấu trúc đảm bảo chống trùng lặp, nhất quán liên kết và bảo toàn chi tiết kỹ thuật.
+
+### Nguyên tắc cốt lõi trong kiến trúc
+
+- **Sear creation tools**: áp dụng ở bước tạo nội dung để các mục luôn cụ thể, đầy đủ và đúng với kho mã.
+- **Self-healing tools**: áp dụng ở bước kiểm tra để loại bỏ khối trùng, sửa tham chiếu run đã cũ và khôi phục tính tương đương cấu trúc.
+- **Chain of prompt tools**: áp dụng xuyên suốt artifact để mỗi giai đoạn sinh nội dung luôn rõ ràng và có thể kiểm toán.
+
+### Điểm kiểm nguyên tắc theo giai đoạn pipeline
+
+| Giai đoạn | Sear creation tools | Self-healing tools | Chain of prompt tools |
+| --- | --- | --- | --- |
+| Thu thập ngữ cảnh | Đặt ràng buộc sinh nội dung sắc bén. | Cảnh báo sớm đầu vào thiếu/không hợp lệ. | Lưu prompt nguồn và metadata lần chạy. |
+| Soạn bản chuẩn | Xây dựng đầy đủ các mục README từ bằng chứng kho mã. | Ngăn hồi quy và mất nội dung ngoài ý muốn. | Giữ liên kết giữa đầu ra từng bước và artifact trước đó. |
+| Căn chỉnh i18n | Duy trì đồng đều cấu trúc và chi tiết kỹ thuật giữa các locale. | Sửa độ lệch giữa tệp gốc và tệp i18n. | Mang đúng ý định từ bản chuẩn sang từng bản dịch. |
+| Kiểm tra cuối | Đảm bảo khả năng đọc và bảo toàn chi tiết. | Loại bỏ banner/support bị lặp và tham chiếu cũ. | Để lại dấu vết artifact có thể kiểm toán cho lần chạy. |
+
+## 🧾 Đầu vào tài liệu và artifact được tạo
 
 | Tệp | Mục đích |
-|---|---|
-| `.auto-readme-work/20260301_070633/pipeline-context.md` | Ràng buộc và hướng dẫn cho lượt chạy này. |
-| `.auto-readme-work/20260301_070633/translation-plan.txt` | Ánh xạ locale cho đồng bộ đa ngôn ngữ. |
-| `.auto-readme-work/20260301_070633/language-nav-root.md` | Dòng chuyển ngôn ngữ chuẩn cho `README.md`. |
-| `.auto-readme-work/20260301_070633/language-nav-i18n.md` | Dòng chuyển ngôn ngữ chuẩn cho các README đã dịch trong `i18n/`. |
-| `.auto-readme-work/20260301_070633/repo-structure-analysis.md` | Snapshot repository dùng cho lượt sinh lần này. |
-| `README.md.auto-readme-support*` | Manifest hỗ trợ dùng trong các pass bootstrap trước. |
+| --- | --- |
+| `.auto-readme-work/20260302_124338/pipeline-context.md` | Ràng buộc và mục tiêu nguồn cho lần sinh nội dung này. |
+| `.auto-readme-work/20260302_124338/repo-structure-analysis.md` | Tóm tắt quét kho mã và trạng thái kỹ thuật suy luận được. |
+| `.auto-readme-work/20260302_124338/language-nav-root.md` | Dòng tùy chọn ngôn ngữ chuẩn cho `README.md` gốc. |
+| `.auto-readme-work/20260302_124338/language-nav-i18n.md` | Dòng tùy chọn ngôn ngữ chuẩn cho README trong i18n. |
+| `.auto-readme-work/20260302_124338/translation-plan.txt` | Ánh xạ locale và kế hoạch tệp i18n đích. |
+| `.auto-readme-work/<older-run-id>/...` | Ngữ cảnh lịch sử cho các lần chạy pipeline README trước đó. |
 
-## 🧭 Mục tiêu workflow của repository
+## 🔧 Yêu cầu trước
 
-Repository này được giữ cố tình gọn. Mục tiêu dài hạn là giữ README gốc và các bản dịch đồng bộ mà không làm hồi quy ngữ cảnh kỹ thuật, liên kết, và cấu trúc.
+- `git`
+- POSIX shell (ví dụ dùng `bash`)
+- Trình soạn thảo hỗ trợ Markdown
 
-## 🧰 Điều kiện tiên quyết
+### Giả định
 
-- `git` để truy cập repository.
-- Shell tương thích POSIX (ví dụ dùng `bash`).
-- Trình chỉnh sửa hiểu Markdown.
-
-### Giả định runtime
-
-Hiện chưa có yêu cầu build/runtime xác định vì snapshot này chưa phát hiện manifest cho sản phẩm chạy được.
+- Chưa có manifest dịch vụ hoặc ứng dụng chạy được trong snapshot kho mã này.
+- Vì vậy hướng dẫn cài đặt/build/start hiện tại tập trung vào quy trình tài liệu.
 
 ## 📥 Cài đặt
 
-Chưa có quy trình cài nhị phân hoặc build.
+Hiện chưa định nghĩa gói nhị phân hoặc bước build runtime.
 
 ```bash
-# Clone repository
 git clone git@github.com:lachlanchen/AgInTi.git
 cd AgInTi
 ```
 
-## ▶️ Sử dụng
+## ▶️ Cách dùng
 
-Mục đích sử dụng hiện tại tập trung vào bảo trì tài liệu và tính nhất quán đa ngôn ngữ.
+Cách dùng hiện tại là bảo trì tài liệu và đồng bộ đa ngôn ngữ.
 
-### Các lệnh thông dụng
+### Các lệnh kiểm tra thường dùng
 
 ```bash
 ls -la
-ls -la .auto-readme-work/20260301_070633
+ls -la .auto-readme-work/20260302_124338
 ls -la i18n
 ```
 
-### Quy trình đồng bộ README điển hình
+### Quy trình đồng bộ README chuẩn
 
-1. Xem context chạy trong `.auto-readme-work/20260301_070633/pipeline-context.md`.
-2. Kiểm tra template chuyển ngôn ngữ trong `.auto-readme-work/20260301_070633/language-nav-*.md`.
-3. Chỉnh sửa `README.md` theo kiểu gia tăng; không xóa các phần nội dung cốt lõi hiện hữu.
-4. Giữ banner và support block duy nhất và đúng vị trí yêu cầu.
-5. Căn chỉnh các file đã dịch trong `i18n/README.*.md` theo cùng cấu trúc khi cần.
+1. Đọc `.auto-readme-work/20260302_124338/pipeline-context.md`.
+2. Xác minh template bộ chọn ngôn ngữ từ `language-nav-root.md` và `language-nav-i18n.md`.
+3. Cập nhật `README.md` theo hướng tăng dần như nguồn sự thật.
+4. Căn chỉnh các tệp `i18n/README.*.md` theo cùng cấu trúc và các chi tiết kỹ thuật quan trọng.
+5. Xác nhận chỉ có đúng một banner và đúng một support panel.
 
 ## ⚙️ Cấu hình
 
-Chưa có cấu hình ứng dụng.
-Hành vi tài liệu cấp repository được xác định bởi artifacts workflow trong `.auto-readme-work/` và các tệp locale trong `i18n/`.
+Hiện chưa có cấu hình runtime. Hành vi tài liệu được điều khiển bởi artifact trong kho mã.
 
-- `pipeline-context.md` (ràng buộc và mục tiêu)
-- `translation-plan.txt` (phạm vi locale và ánh xạ)
-- `language-nav-root.md` và `language-nav-i18n.md` (độ nhất quán điều hướng)
-- `README.md.auto-readme-support*` (helpers scaffold)
+- `pipeline-context.md`: mục tiêu và ràng buộc lần chạy.
+- `repo-structure-analysis.md`: bằng chứng snapshot và khoảng trống.
+- `language-nav-root.md` và `language-nav-i18n.md`: tính nhất quán điều hướng.
+- `translation-plan.txt`: mục tiêu locale và ánh xạ.
 
 ## 🧪 Ví dụ
 
-### Ví dụ 1: Kiểm tra các dòng language selector
+### Ví dụ 1: Xác minh template điều hướng ngôn ngữ
 
 ```bash
-cat .auto-readme-work/20260301_070633/language-nav-root.md
-cat .auto-readme-work/20260301_070633/language-nav-i18n.md
+cat .auto-readme-work/20260302_124338/language-nav-root.md
+cat .auto-readme-work/20260302_124338/language-nav-i18n.md
 ```
 
-### Ví dụ 2: Xác nhận locales được hỗ trợ và tệp dịch
+### Ví dụ 2: Kiểm tra kế hoạch locale
 
 ```bash
-cat .auto-readme-work/20260301_070633/translation-plan.txt
+cat .auto-readme-work/20260302_124338/translation-plan.txt
 ```
 
-### Ví dụ 3: Xác nhận trạng thái scaffold
+### Ví dụ 3: Xác nhận không có runtime manifest (snapshot hiện tại)
 
 ```bash
 find . -maxdepth 2 \
@@ -197,64 +215,81 @@ find . -maxdepth 2 \
 
 ## 🛠️ Ghi chú phát triển
 
-- Dùng chỉnh sửa gia tăng để giữ ngữ cảnh kỹ thuật đã có.
-- Không thêm bước cài/build runtime nếu chưa có manifest ứng dụng phù hợp.
-- Đảm bảo banner và khối support chỉ xuất hiện đúng một lần.
-- Khi chưa rõ hành vi repository, hãy ghi rõ giả định.
-- Giữ ví dụ lệnh gắn với file và thư mục tồn tại.
+- Giữ lại các mục và liên kết có nội dung quan trọng từ lịch sử README chuẩn.
+- Ưu tiên chỉnh sửa tăng dần thay vì viết lại phá hủy.
+- Chỉ giữ một banner và một khối support.
+- Giữ cấu trúc README gốc và i18n luôn đồng bộ.
+- Nêu rõ giả định khi chưa chắc chi tiết runtime hoặc hạ tầng.
+- Áp dụng bộ ba triết lý như rào chắn vận hành chủ động:
+  - **Sear creation tools** cho biên soạn giàu tín hiệu.
+  - **Self-healing tools** cho sửa chữa tính nhất quán.
+  - **Chain of prompt tools** cho bàn giao tái lập giữa các giai đoạn pipeline.
 
-## 🩺 Khắc phục sự cố
+## 🚑 Khắc phục sự cố
 
-### Tôi chỉ thấy file markdown
+### Tôi chỉ thấy tệp Markdown và artifact pipeline
 
-Điều này là bình thường trong giai đoạn bootstrap.
+Đây là trạng thái dự kiến cho giai đoạn bootstrap hiện tại.
 
-### Bộ chọn ngôn ngữ hiển thị không nhất quán
+### Dòng chọn ngôn ngữ khác nhau giữa các tệp
 
-So sánh từng `README.*.md` với dòng ngôn ngữ của root và các file ngữ cảnh pipeline mới nhất trong `.auto-readme-work/20260301_070633/`.
+Hãy dùng template chuẩn tại:
 
-### Nhánh của tôi bị trễ
+- `.auto-readme-work/20260302_124338/language-nav-root.md`
+- `.auto-readme-work/20260302_124338/language-nav-i18n.md`
+
+### Nhánh của tôi đang bị tụt phía sau
 
 ```bash
 git fetch origin
 git pull --ff-only
 ```
 
-### Tôi muốn thêm hướng dẫn code
+### Tôi muốn thêm hướng dẫn runtime
 
-Chỉ thêm lệnh build/run sau khi thêm manifest cụ thể (ví dụ `package.json`, `pyproject.toml`, `Cargo.toml`, v.v.) và xác nhận các tài nguyên đó tồn tại trong repository.
+Chỉ thêm hướng dẫn build/run sau khi có manifest cụ thể (ví dụ: `package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`) và đã xác nhận đường dẫn trong kho mã này.
 
 ## 🗺️ Lộ trình
 
-- Bổ sung thành phần ứng dụng/runtime thực tế.
-- Mở rộng hướng dẫn cài đặt, runtime và triển khai khi có code và tooling.
-- Thêm kiểm tra CI cho chất lượng markdown và sự tương đương locales.
-- Giữ quy trình dịch tái tạo được qua các pipeline versioned rõ ràng.
-- Bổ sung hướng dẫn đóng góp cho cả tài liệu và những người đóng góp code tương lai.
+1. Tăng cường **sear creation tools** với template soạn README chuẩn hóa, cổng chất lượng theo từng mục và kiểm tra rõ hơn từ bằng chứng sang đầu ra.
+2. Mở rộng **self-healing tools** với kiểm tra tự động cho khối trùng lặp, lệch locale, anchor nội bộ hỏng và tham chiếu run đã cũ.
+3. Chuẩn hóa **chain of prompt tools** xuyên suốt các giai đoạn chạy để truy vết ngữ cảnh, sinh nội dung, dịch thuật và xác minh có thể tái lập.
+4. Bổ sung luồng bảo trì tài liệu bằng một lệnh duy nhất khi kho mã có script.
+5. Thêm kiểm tra CI cho chất lượng markdown, toàn vẹn liên kết và tính tương đương cấu trúc i18n.
+6. Đưa vào các thành phần runtime cụ thể khi đã thêm manifest nguồn và entrypoint.
+7. Chốt quyết định license ổn định và thêm tệp license độc lập.
+
+### Lộ trình theo trọng tâm nguyên tắc
+
+| Trọng tâm | Mục tiêu gần hạn |
+| --- | --- |
+| **Sear creation tools** | Cải thiện template soạn thảo và prompt mục dựa trên bằng chứng. |
+| **Self-healing tools** | Tự động hóa phát hiện trùng lặp, kiểm tra anchor cũ và sửa lệch locale. |
+| **Chain of prompt tools** | Chuẩn hóa hợp đồng artifact theo giai đoạn chạy để tạo đầu ra đa ngôn ngữ có thể tái lập. |
 
 ## 🤝 Đóng góp
 
-Đóng góp luôn được chào đón.
+Hoan nghênh đóng góp.
 
-1. Tạo một issue mô tả thay đổi.
-2. Mở branch riêng.
-3. Giữ thay đổi tối thiểu và gia tăng.
-4. Bảo toàn các phần nội dung có ý nghĩa.
-5. Nộp pull request kèm ghi chú xác minh ngắn gọn.
+1. Mở issue mô tả thay đổi dự định.
+2. Tạo nhánh gọn, tập trung.
+3. Giữ chỉnh sửa tài liệu theo hướng tăng dần và đúng với kho mã.
+4. Bảo toàn liên kết, lệnh và bối cảnh lịch sử quan trọng.
+5. Mở pull request kèm ghi chú xác minh ngắn gọn.
 
 ### Luồng đề xuất
 
 ```bash
 git checkout -b docs/your-update
-# edit README.md và/hoặc i18n/
-git add README.md
-git commit -m "docs: refine README draft"
+# edit README.md and/or i18n/README.*.md
+git add README.md i18n/README.*.md
+git commit -m "docs: refine README content"
 git push -u origin docs/your-update
 ```
 
 ## 📄 Giấy phép
 
-Giấy phép vẫn chưa được thêm trong snapshot repository này.
+TBD. Một tệp license độc lập đã được lên kế hoạch nhưng chưa có trong snapshot hiện tại.
 
 
 ## ❤️ Support
