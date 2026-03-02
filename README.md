@@ -292,6 +292,16 @@ git commit -m "docs: refine README content"
 git push -u origin docs/your-update
 ```
 
+## 🔗 Git Submodules
+
+This repository includes these root submodules:
+
+- [AutoAppDev](https://github.com/lachlanchen/AutoAppDev)
+- [AutoNovelWriter](https://github.com/lachlanchen/AutoNovelWriter)
+- [OrganoidAgent](https://github.com/lachlanchen/OrganoidAgent)
+- [LazyingArtBot](https://github.com/lachlanchen/LazyingArtBot)
+- [PaperAgent](https://github.com/lachlanchen/PaperAgent)
+
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |

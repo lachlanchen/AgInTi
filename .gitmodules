@@ -4,3 +4,12 @@
 [submodule "AutoNovelWriter"]
 	path = AutoNovelWriter
 	url = git@github.com:lachlanchen/AutoNovelWriter.git
+[submodule "OrganoidAgent"]
+	path = OrganoidAgent
+	url = git@github.com:lachlanchen/OrganoidAgent.git
+[submodule "LazyingArtBot"]
+	path = LazyingArtBot
+	url = git@github.com:lachlanchen/LazyingArtBot.git
+[submodule "PaperAgent"]
+	path = PaperAgent
+	url = git@github.com:lachlanchen/PaperAgent.git

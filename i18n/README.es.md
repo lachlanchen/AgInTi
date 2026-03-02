@@ -296,6 +296,16 @@ git push -u origin docs/your-update
 TBD. Se prevé un archivo de licencia independiente, pero aún no está presente en la instantánea actual.
 
 
+## 🔗 Git Submodules
+
+This repository includes these root submodules:
+
+- [AutoAppDev](https://github.com/lachlanchen/AutoAppDev)
+- [AutoNovelWriter](https://github.com/lachlanchen/AutoNovelWriter)
+- [OrganoidAgent](https://github.com/lachlanchen/OrganoidAgent)
+- [LazyingArtBot](https://github.com/lachlanchen/LazyingArtBot)
+- [PaperAgent](https://github.com/lachlanchen/PaperAgent)
+
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |

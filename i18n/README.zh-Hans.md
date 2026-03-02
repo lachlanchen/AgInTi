@@ -296,6 +296,16 @@ git push -u origin docs/your-update
 TBD。计划添加独立许可证文件，但在当前快照中尚不存在。
 
 
+## 🔗 Git Submodules
+
+This repository includes these root submodules:
+
+- [AutoAppDev](https://github.com/lachlanchen/AutoAppDev)
+- [AutoNovelWriter](https://github.com/lachlanchen/AutoNovelWriter)
+- [OrganoidAgent](https://github.com/lachlanchen/OrganoidAgent)
+- [LazyingArtBot](https://github.com/lachlanchen/LazyingArtBot)
+- [PaperAgent](https://github.com/lachlanchen/PaperAgent)
+
 ## ❤️ Support
 
 | Donate | PayPal | Stripe |
