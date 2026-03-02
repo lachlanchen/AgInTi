@@ -1,7 +1,7 @@
 [English](README.md) · [العربية](i18n/README.ar.md) · [Español](i18n/README.es.md) · [Français](i18n/README.fr.md) · [日本語](i18n/README.ja.md) · [한국어](i18n/README.ko.md) · [Tiếng Việt](i18n/README.vi.md) · [中文 (简体)](i18n/README.zh-Hans.md) · [中文（繁體）](i18n/README.zh-Hant.md) · [Deutsch](i18n/README.de.md) · [Русский](i18n/README.ru.md)
 
 
-<table><tr><td><a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png"><img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" height="84"></a></td><td><a href="logos/aginti-logo-wordmark.png"><img src="logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" height="84"></a></td></tr></table>
+<table width="100%"><tr><td width="70%"><a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png"><img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" height="84"></a></td><td width="30%" align="right"><a href="logos/aginti-logo-wordmark.png"><img src="logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" height="84"></a></td></tr></table>
 
 
 # AgInTi
