@@ -273,6 +273,7 @@ python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --schema "$PROMPT_TOOLS_DIR/lre/lre_profile_schema.json" \
   --model "$MODEL" \
   --reasoning "$REASONING" \
+  --safety read-only \
   --label lre-profile \
   --skip-git-check
 
