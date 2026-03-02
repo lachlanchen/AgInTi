@@ -33,13 +33,7 @@
             }
           }
         },
-        "required": [
-          "theme",
-          "thesis",
-          "profile_fit",
-          "risks",
-          "monitor_monthly"
-        ]
+        "required": ["theme", "thesis", "profile_fit", "risks", "monitor_monthly"]
       }
     },
     "watchlist": {
@@ -55,10 +49,5 @@
       }
     }
   },
-  "required": [
-    "summary",
-    "high_conviction",
-    "watchlist",
-    "avoid_for_now"
-  ]
+  "required": ["summary", "high_conviction", "watchlist", "avoid_for_now"]
 }

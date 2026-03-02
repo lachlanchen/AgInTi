@@ -51,10 +51,7 @@
             }
           }
         },
-        "required": [
-          "claim",
-          "links"
-        ]
+        "required": ["claim", "links"]
       }
     }
   },

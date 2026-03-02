@@ -25,29 +25,15 @@
           },
           "priority": {
             "type": "string",
-            "enum": [
-              "high",
-              "medium",
-              "low"
-            ]
+            "enum": ["high", "medium", "low"]
           },
           "action_30d": {
             "type": "string"
           }
         },
-        "required": [
-          "title",
-          "author",
-          "theme",
-          "why_fit",
-          "priority",
-          "action_30d"
-        ]
+        "required": ["title", "author", "theme", "why_fit", "priority", "action_30d"]
       }
     }
   },
-  "required": [
-    "summary",
-    "recommendations"
-  ]
+  "required": ["summary", "recommendations"]
 }
