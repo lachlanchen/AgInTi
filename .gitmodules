@@ -1,0 +1,3 @@
+[submodule "AutoAppDev"]
+	path = AutoAppDev
+	url = git@github.com:lachlanchen/AutoAppDev.git
