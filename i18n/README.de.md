@@ -3,10 +3,10 @@
 
 <p align="center">
   <a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png">
-    <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="80%">
+    <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="79%">
   </a>
   <a href="../logos/aginti-logo-wordmark.png">
-    <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="20%">
+    <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="19%">
   </a>
 </p>
 
