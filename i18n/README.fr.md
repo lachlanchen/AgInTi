@@ -1,6 +1,5 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
-
 <p align="center">
   <a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png">
     <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="75%">
@@ -9,7 +8,6 @@
     <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="23%">
   </a>
 </p>
-
 
 # AgInTi
 
@@ -24,32 +22,31 @@
 
 Structure de dépôt orientée documentation pour maintenir un README anglais canonique et une documentation multilingue synchronisée, guidée par trois principes opérationnels : **sear creation tools**, **self-healing tools** et **chain of prompt tools**.
 
-
 ## 🧭 Navigation rapide
 
-| Type | Destination |
-| --- | --- |
-| Résumé du projet | [Aperçu](#-aperçu) |
-| Capacités principales | [Fonctionnalités](#-fonctionnalités) |
-| Conception du pipeline | [Architecture](#-architecture) |
-| Base philosophique | [Philosophie en un coup d’œil](#philosophie-en-un-coup-dœil) |
-| Flux contributeur | [Notes de développement](#-notes-de-développement) |
-| Direction future | [Feuille de route](#-feuille-de-route) |
-| Soutenir le projet | [Support](#-support) |
+| Type                   | Destination                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| Résumé du projet       | [Aperçu](#-aperçu)                                           |
+| Capacités principales  | [Fonctionnalités](#-fonctionnalités)                         |
+| Conception du pipeline | [Architecture](#-architecture)                               |
+| Base philosophique     | [Philosophie en un coup d’œil](#philosophie-en-un-coup-dœil) |
+| Flux contributeur      | [Notes de développement](#-notes-de-développement)           |
+| Direction future       | [Feuille de route](#-feuille-de-route)                       |
+| Soutenir le projet     | [Support](#-support)                                         |
 
 ---
 
 ## 📌 Périmètre et état actuel
 
-| Élément | État actuel |
-| --- | --- |
-| Phase du dépôt | Structure initiale de documentation |
-| Code d’exécution | Non détecté dans l’instantané actuel |
-| Tests/pipelines CI | Non détectés dans l’instantané actuel |
-| Docs localisées | 10 fichiers de locale sous `i18n/` |
-| Artefacts du pipeline | Exécutions horodatées sous `.auto-readme-work/` |
-| Fichier de licence | Absent en fichier autonome (badge README `TBD`) |
-| Base philosophique | Sear creation + self-healing + chain of prompt tools |
+| Élément               | État actuel                                          |
+| --------------------- | ---------------------------------------------------- |
+| Phase du dépôt        | Structure initiale de documentation                  |
+| Code d’exécution      | Non détecté dans l’instantané actuel                 |
+| Tests/pipelines CI    | Non détectés dans l’instantané actuel                |
+| Docs localisées       | 10 fichiers de locale sous `i18n/`                   |
+| Artefacts du pipeline | Exécutions horodatées sous `.auto-readme-work/`      |
+| Fichier de licence    | Absent en fichier autonome (badge README `TBD`)      |
+| Base philosophique    | Sear creation + self-healing + chain of prompt tools |
 
 ## 🌍 Aperçu
 
@@ -65,11 +62,11 @@ Ce dépôt préserve un historique utile via des modifications incrémentales, t
 
 ### Philosophie en un coup d’œil
 
-| Principe | Intention | Résultat opérationnel |
-| --- | --- | --- |
-| **Sear creation tools** | Produire une documentation à fort signal depuis des preuves contraintes. | Les sections restent pratiques, spécifiques et ancrées dans le dépôt. |
-| **Self-healing tools** | Réparer la dérive, la duplication et les structures obsolètes. | Les README canonique et localisés restent alignés et propres. |
-| **Chain of prompt tools** | Garder les étapes de génération explicites et traçables. | Les artefacts du pipeline conservent un contexte et des relais reproductibles. |
+| Principe                  | Intention                                                                | Résultat opérationnel                                                          |
+| ------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| **Sear creation tools**   | Produire une documentation à fort signal depuis des preuves contraintes. | Les sections restent pratiques, spécifiques et ancrées dans le dépôt.          |
+| **Self-healing tools**    | Réparer la dérive, la duplication et les structures obsolètes.           | Les README canonique et localisés restent alignés et propres.                  |
+| **Chain of prompt tools** | Garder les étapes de génération explicites et traçables.                 | Les artefacts du pipeline conservent un contexte et des relais reproductibles. |
 
 ## ✨ Fonctionnalités
 
@@ -81,10 +78,10 @@ Ce dépôt préserve un historique utile via des modifications incrémentales, t
 
 ### Correspondance principe → fonctionnalité
 
-| Principe central | Manifestation actuelle |
-| --- | --- |
-| **Sear creation tools** | Rédaction README précise à partir d’indices du dépôt et de gabarits de section stables. |
-| **Self-healing tools** | Contrôles de déduplication des blocs bannière/support, des références obsolètes et des dérives de structure. |
+| Principe central          | Manifestation actuelle                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Rédaction README précise à partir d’indices du dépôt et de gabarits de section stables.                                                     |
+| **Self-healing tools**    | Contrôles de déduplication des blocs bannière/support, des références obsolètes et des dérives de structure.                                |
 | **Chain of prompt tools** | Chaîne d’artefacts propre à chaque exécution (`pipeline-context`, modèles de navigation, plan de traduction) pour une sortie reproductible. |
 
 ## 🗂️ Structure du projet
@@ -137,23 +134,23 @@ flowchart LR
 
 ### Points de contrôle par étape du pipeline
 
-| Étape | Sear creation tools | Self-healing tools | Chain of prompt tools |
-| --- | --- | --- | --- |
-| Capture du contexte | Définir des contraintes de génération nettes. | Signaler tôt les entrées manquantes ou invalides. | Préserver le prompt source et les métadonnées d’exécution. |
-| Rédaction canonique | Construire des sections README complètes à partir des preuves du dépôt. | Éviter les régressions et pertes de contenu accidentelles. | Relier les sorties d’étape aux artefacts précédents. |
-| Alignement i18n | Maintenir la parité de structure et de technique entre les locales. | Corriger la dérive entre la racine et les fichiers i18n. | Porter l’intention canonique dans chaque variante localisée. |
-| Vérification finale | Imposer lisibilité et préservation du détail. | Supprimer les bannières/panneaux de support en double et les références obsolètes. | Laisser une trace d’artefacts auditable pour l’exécution. |
+| Étape               | Sear creation tools                                                     | Self-healing tools                                                                 | Chain of prompt tools                                        |
+| ------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Capture du contexte | Définir des contraintes de génération nettes.                           | Signaler tôt les entrées manquantes ou invalides.                                  | Préserver le prompt source et les métadonnées d’exécution.   |
+| Rédaction canonique | Construire des sections README complètes à partir des preuves du dépôt. | Éviter les régressions et pertes de contenu accidentelles.                         | Relier les sorties d’étape aux artefacts précédents.         |
+| Alignement i18n     | Maintenir la parité de structure et de technique entre les locales.     | Corriger la dérive entre la racine et les fichiers i18n.                           | Porter l’intention canonique dans chaque variante localisée. |
+| Vérification finale | Imposer lisibilité et préservation du détail.                           | Supprimer les bannières/panneaux de support en double et les références obsolètes. | Laisser une trace d’artefacts auditable pour l’exécution.    |
 
 ## 🧾 Entrées de documentation et artefacts générés
 
-| Fichier | Objectif |
-| --- | --- |
-| `.auto-readme-work/20260302_140358/pipeline-context.md` | Contraintes et objectifs source pour cette passe de génération. |
-| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Résumé du scan du dépôt et état technique inféré. |
-| `.auto-readme-work/20260302_140358/language-nav-root.md` | Ligne canonique d’options de langue pour `README.md` racine. |
-| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Ligne canonique d’options de langue pour les README i18n. |
-| `.auto-readme-work/20260302_140358/translation-plan.txt` | Mappage des locales et plan des fichiers i18n cibles. |
-| `.auto-readme-work/<older-run-id>/...` | Contexte historique des exécutions précédentes du pipeline. |
+| Fichier                                                        | Objectif                                                        |
+| -------------------------------------------------------------- | --------------------------------------------------------------- |
+| `.auto-readme-work/20260302_140358/pipeline-context.md`        | Contraintes et objectifs source pour cette passe de génération. |
+| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Résumé du scan du dépôt et état technique inféré.               |
+| `.auto-readme-work/20260302_140358/language-nav-root.md`       | Ligne canonique d’options de langue pour `README.md` racine.    |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md`       | Ligne canonique d’options de langue pour les README i18n.       |
+| `.auto-readme-work/20260302_140358/translation-plan.txt`       | Mappage des locales et plan des fichiers i18n cibles.           |
+| `.auto-readme-work/<older-run-id>/...`                         | Contexte historique des exécutions précédentes du pipeline.     |
 
 ## 🔧 Prérequis
 
@@ -274,11 +271,11 @@ Ajoutez des instructions de build et d’exécution uniquement après avoir intr
 
 ### Feuille de route par priorité de principe
 
-| Domaine de focus | Cible à court terme |
-| --- | --- |
-| **Sear creation tools** | Améliorer les modèles de rédaction et les prompts de section basés sur des preuves. |
-| **Self-healing tools** | Automatiser la détection des doublons, les contrôles d’ancres obsolètes et la réparation de dérive des locales. |
-| **Chain of prompt tools** | Standardiser les contrats d’artefacts par étape d’exécution pour des sorties multilingues reproductibles. |
+| Domaine de focus          | Cible à court terme                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Améliorer les modèles de rédaction et les prompts de section basés sur des preuves.                             |
+| **Self-healing tools**    | Automatiser la détection des doublons, les contrôles d’ancres obsolètes et la réparation de dérive des locales. |
+| **Chain of prompt tools** | Standardiser les contrats d’artefacts par étape d’exécution pour des sorties multilingues reproductibles.       |
 
 ## 🤝 Contribution
 
@@ -304,7 +301,6 @@ git push -u origin docs/your-update
 
 TBD. Un fichier de licence autonome est prévu, mais n’est pas encore présent dans l’instantané actuel.
 
-
 ## 🔗 Git Submodules
 
 This repository includes these root submodules:
@@ -317,6 +313,6 @@ This repository includes these root submodules:
 
 ## ❤️ Support
 
-| Donate | PayPal | Stripe |
-| --- | --- | --- |
+| Donate                                                                                                                                                                                                                                                                                                                                                     | PayPal                                                                                                                                                                                                                                                                                                                                                          | Stripe                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

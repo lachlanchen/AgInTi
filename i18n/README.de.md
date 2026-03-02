@@ -1,6 +1,5 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
-
 <p align="center">
   <a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png">
     <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="75%">
@@ -9,7 +8,6 @@
     <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="23%">
   </a>
 </p>
-
 
 # AgInTi
 
@@ -24,32 +22,31 @@
 
 Dokumentationsorientiertes Repository-Grundgerüst zur Pflege einer kanonischen englischen README und synchronisierter mehrsprachiger Dokumentation, geführt von drei Leitprinzipien: **Sear Creation Tools**, **Self-Healing Tools** und **Chain of Prompt Tools**.
 
-
 ## 🧭 Schnelle Navigation
 
-| Typ | Ziel |
-| --- | --- |
-| Projektzusammenfassung | [Überblick](#-uberblick) |
-| Kernfähigkeiten | [Funktionen](#-funktionen) |
-| Pipeline-Design | [Architektur](#-architektur) |
-| Philosophische Basis | [Philosophie auf einen Blick](#philosophie-auf-einen-blick) |
-| Workflow für Mitwirkende | [Entwicklungsnotizen](#-entwicklungsnotizen) |
-| Zukunftsrichtung | [Roadmap](#-roadmap) |
-| Dieses Projekt unterstützen | [Support](#-support) |
+| Typ                         | Ziel                                                        |
+| --------------------------- | ----------------------------------------------------------- |
+| Projektzusammenfassung      | [Überblick](#-uberblick)                                    |
+| Kernfähigkeiten             | [Funktionen](#-funktionen)                                  |
+| Pipeline-Design             | [Architektur](#-architektur)                                |
+| Philosophische Basis        | [Philosophie auf einen Blick](#philosophie-auf-einen-blick) |
+| Workflow für Mitwirkende    | [Entwicklungsnotizen](#-entwicklungsnotizen)                |
+| Zukunftsrichtung            | [Roadmap](#-roadmap)                                        |
+| Dieses Projekt unterstützen | [Support](#-support)                                        |
 
 ---
 
 ## 📌 Umfang und aktueller Stand
 
-| Element | Aktueller Stand |
-| --- | --- |
-| Repository-Phase | Documentation bootstrap scaffold |
-| Laufzeit-Code | Im aktuellen Snapshot nicht erkannt |
-| Tests/CI-Pipelines | Im aktuellen Snapshot nicht erkannt |
-| Lokalisierte Doku | 10 Locale-Dateien unter `i18n/` |
-| Pipeline-Artefakte | Zeitgestempelte Runs unter `.auto-readme-work/` |
-| Lizenzdatei | Nicht als eigenständige Datei vorhanden (README-Badge zeigt `TBD`) |
-| Philosophische Basis | Sear creation + self-healing + chain of prompt tools |
+| Element              | Aktueller Stand                                                    |
+| -------------------- | ------------------------------------------------------------------ |
+| Repository-Phase     | Documentation bootstrap scaffold                                   |
+| Laufzeit-Code        | Im aktuellen Snapshot nicht erkannt                                |
+| Tests/CI-Pipelines   | Im aktuellen Snapshot nicht erkannt                                |
+| Lokalisierte Doku    | 10 Locale-Dateien unter `i18n/`                                    |
+| Pipeline-Artefakte   | Zeitgestempelte Runs unter `.auto-readme-work/`                    |
+| Lizenzdatei          | Nicht als eigenständige Datei vorhanden (README-Badge zeigt `TBD`) |
+| Philosophische Basis | Sear creation + self-healing + chain of prompt tools               |
 
 ## 🌍 Uberblick
 
@@ -65,11 +62,11 @@ Dieses Repository bewahrt durch inkrementelle Bearbeitung relevante historische 
 
 ### Philosophie auf einen Blick
 
-| Prinzip | Absicht | Operatives Ergebnis |
-| --- | --- | --- |
-| **Sear creation tools** | Signalstarke Dokumentation aus begrenzter Evidenz erzeugen. | Abschnitte bleiben praxisnah, konkret und repository-basiert. |
-| **Self-healing tools** | Drift, Duplikate und veraltete Struktur beheben. | Kanonische und lokalisierte READMEs bleiben ausgerichtet und sauber. |
-| **Chain of prompt tools** | Generierungsstufen explizit und nachvollziehbar halten. | Pipeline-Artefakte bewahren reproduzierbare Kontexte und Übergaben. |
+| Prinzip                   | Absicht                                                     | Operatives Ergebnis                                                  |
+| ------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Sear creation tools**   | Signalstarke Dokumentation aus begrenzter Evidenz erzeugen. | Abschnitte bleiben praxisnah, konkret und repository-basiert.        |
+| **Self-healing tools**    | Drift, Duplikate und veraltete Struktur beheben.            | Kanonische und lokalisierte READMEs bleiben ausgerichtet und sauber. |
+| **Chain of prompt tools** | Generierungsstufen explizit und nachvollziehbar halten.     | Pipeline-Artefakte bewahren reproduzierbare Kontexte und Übergaben.  |
 
 ## ✨ Funktionen
 
@@ -81,10 +78,10 @@ Dieses Repository bewahrt durch inkrementelle Bearbeitung relevante historische 
 
 ### Prinzip-zu-Funktion-Mapping
 
-| Kernprinzip | Aktuelle Ausprägung |
-| --- | --- |
-| **Sear creation tools** | Präzises README-Drafting aus repository-basierter Evidenz und stabilen Abschnittsgerüsten. |
-| **Self-healing tools** | Deduplizierungsprüfungen für wiederholte Banner-/Support-Blöcke, veraltete Referenzen und Strukturdrift. |
+| Kernprinzip               | Aktuelle Ausprägung                                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Präzises README-Drafting aus repository-basierter Evidenz und stabilen Abschnittsgerüsten.                              |
+| **Self-healing tools**    | Deduplizierungsprüfungen für wiederholte Banner-/Support-Blöcke, veraltete Referenzen und Strukturdrift.                |
 | **Chain of prompt tools** | Run-spezifische Artefaktkette (`pipeline-context`, Navigationsvorlagen, Übersetzungsplan) für reproduzierbare Ausgaben. |
 
 ## 🗂️ Projektstruktur
@@ -137,23 +134,23 @@ flowchart LR
 
 ### Prinzip-Checkpoints pro Pipeline-Stufe
 
-| Stufe | Sear creation tools | Self-healing tools | Chain of prompt tools |
-| --- | --- | --- | --- |
-| Kontext-Erfassung | Präzise Generierungsgrenzen definieren. | Fehlende oder ungültige Eingaben früh markieren. | Quell-Prompt und Run-Metadaten bewahren. |
-| Kanonisches Drafting | Vollständige README-Abschnitte aus Repository-Evidenz aufbauen. | Regressionen und versehentlichen Inhaltsverlust verhindern. | Stage-Ausgaben mit vorherigen Artefakten verknüpfen. |
-| i18n-Ausrichtung | Struktur- und Technikparität über alle Locales halten. | Drift zwischen Root- und i18n-Dateien korrigieren. | Kanonische Intention in jede lokalisierte Variante übertragen. |
-| Finale Verifikation | Lesbarkeit und Detailtreue durchsetzen. | Doppelte Banner-/Support-Blöcke und veraltete Referenzen entfernen. | Einen auditierbaren Artefaktpfad für den Run hinterlassen. |
+| Stufe                | Sear creation tools                                             | Self-healing tools                                                  | Chain of prompt tools                                          |
+| -------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Kontext-Erfassung    | Präzise Generierungsgrenzen definieren.                         | Fehlende oder ungültige Eingaben früh markieren.                    | Quell-Prompt und Run-Metadaten bewahren.                       |
+| Kanonisches Drafting | Vollständige README-Abschnitte aus Repository-Evidenz aufbauen. | Regressionen und versehentlichen Inhaltsverlust verhindern.         | Stage-Ausgaben mit vorherigen Artefakten verknüpfen.           |
+| i18n-Ausrichtung     | Struktur- und Technikparität über alle Locales halten.          | Drift zwischen Root- und i18n-Dateien korrigieren.                  | Kanonische Intention in jede lokalisierte Variante übertragen. |
+| Finale Verifikation  | Lesbarkeit und Detailtreue durchsetzen.                         | Doppelte Banner-/Support-Blöcke und veraltete Referenzen entfernen. | Einen auditierbaren Artefaktpfad für den Run hinterlassen.     |
 
 ## 🧾 Dokumentationseingaben und generierte Artefakte
 
-| Datei | Zweck |
-| --- | --- |
-| `.auto-readme-work/20260302_140358/pipeline-context.md` | Quellgrenzen und Ziele für diesen Generierungslauf. |
+| Datei                                                          | Zweck                                                               |
+| -------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `.auto-readme-work/20260302_140358/pipeline-context.md`        | Quellgrenzen und Ziele für diesen Generierungslauf.                 |
 | `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Repository-Scan-Zusammenfassung und abgeleiteter technischer Stand. |
-| `.auto-readme-work/20260302_140358/language-nav-root.md` | Kanonische Sprachzeile für die Root-`README.md`. |
-| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Kanonische Sprachzeile für i18n-README-Dateien. |
-| `.auto-readme-work/20260302_140358/translation-plan.txt` | Locale-Mapping und i18n-Zieldateiplan. |
-| `.auto-readme-work/<older-run-id>/...` | Historischer Kontext aus früheren Pipeline-Runs. |
+| `.auto-readme-work/20260302_140358/language-nav-root.md`       | Kanonische Sprachzeile für die Root-`README.md`.                    |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md`       | Kanonische Sprachzeile für i18n-README-Dateien.                     |
+| `.auto-readme-work/20260302_140358/translation-plan.txt`       | Locale-Mapping und i18n-Zieldateiplan.                              |
+| `.auto-readme-work/<older-run-id>/...`                         | Historischer Kontext aus früheren Pipeline-Runs.                    |
 
 ## 🔧 Voraussetzungen
 
@@ -274,11 +271,11 @@ Ergänze Build- und Laufzeitanweisungen erst, nachdem konkrete Manifeste eingef�
 
 ### Roadmap nach Prinzip-Fokus
 
-| Fokusbereich | Kurzfristiges Ziel |
-| --- | --- |
-| **Sear creation tools** | Drafting-Vorlagen und evidenzbasierte Abschnitts-Prompts verbessern. |
-| **Self-healing tools** | Duplikaterkennung, Prüfungen auf veraltete Anchors und Reparatur von Locale-Drift automatisieren. |
-| **Chain of prompt tools** | Artefaktverträge je Run-Stufe für reproduzierbare mehrsprachige Ausgaben standardisieren. |
+| Fokusbereich              | Kurzfristiges Ziel                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Drafting-Vorlagen und evidenzbasierte Abschnitts-Prompts verbessern.                              |
+| **Self-healing tools**    | Duplikaterkennung, Prüfungen auf veraltete Anchors und Reparatur von Locale-Drift automatisieren. |
+| **Chain of prompt tools** | Artefaktverträge je Run-Stufe für reproduzierbare mehrsprachige Ausgaben standardisieren.         |
 
 ## 🤝 Mitwirken
 
@@ -304,7 +301,6 @@ git push -u origin docs/your-update
 
 TBD. Eine eigenständige Lizenzdatei ist geplant, im aktuellen Snapshot aber noch nicht vorhanden.
 
-
 ## 🔗 Git Submodules
 
 This repository includes these root submodules:
@@ -317,6 +313,6 @@ This repository includes these root submodules:
 
 ## ❤️ Support
 
-| Donate | PayPal | Stripe |
-| --- | --- | --- |
+| Donate                                                                                                                                                                                                                                                                                                                                                     | PayPal                                                                                                                                                                                                                                                                                                                                                          | Stripe                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

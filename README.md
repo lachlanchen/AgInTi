@@ -1,6 +1,5 @@
 [English](README.md) · [العربية](i18n/README.ar.md) · [Español](i18n/README.es.md) · [Français](i18n/README.fr.md) · [日本語](i18n/README.ja.md) · [한국어](i18n/README.ko.md) · [Tiếng Việt](i18n/README.vi.md) · [中文 (简体)](i18n/README.zh-Hans.md) · [中文（繁體）](i18n/README.zh-Hant.md) · [Deutsch](i18n/README.de.md) · [Русский](i18n/README.ru.md)
 
-
 <p align="center">
   <a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png">
     <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="75%">
@@ -9,7 +8,6 @@
     <img src="logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="23%">
   </a>
 </p>
-
 
 # AgInTi
 
@@ -25,32 +23,31 @@
 
 Documentation-first repository scaffold for maintaining one canonical English README and synchronized multilingual documentation, guided by three operating principles: **sear creation tools**, **self-healing tools**, and **chain of prompt tools**.
 
-
 ## 🧭 Quick Navigation
 
-| Type | Destination |
-| --- | --- |
-| Project summary | [Overview](#-overview) |
-| Core capabilities | [Features](#-features) |
-| Pipeline design | [Architecture](#-architecture) |
-| Philosophy baseline | [Philosophy at a glance](#philosophy-at-a-glance) |
-| Contributor workflow | [Development Notes](#-development-notes) |
-| Future direction | [Roadmap](#-roadmap) |
-| Support this project | [Support](#-support) |
+| Type                 | Destination                                       |
+| -------------------- | ------------------------------------------------- |
+| Project summary      | [Overview](#-overview)                            |
+| Core capabilities    | [Features](#-features)                            |
+| Pipeline design      | [Architecture](#-architecture)                    |
+| Philosophy baseline  | [Philosophy at a glance](#philosophy-at-a-glance) |
+| Contributor workflow | [Development Notes](#-development-notes)          |
+| Future direction     | [Roadmap](#-roadmap)                              |
+| Support this project | [Support](#-support)                              |
 
 ---
 
 ## 📌 Scope and Snapshot
 
-| Item | Current state |
-| --- | --- |
-| Repository phase | Documentation bootstrap scaffold |
-| Runtime code | Not detected in current snapshot |
-| Tests/CI pipelines | Not detected in current snapshot |
-| Localized docs | 10 locale files under `i18n/` |
-| Pipeline artifacts | Timestamped runs under `.auto-readme-work/` |
-| License file | Not present as standalone file (README badge shows `TBD`) |
-| Philosophy baseline | Sear creation + self-healing + chain of prompt tools |
+| Item                | Current state                                             |
+| ------------------- | --------------------------------------------------------- |
+| Repository phase    | Documentation bootstrap scaffold                          |
+| Runtime code        | Not detected in current snapshot                          |
+| Tests/CI pipelines  | Not detected in current snapshot                          |
+| Localized docs      | 10 locale files under `i18n/`                             |
+| Pipeline artifacts  | Timestamped runs under `.auto-readme-work/`               |
+| License file        | Not present as standalone file (README badge shows `TBD`) |
+| Philosophy baseline | Sear creation + self-healing + chain of prompt tools      |
 
 ## 🌍 Overview
 
@@ -66,11 +63,11 @@ This repository preserves meaningful historical content through incremental edit
 
 ### Philosophy at a glance
 
-| Principle | Intent | Operational outcome |
-| --- | --- | --- |
-| **Sear creation tools** | Produce high-signal documentation from constrained evidence. | Sections stay practical, specific, and repository-grounded. |
-| **Self-healing tools** | Repair drift, duplication, and stale structure. | Canonical and localized READMEs stay aligned and clean. |
-| **Chain of prompt tools** | Keep generation stages explicit and traceable. | Pipeline artifacts preserve reproducible context and handoffs. |
+| Principle                 | Intent                                                       | Operational outcome                                            |
+| ------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
+| **Sear creation tools**   | Produce high-signal documentation from constrained evidence. | Sections stay practical, specific, and repository-grounded.    |
+| **Self-healing tools**    | Repair drift, duplication, and stale structure.              | Canonical and localized READMEs stay aligned and clean.        |
+| **Chain of prompt tools** | Keep generation stages explicit and traceable.               | Pipeline artifacts preserve reproducible context and handoffs. |
 
 ## ✨ Features
 
@@ -82,10 +79,10 @@ This repository preserves meaningful historical content through incremental edit
 
 ### Principle-to-feature mapping
 
-| Core principle | Current manifestation |
-| --- | --- |
-| **Sear creation tools** | Precise README drafting from repo-grounded evidence and stable section scaffolds. |
-| **Self-healing tools** | Deduplication checks for repeated banner/support blocks, stale references, and structure drift. |
+| Core principle            | Current manifestation                                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Precise README drafting from repo-grounded evidence and stable section scaffolds.                          |
+| **Self-healing tools**    | Deduplication checks for repeated banner/support blocks, stale references, and structure drift.            |
 | **Chain of prompt tools** | Run-specific artifact chain (`pipeline-context`, nav templates, translation plan) for reproducible output. |
 
 ## 🗂️ Project Structure
@@ -138,23 +135,23 @@ flowchart LR
 
 ### Principle checkpoints by pipeline stage
 
-| Stage | Sear creation tools | Self-healing tools | Chain of prompt tools |
-| --- | --- | --- | --- |
-| Context capture | Define sharp generation constraints. | Flag missing or invalid inputs early. | Preserve source prompt and run metadata. |
-| Canonical drafting | Build complete README sections from repository evidence. | Prevent regressions and accidental content loss. | Keep stage outputs linked to prior artifacts. |
-| i18n alignment | Maintain structure and technical parity across locales. | Correct drift between root and i18n files. | Carry canonical intent into each localized variant. |
-| Final verification | Enforce readability and detail preservation. | Remove duplicate banner/support blocks and stale references. | Leave an auditable artifact trail for the run. |
+| Stage              | Sear creation tools                                      | Self-healing tools                                           | Chain of prompt tools                               |
+| ------------------ | -------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
+| Context capture    | Define sharp generation constraints.                     | Flag missing or invalid inputs early.                        | Preserve source prompt and run metadata.            |
+| Canonical drafting | Build complete README sections from repository evidence. | Prevent regressions and accidental content loss.             | Keep stage outputs linked to prior artifacts.       |
+| i18n alignment     | Maintain structure and technical parity across locales.  | Correct drift between root and i18n files.                   | Carry canonical intent into each localized variant. |
+| Final verification | Enforce readability and detail preservation.             | Remove duplicate banner/support blocks and stale references. | Leave an auditable artifact trail for the run.      |
 
 ## 🧾 Documentation Inputs and Generated Artifacts
 
-| File | Purpose |
-| --- | --- |
-| `.auto-readme-work/20260302_140358/pipeline-context.md` | Source constraints and goals for this generation pass. |
-| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Repository scan summary and inferred technical state. |
-| `.auto-readme-work/20260302_140358/language-nav-root.md` | Canonical language options line for root `README.md`. |
-| `.auto-readme-work/20260302_140358/language-nav-i18n.md` | Canonical language options line for i18n README files. |
-| `.auto-readme-work/20260302_140358/translation-plan.txt` | Locale mapping and i18n target file plan. |
-| `.auto-readme-work/<older-run-id>/...` | Historical context from prior pipeline runs. |
+| File                                                           | Purpose                                                |
+| -------------------------------------------------------------- | ------------------------------------------------------ |
+| `.auto-readme-work/20260302_140358/pipeline-context.md`        | Source constraints and goals for this generation pass. |
+| `.auto-readme-work/20260302_140358/repo-structure-analysis.md` | Repository scan summary and inferred technical state.  |
+| `.auto-readme-work/20260302_140358/language-nav-root.md`       | Canonical language options line for root `README.md`.  |
+| `.auto-readme-work/20260302_140358/language-nav-i18n.md`       | Canonical language options line for i18n README files. |
+| `.auto-readme-work/20260302_140358/translation-plan.txt`       | Locale mapping and i18n target file plan.              |
+| `.auto-readme-work/<older-run-id>/...`                         | Historical context from prior pipeline runs.           |
 
 ## 🔧 Prerequisites
 
@@ -275,10 +272,10 @@ Add build and run instructions only after introducing concrete manifests (for ex
 
 ### Roadmap by principle focus
 
-| Focus area | Near-term target |
-| --- | --- |
-| **Sear creation tools** | Improve drafting templates and evidence-backed section prompts. |
-| **Self-healing tools** | Automate duplicate detection, stale anchor checks, and locale drift repair. |
+| Focus area                | Near-term target                                                                |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Sear creation tools**   | Improve drafting templates and evidence-backed section prompts.                 |
+| **Self-healing tools**    | Automate duplicate detection, stale anchor checks, and locale drift repair.     |
 | **Chain of prompt tools** | Standardize run-stage artifact contracts for reproducible multilingual outputs. |
 
 ## 🤝 Contribution
@@ -313,8 +310,8 @@ This repository includes these root submodules:
 
 ## ❤️ Support
 
-| Donate | PayPal | Stripe |
-| --- | --- | --- |
+| Donate                                                                                                                                                                                                                                                                                                                                                     | PayPal                                                                                                                                                                                                                                                                                                                                                          | Stripe                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
 ## 📄 License
