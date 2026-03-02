@@ -6,32 +6,63 @@ REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PROMPT_TOOLS_DIR="$REPO_DIR/lab_prompt_tools"
 OUTPUT_DIR="${HOME}/.openclaw/workspace/LRE/book_runs"
 RUN_ID="$(date +%Y%m%d-%H%M%S)"
-MODEL="${CODEX_MODEL:-gpt-5.3-codex-spark}"
+MODEL="${CODEX_MODEL:-gpt-5.3-codex}"
 REASONING="${CODEX_REASONING:-high}"
 PROFILE_JSON=""
 SKIP_WEBSEARCH=0
-
-QUERIES=(
-  "best books systems thinking founder decision making"
-  "best books on emotional discipline and self mastery"
-  "books for strategic execution and focus"
-  "shadow work books for ambitious leaders"
-  "books creativity research and product innovation"
-)
+AUTO_HEAL=1
+QUERY_FILE="${SCRIPT_DIR}/book_queries.txt"
 
 usage() {
   cat <<'USAGE'
 Usage: prompt_lre_book_finder.sh [options]
 
 Options:
-  --profile-json <path>  Profile JSON (optional; can use latest from profile runs)
-  --output-dir <path>    Output root (default: ~/.openclaw/workspace/LRE/book_runs)
-  --run-id <id>          Run id (default: timestamp)
-  --model <name>         Codex model
-  --reasoning <level>    Codex reasoning
-  --skip-websearch       Skip websearch stage
+  --profile-json <path>   Profile JSON (default: ~/.openclaw/workspace/LRE/profile_runs/latest/latest-result.json)
+  --output-dir <path>     Output root (default: ~/.openclaw/workspace/LRE/book_runs)
+  --run-id <id>           Run id (default: timestamp)
+  --model <name>          Codex model (default: gpt-5.3-codex)
+  --reasoning <level>     Codex reasoning (default: high)
+  --query-file <path>     Query file (default: lre/book_queries.txt)
+  --skip-websearch        Skip websearch stage
+  --no-auto-heal          Disable self-heal query evolution
   --help
 USAGE
+}
+
+load_queries() {
+  local file="$1"
+  local -a out=()
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line="${line#"${line%%[![:space:]]*}"}"
+    line="${line%"${line##*[![:space:]]}"}"
+    [[ -z "$line" ]] && continue
+    [[ "$line" == \#* ]] && continue
+    out+=("$line")
+  done < "$file"
+  printf "%s\n" "${out[@]}"
+}
+
+run_queries() {
+  local prefix="$1"
+  shift
+  local -a queries=("$@")
+  local i=1
+  for q in "${queries[@]}"; do
+    "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
+      --query "$q" \
+      --engine "google" \
+      --results 8 \
+      --open-top-results 5 \
+      --summarize-open-url \
+      --scroll-steps 4 \
+      --scroll-pause 1.0 \
+      --no-auto-attach \
+      --output-dir "$WEB_DIR" \
+      --run-id "${prefix}-${i}" \
+      >"$WEB_DIR/${prefix}-${i}.log" 2>&1 || true
+    i=$((i + 1))
+  done
 }
 
 while [[ $# -gt 0 ]]; do
@@ -41,7 +72,9 @@ while [[ $# -gt 0 ]]; do
     --run-id) shift; RUN_ID="${1:-}";;
     --model) shift; MODEL="${1:-}";;
     --reasoning) shift; REASONING="${1:-}";;
+    --query-file) shift; QUERY_FILE="${1:-}";;
     --skip-websearch) SKIP_WEBSEARCH=1;;
+    --no-auto-heal) AUTO_HEAL=0;;
     -h|--help) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage; exit 1;;
   esac
@@ -51,55 +84,83 @@ done
 if [[ -z "$PROFILE_JSON" ]]; then
   PROFILE_JSON="${HOME}/.openclaw/workspace/LRE/profile_runs/latest/latest-result.json"
 fi
+if [[ ! -f "$QUERY_FILE" ]]; then
+  echo "Missing query file: $QUERY_FILE" >&2
+  exit 1
+fi
 
 RUN_DIR="${OUTPUT_DIR}/${RUN_ID}"
 WEB_DIR="${RUN_DIR}/websearch"
-CODEx_DIR="${RUN_DIR}/codex"
-mkdir -p "$WEB_DIR" "$CODEx_DIR"
+CODEX_DIR="${RUN_DIR}/codex"
+mkdir -p "$WEB_DIR" "$CODEX_DIR"
 
 if [[ "$SKIP_WEBSEARCH" -eq 0 ]]; then
-  i=1
-  for q in "${QUERIES[@]}"; do
-    "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_batch.sh" \
-      --query "$q" \
-      --kind auto \
-      --top-results 5 \
-      --output-dir "$WEB_DIR" \
-      --run-id "books-${i}" \
-      --no-codex || true
-    i=$((i + 1))
-  done
+  QUERIES=("${(@f)$(load_queries "$QUERY_FILE")}")
+  run_queries "books" "${QUERIES[@]}"
+
+  STATS_JSON="${WEB_DIR}/websearch_stats.json"
+  python3 - "$WEB_DIR" "$STATS_JSON" <<'PY'
+import json, pathlib, sys
+web_dir = pathlib.Path(sys.argv[1])
+out = pathlib.Path(sys.argv[2])
+files = sorted(web_dir.rglob("query-*.json"))
+success = 0
+for f in files:
+    try:
+        data = json.loads(f.read_text(encoding="utf-8"))
+    except Exception:
+        continue
+    if int(data.get("opened_count", 0) or 0) > 0:
+        success += 1
+stats = {"json_files": len(files), "success_files": success, "weak_signal": success < max(2, len(files) // 2 if files else 1)}
+out.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print(json.dumps(stats))
+PY
+
+  if [[ "$AUTO_HEAL" -eq 1 ]]; then
+    WEAK_SIGNAL="$(python3 - "$STATS_JSON" <<'PY'
+import json, pathlib, sys
+data = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8"))
+print("1" if data.get("weak_signal") else "0")
+PY
+)"
+    if [[ "$WEAK_SIGNAL" == "1" ]]; then
+      "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
+        --tool-name "lre-books-websearch" \
+        --feedback "Book search signal weak. Improve with concise and practical growth-book search queries." \
+        --query-file "$QUERY_FILE" \
+        --apply \
+        --model "$MODEL" \
+        --reasoning "$REASONING" \
+        --run-id "${RUN_ID}-books-heal" \
+        --output-dir "${HOME}/.openclaw/workspace/LRE/self_evolve_runs" \
+        >"$RUN_DIR/books_self_heal.log" 2>&1 || true
+      QUERIES=("${(@f)$(load_queries "$QUERY_FILE")}")
+      run_queries "books-heal" "${QUERIES[@]:0:4}"
+    fi
+  fi
 fi
 
 INPUT_JSON="${RUN_DIR}/books_input.json"
 python3 - "$INPUT_JSON" "$PROFILE_JSON" "$WEB_DIR" <<'PY'
-import json
-import pathlib
-import sys
-
+import json, pathlib, sys
 out = pathlib.Path(sys.argv[1])
 profile_path = pathlib.Path(sys.argv[2])
 web_dir = pathlib.Path(sys.argv[3])
-
 profile = {}
 if profile_path.exists():
     try:
         profile = json.loads(profile_path.read_text(encoding="utf-8"))
     except Exception:
         profile = {"raw_profile_path": str(profile_path)}
-
-artifacts = [str(p) for p in sorted(web_dir.rglob("search_batch_result.json"))]
-payload = {
-    "profile": profile,
-    "profile_path": str(profile_path),
-    "websearch_artifacts": artifacts,
-}
+artifacts = [str(p) for p in sorted(web_dir.rglob("query-*.json"))]
+payload = {"profile": profile, "profile_path": str(profile_path), "websearch_artifacts": artifacts}
 out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 PY
 
 python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --input-json "$INPUT_JSON" \
-  --output-dir "$CODEx_DIR" \
+  --output-dir "$CODEX_DIR" \
   --prompt-file "$PROMPT_TOOLS_DIR/lre/lre_books_prompt.md" \
   --schema "$PROMPT_TOOLS_DIR/lre/lre_books_schema.json" \
   --model "$MODEL" \
@@ -107,5 +168,25 @@ python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --label lre-books \
   --skip-git-check
 
+BOOKS_MD="${RUN_DIR}/books.md"
+python3 - "$CODEX_DIR/latest-result.json" "$BOOKS_MD" <<'PY'
+import json, pathlib, sys
+src = pathlib.Path(sys.argv[1]); dst = pathlib.Path(sys.argv[2])
+data = json.loads(src.read_text(encoding="utf-8")) if src.exists() else {}
+lines = ["# LRE Books", "", f"Summary: {data.get('summary', '')}", "", "## Recommendations"]
+for item in data.get("recommendations", []):
+    lines.append(f"- {item.get('title','')} — {item.get('author','')} [{item.get('priority','')}]")
+    lines.append(f"  - Theme: {item.get('theme','')}")
+    lines.append(f"  - Why fit: {item.get('why_fit','')}")
+    lines.append(f"  - 30d action: {item.get('action_30d','')}")
+dst.write_text("\n".join(lines) + "\n", encoding="utf-8")
+PY
+
+LATEST_DIR="${OUTPUT_DIR}/latest"
+mkdir -p "$LATEST_DIR"
+cp "$CODEX_DIR/latest-result.json" "$LATEST_DIR/latest-result.json"
+cp "$BOOKS_MD" "$LATEST_DIR/books.md"
+
 echo "run_dir=$RUN_DIR"
-echo "books_result=${CODEx_DIR}/latest-result.json"
+echo "books_result=${CODEX_DIR}/latest-result.json"
+echo "books_markdown=$BOOKS_MD"

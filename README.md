@@ -325,6 +325,7 @@ LRE-specific tools:
 - `lab_prompt_tools/lre/prompt_lre_profile_research.sh`
 - `lab_prompt_tools/lre/prompt_lre_book_finder.sh`
 - `lab_prompt_tools/lre/prompt_lre_investment_finder.sh`
+- `lab_prompt_tools/lre/prompt_lre_ideas_finder.sh`
 - `lab_prompt_tools/lre/prompt_lre_self_evolve.sh`
 - `lab_prompt_tools/lre/run_lre_deep_research.sh`
 
@@ -332,7 +333,7 @@ Quick run:
 
 ```bash
 cd AgInTi
-lab_prompt_tools/lre/run_lre_deep_research.sh --model gpt-5.3-codex-spark --reasoning high
+lab_prompt_tools/lre/run_lre_deep_research.sh --model gpt-5.3-codex --reasoning high
 ```
 
 ## ❤️ Support

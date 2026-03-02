@@ -26,6 +26,12 @@
         "type": "string"
       }
     },
+    "recommended_queries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "next_experiment": {
       "type": "string"
     }
@@ -35,6 +41,7 @@
     "query_strategy_updates",
     "prompt_patch",
     "script_patch",
+    "recommended_queries",
     "next_experiment"
   ]
 }

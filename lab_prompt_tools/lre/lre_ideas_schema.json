@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "ideas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "why_fit": {
+            "type": "string"
+          },
+          "first_experiment_7d": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          }
+        },
+        "required": ["title", "hypothesis", "why_fit", "first_experiment_7d", "priority"]
+      }
+    }
+  },
+  "required": ["summary", "ideas"]
+}

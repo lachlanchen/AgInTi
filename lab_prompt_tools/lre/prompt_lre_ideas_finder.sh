@@ -4,26 +4,26 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PROMPT_TOOLS_DIR="$REPO_DIR/lab_prompt_tools"
-OUTPUT_DIR="${HOME}/.openclaw/workspace/LRE/investment_runs"
+OUTPUT_DIR="${HOME}/.openclaw/workspace/LRE/ideas_runs"
 RUN_ID="$(date +%Y%m%d-%H%M%S)"
 MODEL="${CODEX_MODEL:-gpt-5.3-codex}"
 REASONING="${CODEX_REASONING:-high}"
 PROFILE_JSON=""
 SKIP_WEBSEARCH=0
 AUTO_HEAL=1
-QUERY_FILE="${SCRIPT_DIR}/investment_queries.txt"
+QUERY_FILE="${SCRIPT_DIR}/ideas_queries.txt"
 
 usage() {
   cat <<'USAGE'
-Usage: prompt_lre_investment_finder.sh [options]
+Usage: prompt_lre_ideas_finder.sh [options]
 
 Options:
   --profile-json <path>   Profile JSON (default: ~/.openclaw/workspace/LRE/profile_runs/latest/latest-result.json)
-  --output-dir <path>     Output root (default: ~/.openclaw/workspace/LRE/investment_runs)
+  --output-dir <path>     Output root (default: ~/.openclaw/workspace/LRE/ideas_runs)
   --run-id <id>           Run id (default: timestamp)
   --model <name>          Codex model (default: gpt-5.3-codex)
   --reasoning <level>     Codex reasoning (default: high)
-  --query-file <path>     Query file (default: lre/investment_queries.txt)
+  --query-file <path>     Query file (default: lre/ideas_queries.txt)
   --skip-websearch        Skip websearch stage
   --no-auto-heal          Disable self-heal query evolution
   --help
@@ -43,15 +43,28 @@ load_queries() {
   printf "%s\n" "${out[@]}"
 }
 
+choose_engine() {
+  local q="${1:l}"
+  if [[ "$q" == *paper* || "$q" == *arxiv* || "$q" == *scholar* ]]; then
+    echo "google-scholar"
+  elif [[ "$q" == *news* || "$q" == *trend* ]]; then
+    echo "google-news"
+  else
+    echo "google"
+  fi
+}
+
 run_queries() {
   local prefix="$1"
   shift
   local -a queries=("$@")
   local i=1
   for q in "${queries[@]}"; do
+    local engine
+    engine="$(choose_engine "$q")"
     "$PROMPT_TOOLS_DIR/websearch/prompt_web_search_immersive.sh" \
       --query "$q" \
-      --engine "google-news" \
+      --engine "$engine" \
       --results 8 \
       --open-top-results 5 \
       --summarize-open-url \
@@ -96,7 +109,7 @@ mkdir -p "$WEB_DIR" "$CODEX_DIR"
 
 if [[ "$SKIP_WEBSEARCH" -eq 0 ]]; then
   QUERIES=("${(@f)$(load_queries "$QUERY_FILE")}")
-  run_queries "invest" "${QUERIES[@]}"
+  run_queries "ideas" "${QUERIES[@]}"
 
   STATS_JSON="${WEB_DIR}/websearch_stats.json"
   python3 - "$WEB_DIR" "$STATS_JSON" <<'PY'
@@ -126,22 +139,22 @@ PY
 )"
     if [[ "$WEAK_SIGNAL" == "1" ]]; then
       "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
-        --tool-name "lre-investment-websearch" \
-        --feedback "Investment/news search signal weak. Improve with concise macro/theme/risk-oriented queries." \
+        --tool-name "lre-ideas-websearch" \
+        --feedback "Ideas search signal weak. Improve with practical research direction and execution-focused queries." \
         --query-file "$QUERY_FILE" \
         --apply \
         --model "$MODEL" \
         --reasoning "$REASONING" \
-        --run-id "${RUN_ID}-invest-heal" \
+        --run-id "${RUN_ID}-ideas-heal" \
         --output-dir "${HOME}/.openclaw/workspace/LRE/self_evolve_runs" \
-        >"$RUN_DIR/invest_self_heal.log" 2>&1 || true
+        >"$RUN_DIR/ideas_self_heal.log" 2>&1 || true
       QUERIES=("${(@f)$(load_queries "$QUERY_FILE")}")
-      run_queries "invest-heal" "${QUERIES[@]:0:4}"
+      run_queries "ideas-heal" "${QUERIES[@]:0:4}"
     fi
   fi
 fi
 
-INPUT_JSON="${RUN_DIR}/investments_input.json"
+INPUT_JSON="${RUN_DIR}/ideas_input.json"
 python3 - "$INPUT_JSON" "$PROFILE_JSON" "$WEB_DIR" <<'PY'
 import json, pathlib, sys
 out = pathlib.Path(sys.argv[1])
@@ -161,40 +174,32 @@ PY
 python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --input-json "$INPUT_JSON" \
   --output-dir "$CODEX_DIR" \
-  --prompt-file "$PROMPT_TOOLS_DIR/lre/lre_investments_prompt.md" \
-  --schema "$PROMPT_TOOLS_DIR/lre/lre_investments_schema.json" \
+  --prompt-file "$PROMPT_TOOLS_DIR/lre/lre_ideas_prompt.md" \
+  --schema "$PROMPT_TOOLS_DIR/lre/lre_ideas_schema.json" \
   --model "$MODEL" \
   --reasoning "$REASONING" \
-  --label lre-investments \
+  --label lre-ideas \
   --skip-git-check
 
-INVEST_MD="${RUN_DIR}/investments.md"
-python3 - "$CODEX_DIR/latest-result.json" "$INVEST_MD" <<'PY'
+IDEAS_MD="${RUN_DIR}/ideas.md"
+python3 - "$CODEX_DIR/latest-result.json" "$IDEAS_MD" <<'PY'
 import json, pathlib, sys
 src = pathlib.Path(sys.argv[1]); dst = pathlib.Path(sys.argv[2])
 data = json.loads(src.read_text(encoding="utf-8")) if src.exists() else {}
-lines = ["# LRE Investments", "", f"Summary: {data.get('summary', '')}", "", "## High Conviction"]
-for item in data.get("high_conviction", []):
-    lines.append(f"- {item.get('theme','')}")
-    lines.append(f"  - Thesis: {item.get('thesis','')}")
-    lines.append(f"  - Profile fit: {item.get('profile_fit','')}")
-    risks = item.get("risks", [])
-    if risks:
-        lines.append(f"  - Risks: {', '.join(risks)}")
-lines += ["", "## Watchlist"]
-for x in data.get("watchlist", []):
-    lines.append(f"- {x}")
-lines += ["", "## Avoid For Now"]
-for x in data.get("avoid_for_now", []):
-    lines.append(f"- {x}")
+lines = ["# LRE Research Ideas", "", f"Summary: {data.get('summary', '')}", "", "## Ideas"]
+for item in data.get("ideas", []):
+    lines.append(f"- {item.get('title','')} [{item.get('priority','')}]")
+    lines.append(f"  - Hypothesis: {item.get('hypothesis','')}")
+    lines.append(f"  - Why fit: {item.get('why_fit','')}")
+    lines.append(f"  - 7d experiment: {item.get('first_experiment_7d','')}")
 dst.write_text("\n".join(lines) + "\n", encoding="utf-8")
 PY
 
 LATEST_DIR="${OUTPUT_DIR}/latest"
 mkdir -p "$LATEST_DIR"
 cp "$CODEX_DIR/latest-result.json" "$LATEST_DIR/latest-result.json"
-cp "$INVEST_MD" "$LATEST_DIR/investments.md"
+cp "$IDEAS_MD" "$LATEST_DIR/ideas.md"
 
 echo "run_dir=$RUN_DIR"
-echo "investments_result=${CODEX_DIR}/latest-result.json"
-echo "investments_markdown=$INVEST_MD"
+echo "ideas_result=${CODEX_DIR}/latest-result.json"
+echo "ideas_markdown=$IDEAS_MD"

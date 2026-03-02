@@ -6,11 +6,13 @@ REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PROMPT_TOOLS_DIR="$REPO_DIR/lab_prompt_tools"
 OUTPUT_DIR="${HOME}/.openclaw/workspace/LRE/self_evolve_runs"
 RUN_ID="$(date +%Y%m%d-%H%M%S)"
-MODEL="${CODEX_MODEL:-gpt-5.3-codex-spark}"
+MODEL="${CODEX_MODEL:-gpt-5.3-codex}"
 REASONING="${CODEX_REASONING:-high}"
 TOOL_NAME="lre"
 FEEDBACK=""
 LATEST_OUTPUT_PATH=""
+QUERY_FILE=""
+APPLY=0
 
 usage() {
   cat <<'USAGE'
@@ -20,10 +22,12 @@ Options:
   --tool-name <name>         Tool identity (default: lre)
   --feedback <text>          Required feedback string
   --latest-output <path>     Optional latest result JSON path
+  --query-file <path>        Optional query file for auto-heal updates
+  --apply                    Apply recommended_queries into query-file (dedupe append)
   --output-dir <path>        Output root (default: ~/.openclaw/workspace/LRE/self_evolve_runs)
   --run-id <id>              Run id (default: timestamp)
-  --model <name>             Codex model
-  --reasoning <level>        Codex reasoning
+  --model <name>             Codex model (default: gpt-5.3-codex)
+  --reasoning <level>        Codex reasoning (default: high)
   --help
 USAGE
 }
@@ -33,6 +37,8 @@ while [[ $# -gt 0 ]]; do
     --tool-name) shift; TOOL_NAME="${1:-}";;
     --feedback) shift; FEEDBACK="${1:-}";;
     --latest-output) shift; LATEST_OUTPUT_PATH="${1:-}";;
+    --query-file) shift; QUERY_FILE="${1:-}";;
+    --apply) APPLY=1;;
     --output-dir) shift; OUTPUT_DIR="${1:-}";;
     --run-id) shift; RUN_ID="${1:-}";;
     --model) shift; MODEL="${1:-}";;
@@ -49,12 +55,17 @@ if [[ -z "$FEEDBACK" ]]; then
   exit 1
 fi
 
+if [[ "$APPLY" -eq 1 && -z "$QUERY_FILE" ]]; then
+  echo "--apply requires --query-file" >&2
+  exit 1
+fi
+
 RUN_DIR="${OUTPUT_DIR}/${RUN_ID}"
-CODEx_DIR="${RUN_DIR}/codex"
-mkdir -p "$RUN_DIR" "$CODEx_DIR"
+CODEX_DIR="${RUN_DIR}/codex"
+mkdir -p "$RUN_DIR" "$CODEX_DIR"
 
 INPUT_JSON="${RUN_DIR}/self_evolve_input.json"
-python3 - "$INPUT_JSON" "$TOOL_NAME" "$FEEDBACK" "$LATEST_OUTPUT_PATH" <<'PY'
+python3 - "$INPUT_JSON" "$TOOL_NAME" "$FEEDBACK" "$LATEST_OUTPUT_PATH" "$QUERY_FILE" <<'PY'
 import json
 import pathlib
 import sys
@@ -63,6 +74,7 @@ out = pathlib.Path(sys.argv[1])
 tool_name = sys.argv[2]
 feedback = sys.argv[3]
 latest_output = sys.argv[4]
+query_file = sys.argv[5]
 
 latest_payload = {}
 if latest_output:
@@ -78,13 +90,14 @@ payload = {
     "feedback": feedback,
     "latest_output_path": latest_output,
     "latest_output": latest_payload,
+    "query_file": query_file,
 }
 out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 PY
 
 python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --input-json "$INPUT_JSON" \
-  --output-dir "$CODEx_DIR" \
+  --output-dir "$CODEX_DIR" \
   --prompt-file "$PROMPT_TOOLS_DIR/lre/lre_self_evolve_prompt.md" \
   --schema "$PROMPT_TOOLS_DIR/lre/lre_self_evolve_schema.json" \
   --model "$MODEL" \
@@ -92,5 +105,48 @@ python3 "$PROMPT_TOOLS_DIR/runtime/codex-json-runner.py" \
   --label lre-self-evolve \
   --skip-git-check
 
+RESULT_PATH="${CODEX_DIR}/latest-result.json"
+if [[ "$APPLY" -eq 1 ]]; then
+  python3 - "$RESULT_PATH" "$QUERY_FILE" <<'PY'
+import json
+import pathlib
+import sys
+
+result_path = pathlib.Path(sys.argv[1])
+query_path = pathlib.Path(sys.argv[2])
+
+existing = []
+if query_path.exists():
+    for line in query_path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s or s.startswith("#"):
+            continue
+        existing.append(s)
+seen = {x.lower() for x in existing}
+
+recommended = []
+if result_path.exists():
+    data = json.loads(result_path.read_text(encoding="utf-8"))
+    for q in data.get("recommended_queries", []):
+        s = str(q).strip()
+        if not s:
+            continue
+        if s.lower() in seen:
+            continue
+        seen.add(s.lower())
+        recommended.append(s)
+
+if recommended:
+    lines = query_path.read_text(encoding="utf-8").splitlines() if query_path.exists() else []
+    lines.append("")
+    lines.append("# auto-evolve")
+    lines.extend(recommended)
+    query_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"applied_queries={len(recommended)}")
+else:
+    print("applied_queries=0")
+PY
+fi
+
 echo "run_dir=$RUN_DIR"
-echo "self_evolve_result=${CODEx_DIR}/latest-result.json"
+echo "self_evolve_result=$RESULT_PATH"

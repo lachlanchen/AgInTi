@@ -59,6 +59,7 @@ Core scripts:
 - `lre/prompt_lre_profile_research.sh`
 - `lre/prompt_lre_book_finder.sh`
 - `lre/prompt_lre_investment_finder.sh`
+- `lre/prompt_lre_ideas_finder.sh`
 - `lre/prompt_lre_self_evolve.sh`
 - `lre/run_lre_deep_research.sh`
 
@@ -67,11 +68,13 @@ Prompt + schema assets:
 - `lre/lre_profile_prompt.md`, `lre/lre_profile_schema.json`
 - `lre/lre_books_prompt.md`, `lre/lre_books_schema.json`
 - `lre/lre_investments_prompt.md`, `lre/lre_investments_schema.json`
+- `lre/lre_ideas_prompt.md`, `lre/lre_ideas_schema.json`
 - `lre/lre_self_evolve_prompt.md`, `lre/lre_self_evolve_schema.json`
 
 Design intent:
 
 - Use websearch evidence first, then structured Codex synthesis.
+- Use immersive websearch (`websearch/prompt_web_search_immersive.sh`) as the default retrieval mode.
 - Produce profile insights from interests, strengths, weaknesses, and dark-side risks.
 - Recommend books and investment theses linked to evidence.
 - Keep a self-evolve loop that updates query and prompt strategy after each run.
@@ -221,7 +224,7 @@ python3 orchestral/prompt_tools/runtime/codex-json-runner.py \
   --input-json /tmp/task.json \
   --output-dir /tmp/codex-runs \
   --schema orchestral/prompt_tools/runtime/email_send_schema.json \
-  --model gpt-5.3-codex-spark \
+  --model gpt-5.3-codex \
   --reasoning high
 ```
 
