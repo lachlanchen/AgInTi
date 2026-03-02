@@ -17,6 +17,7 @@ Goals:
 5. define a minimal next experiment.
 6. explicitly decide whether to split the workflow into smaller dedicated prompt tools.
 7. explicitly decide whether to create a new helper tool or patch an existing tool.
+8. explicitly decide whether screenshot evidence quality is adequate; if weak, force prompt/query/tool updates.
 
 Rules:
 
@@ -24,6 +25,7 @@ Rules:
 - avoid abstract statements without operational impact.
 - output valid JSON only, matching schema.
 - optimize for better websearch behavior: better keywords, engine choice, click/open strategy, and evidence extraction quality.
+- make a concrete decision to update prompt tools when evidence quality is weak; do not stay in analysis-only mode.
 
 Must include:
 - `recommended_queries`: 3-8 concise search queries to improve signal quality.

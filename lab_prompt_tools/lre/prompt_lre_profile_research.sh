@@ -156,6 +156,7 @@ web_dir = pathlib.Path(sys.argv[1])
 out = pathlib.Path(sys.argv[2])
 files = sorted(web_dir.rglob("query-*.json"))
 success = 0
+screenshot_files = list(web_dir.rglob("*.png"))
 for f in files:
     try:
         data = json.loads(f.read_text(encoding="utf-8"))
@@ -169,7 +170,8 @@ for f in files:
 stats = {
     "json_files": len(files),
     "success_files": success,
-    "weak_signal": success < max(2, len(files) // 2 if files else 1),
+    "screenshot_files": len(screenshot_files),
+    "weak_signal": (success < max(2, len(files) // 2 if files else 1)) and len(screenshot_files) == 0,
 }
 out.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(stats))
@@ -185,7 +187,7 @@ PY
     if [[ "$WEAK_SIGNAL" == "1" ]]; then
       HEAL_RUN_ID="${RUN_ID}-profile-heal"
       HEAL_RESULT_PATH="${HOME}/.openclaw/workspace/LRE/self_evolve_runs/${HEAL_RUN_ID}/codex/latest-result.json"
-      "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
+      perl -e 'alarm shift; exec @ARGV' 240 "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
         --tool-name "lre-profile-websearch" \
         --feedback "Profile websearch signal weak. Improve query strategy with shorter, broader but relevant queries." \
         --query-file "$QUERY_FILE" \
@@ -209,7 +211,7 @@ EOF
     else
       HEAL_RUN_ID="${RUN_ID}-profile-review"
       HEAL_RESULT_PATH="${HOME}/.openclaw/workspace/LRE/self_evolve_runs/${HEAL_RUN_ID}/codex/latest-result.json"
-      "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
+      perl -e 'alarm shift; exec @ARGV' 240 "$SCRIPT_DIR/prompt_lre_self_evolve.sh" \
         --tool-name "lre-profile-websearch" \
         --feedback "Signal is strong. Propose incremental tool/prompt improvements to keep profile retrieval quality improving." \
         --query-file "$QUERY_FILE" \
