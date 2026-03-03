@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgInTi</title>
+    <meta
+      name="description"
+      content="AgInTi - self-creation, self-healing, and chain-of-tools automation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #07131f;
+        --bg-soft: #0f2031;
+        --text: #e8eef6;
+        --muted: #96a8be;
+        --line: #21415f;
+        --accent: #1ce1b5;
+        --accent-2: #57a9ff;
+        --card: #0b1a2a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(circle at 15% -10%, #15436f 0%, transparent 45%),
+          radial-gradient(circle at 85% 0%, #0a5b4a 0%, transparent 35%),
+          var(--bg);
+        color: var(--text);
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      .shell {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 24px 20px 56px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img.aginti {
+        height: 34px;
+        width: auto;
+        filter: drop-shadow(0 3px 16px rgba(87, 169, 255, 0.22));
+      }
+
+      .brand img.lazyingart {
+        height: 30px;
+        width: auto;
+        opacity: 0.92;
+      }
+
+      .tag {
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        padding: 8px 10px;
+        border-radius: 999px;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+        background: linear-gradient(130deg, rgba(15, 32, 49, 0.95), rgba(7, 18, 29, 0.95));
+      }
+
+      .hero-inner {
+        padding: 42px 28px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 26px;
+      }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        line-height: 1.05;
+        margin: 0 0 12px;
+        font-size: clamp(30px, 7vw, 62px);
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(15px, 2.4vw, 18px);
+        max-width: 52ch;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .card h3 {
+        margin: 0 0 6px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 17px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .actions {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn {
+        text-decoration: none;
+        color: #08131f;
+        font-weight: 600;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        padding: 11px 15px;
+        border-radius: 10px;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 860px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding: 28px 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="aginti" src="../logos/aginti-logo-wordmark-transparent.png" alt="AgInTi logo" />
+          <img class="lazyingart" src="https://lazying.art/logos/logo.png" alt="LazyingArt logo" />
+        </div>
+        <div class="tag">Self-Creation · Self-Healing · Chain Tools</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <h1>AgInTi Automation Stack</h1>
+            <p class="lead">
+              Prompt-tool orchestration for deep research, course execution, and multi-repo maintenance.
+              Built to evolve tooling continuously from real run feedback.
+            </p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/lachlanchen/AgInTi" target="_blank" rel="noreferrer">Open GitHub</a>
+              <a class="btn secondary" href="../README.md">Read README</a>
+            </div>
+          </div>
+
+          <div class="grid">
+            <article class="card">
+              <h3>LRE Pipeline</h3>
+              <p>Profile, books, investments, and ideas into single-copy notes + email output.</p>
+            </article>
+            <article class="card">
+              <h3>Course Agent</h3>
+              <p>Selenium bootstrap + prompt-tool builder + autodev loop for stable task execution.</p>
+            </article>
+            <article class="card">
+              <h3>AutoAppDev</h3>
+              <p>Auto-README and auto-website refresh across AgInTi and nested repos.</p>
+            </article>
+            <article class="card">
+              <h3>Run Artifacts</h3>
+              <p>Structured logs and self-heal reports for iterative, evidence-backed improvement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer">Suggested path: keep static site files under <code>website/</code>; use <code>docs/</code> only if you want documentation tooling.</p>
+    </main>
+  </body>
+</html>
