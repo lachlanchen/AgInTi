@@ -6,3 +6,4 @@ sessions/
 *.log
 __pycache__/
 *.pyc
+cache/
