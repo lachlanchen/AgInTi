@@ -19,15 +19,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "purpose",
-          "path",
-          "type",
-          "inputs",
-          "outputs",
-          "reuse"
-        ],
+        "required": ["name", "purpose", "path", "type", "inputs", "outputs", "reuse"],
         "properties": {
           "name": { "type": "string" },
           "purpose": { "type": "string" },
@@ -54,12 +46,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "signal",
-          "likely_root_cause",
-          "fix_action",
-          "verification"
-        ],
+        "required": ["signal", "likely_root_cause", "fix_action", "verification"],
         "properties": {
           "signal": { "type": "string" },
           "likely_root_cause": { "type": "string" },
@@ -71,13 +58,7 @@
     "shadow_self": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "goal",
-        "inputs",
-        "update_targets",
-        "apply_strategy",
-        "verification_strategy"
-      ],
+      "required": ["goal", "inputs", "update_targets", "apply_strategy", "verification_strategy"],
       "properties": {
         "goal": { "type": "string" },
         "inputs": {
