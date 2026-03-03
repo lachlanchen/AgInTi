@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "tool_plan",
+    "failure_handling",
+    "shadow_self",
+    "implementation_order",
+    "next_iteration_prompt"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "tool_plan": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "purpose",
+          "path",
+          "type",
+          "inputs",
+          "outputs",
+          "reuse"
+        ],
+        "properties": {
+          "name": { "type": "string" },
+          "purpose": { "type": "string" },
+          "path": { "type": "string" },
+          "type": { "type": "string" },
+          "inputs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "outputs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "reuse": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "failure_handling": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "signal",
+          "likely_root_cause",
+          "fix_action",
+          "verification"
+        ],
+        "properties": {
+          "signal": { "type": "string" },
+          "likely_root_cause": { "type": "string" },
+          "fix_action": { "type": "string" },
+          "verification": { "type": "string" }
+        }
+      }
+    },
+    "shadow_self": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "goal",
+        "inputs",
+        "update_targets",
+        "apply_strategy",
+        "verification_strategy"
+      ],
+      "properties": {
+        "goal": { "type": "string" },
+        "inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "update_targets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "apply_strategy": { "type": "string" },
+        "verification_strategy": { "type": "string" }
+      }
+    },
+    "implementation_order": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string" }
+    },
+    "next_iteration_prompt": {
+      "type": "string"
+    }
+  }
+}

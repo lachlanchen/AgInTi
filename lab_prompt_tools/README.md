@@ -25,6 +25,7 @@ All callers must use grouped canonical paths.
 - `migration/` LazyingArt migration planners
 - `git/` commit helper wrappers
 - `lre/` Life Reverse Engineering research and recommendation tools
+- `career/` online-course and LinkedIn agent autodev tools
 
 ## Organization rules
 
@@ -38,6 +39,7 @@ All callers must use grouped canonical paths.
 - Email composition prompts: `email/`
 - Git-related prompt helpers: `git/`
 - Life reverse engineering research stack: `lre/`
+- Career operations and Selenium bootstrap tools: `career/`
 - Philosophy and descriptive docs: `docs/`
 
 Constraint for future edits:
@@ -218,6 +220,27 @@ Outputs are standardized per run:
 - `prompt.txt`
 - `result.raw.json`
 - `result.json`
+
+## Career ops agent tools
+
+Core scripts:
+
+- `career/start_dec_login_session.sh`
+- `career/selenium_login_bootstrap.py`
+- `career/prompt_career_tool_builder.sh`
+- `career/prompt_career_tool_autodev.sh`
+
+Prompt + schema assets:
+
+- `career/prompt_career_tool_builder.md`
+- `career/career_tool_builder_schema.json`
+- `career/career_autodev_apply_prompt.md`
+
+Design intent:
+
+- Bootstrap login to online-course portals with Selenium while keeping manual verification in-the-loop.
+- Generate and repair dedicated automation tools for course completion and LinkedIn maintenance.
+- Reuse existing runtime runners (`runtime/codex-json-runner.py`, `runtime/codex-noninteractive.sh`) instead of duplicating orchestration code.
 - `meta.json`
 - `codex.stdout.log`
 - `codex.stderr.log`
