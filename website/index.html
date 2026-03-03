@@ -3,27 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgInTi</title>
+    <title>AgInTi | Self-Creation, Self-Healing, Chain Tools</title>
     <meta
       name="description"
-      content="AgInTi - self-creation, self-healing, and chain-of-tools automation."
+      content="AgInTi prompt-tool ecosystem for LRE deep research, course agent automation, and autoappdev continuous improvement."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=DM+Serif+Display&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #07131f;
-        --bg-soft: #0f2031;
-        --text: #e8eef6;
-        --muted: #96a8be;
-        --line: #21415f;
-        --accent: #1ce1b5;
-        --accent-2: #57a9ff;
-        --card: #0b1a2a;
+        --bg: #f4f7fb;
+        --bg-soft: #ffffff;
+        --ink: #12253d;
+        --ink-soft: #45607f;
+        --line: #d7e0ec;
+        --brand: #0ea5e9;
+        --brand-deep: #0f5fbd;
+        --mint: #22c55e;
+        --lavender: #eef3ff;
       }
 
       * {
@@ -35,205 +36,363 @@
         margin: 0;
         min-height: 100%;
         background:
-          radial-gradient(circle at 15% -10%, #15436f 0%, transparent 45%),
-          radial-gradient(circle at 85% 0%, #0a5b4a 0%, transparent 35%),
+          radial-gradient(circle at 10% 0%, #eaf3ff 0%, transparent 35%),
+          radial-gradient(circle at 85% 10%, #e9fff3 0%, transparent 30%),
           var(--bg);
-        color: var(--text);
-        font-family: "IBM Plex Sans", sans-serif;
+        color: var(--ink);
+        font-family: Manrope, system-ui, -apple-system, sans-serif;
       }
 
-      .shell {
-        max-width: 1080px;
+      .container {
+        max-width: 1120px;
         margin: 0 auto;
-        padding: 24px 20px 56px;
+        padding: 24px 18px 60px;
       }
 
-      .topbar {
+      .top {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        gap: 18px;
-        margin-bottom: 34px;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
       }
 
-      .brand {
+      .logos {
         display: flex;
         align-items: center;
         gap: 14px;
+        flex-wrap: wrap;
       }
 
-      .brand img.aginti {
-        height: 34px;
+      .logos img.aginti {
+        height: 38px;
         width: auto;
-        filter: drop-shadow(0 3px 16px rgba(87, 169, 255, 0.22));
       }
 
-      .brand img.lazyingart {
-        height: 30px;
+      .logos img.lazyingart {
+        height: 32px;
         width: auto;
-        opacity: 0.92;
       }
 
-      .tag {
+      .chip {
         border: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        padding: 8px 10px;
+        background: var(--bg-soft);
         border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 12px;
+        color: var(--brand-deep);
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
       .hero {
+        background: var(--bg-soft);
         border: 1px solid var(--line);
         border-radius: 22px;
-        overflow: hidden;
-        background: linear-gradient(130deg, rgba(15, 32, 49, 0.95), rgba(7, 18, 29, 0.95));
+        padding: 28px;
+        box-shadow: 0 12px 36px rgba(15, 95, 189, 0.08);
       }
 
-      .hero-inner {
-        padding: 42px 28px;
+      .hero-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 26px;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
       }
 
       h1 {
-        font-family: "Space Grotesk", sans-serif;
-        line-height: 1.05;
-        margin: 0 0 12px;
-        font-size: clamp(30px, 7vw, 62px);
+        margin: 0 0 10px;
+        font-size: clamp(34px, 6.8vw, 64px);
+        line-height: 0.96;
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
       }
 
-      .lead {
+      .subtitle {
         margin: 0;
-        color: var(--muted);
-        font-size: clamp(15px, 2.4vw, 18px);
-        max-width: 52ch;
+        color: var(--ink-soft);
+        font-size: 17px;
+        max-width: 64ch;
       }
 
-      .grid {
+      .kpis {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .kpi {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: linear-gradient(180deg, #fff, #f8fbff);
+        padding: 12px;
+      }
+
+      .kpi strong {
+        display: block;
+        font-size: 24px;
+        color: var(--brand-deep);
+      }
+
+      .kpi span {
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+
+      .cta {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+        font-size: 14px;
+        border: 1px solid transparent;
+      }
+
+      .btn.primary {
+        color: #fff;
+        background: linear-gradient(90deg, var(--brand-deep), var(--brand));
+      }
+
+      .btn.ghost {
+        color: var(--brand-deep);
+        border-color: #b6cae8;
+        background: #f7fbff;
+      }
+
+      .section {
+        margin-top: 18px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+      }
+
+      .section h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+
+      .section p {
+        margin: 0 0 14px;
+        color: var(--ink-soft);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
       }
 
       .card {
         border: 1px solid var(--line);
-        background: var(--card);
-        border-radius: 14px;
+        border-radius: 12px;
+        background: #fff;
         padding: 14px;
       }
 
       .card h3 {
-        margin: 0 0 6px;
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 17px;
+        margin: 0 0 8px;
+        font-size: 16px;
       }
 
-      .card p {
+      .card ul {
         margin: 0;
-        color: var(--muted);
+        padding-left: 18px;
+        color: var(--ink-soft);
         font-size: 14px;
       }
 
-      .actions {
-        margin-top: 22px;
-        display: flex;
-        flex-wrap: wrap;
+      .pipeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
       }
 
-      .btn {
-        text-decoration: none;
-        color: #08131f;
-        font-weight: 600;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        padding: 11px 15px;
-        border-radius: 10px;
-        transition: transform 180ms ease, filter 180ms ease;
-      }
-
-      .btn.secondary {
-        background: transparent;
-        color: var(--text);
+      .step {
         border: 1px solid var(--line);
+        background: var(--lavender);
+        border-radius: 12px;
+        padding: 12px;
       }
 
-      .btn:hover {
-        transform: translateY(-2px);
-        filter: brightness(1.08);
+      .step strong {
+        display: block;
+        color: var(--brand-deep);
+        margin-bottom: 6px;
+      }
+
+      .step span {
+        font-size: 13px;
+        color: var(--ink-soft);
       }
 
       .footer {
-        margin-top: 18px;
-        color: var(--muted);
+        margin-top: 16px;
+        color: var(--ink-soft);
         font-size: 13px;
       }
 
-      @media (max-width: 860px) {
-        .hero-inner {
-          grid-template-columns: 1fr;
-          padding: 28px 20px;
-        }
+      .ok {
+        color: #147a42;
+        font-weight: 700;
+      }
 
-        .grid {
+      @media (max-width: 980px) {
+        .hero-grid {
           grid-template-columns: 1fr;
         }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .pipeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
 
-        .topbar {
+      @media (max-width: 640px) {
+        .top {
           flex-direction: column;
           align-items: flex-start;
+        }
+        .pipeline {
+          grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
   <body>
-    <main class="shell">
-      <header class="topbar">
-        <div class="brand">
-          <img class="aginti" src="../logos/aginti-logo-wordmark-transparent.png" alt="AgInTi logo" />
-          <img class="lazyingart" src="https://lazying.art/logos/logo.png" alt="LazyingArt logo" />
+    <main class="container">
+      <header class="top">
+        <div class="logos">
+          <img class="aginti" src="./logos/aginti-logo-wordmark.png" alt="AgInTi logo" />
+          <img class="lazyingart" src="./logos/lazyingart-logo.png" alt="LazyingArt logo" />
         </div>
-        <div class="tag">Self-Creation · Self-Healing · Chain Tools</div>
+        <div class="chip">Self-Creation · Self-Healing · Chain Tools</div>
       </header>
 
       <section class="hero">
-        <div class="hero-inner">
+        <div class="hero-grid">
           <div>
-            <h1>AgInTi Automation Stack</h1>
-            <p class="lead">
-              Prompt-tool orchestration for deep research, course execution, and multi-repo maintenance.
-              Built to evolve tooling continuously from real run feedback.
+            <h1>AgInTi</h1>
+            <p class="subtitle">
+              A practical prompt-tool system for deep research, self-healing automation, and
+              continuous cross-repo updates. This page is fully self-contained under
+              <code>website/</code> for stable GitHub Pages deployment.
             </p>
-            <div class="actions">
-              <a class="btn" href="https://github.com/lachlanchen/AgInTi" target="_blank" rel="noreferrer">Open GitHub</a>
-              <a class="btn secondary" href="../README.md">Read README</a>
+            <div class="cta">
+              <a class="btn primary" href="https://github.com/lachlanchen/AgInTi" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn ghost" href="https://aginti.lazying.art/" target="_blank" rel="noreferrer">Live Site</a>
             </div>
           </div>
-
-          <div class="grid">
-            <article class="card">
-              <h3>LRE Pipeline</h3>
-              <p>Profile, books, investments, and ideas into single-copy notes + email output.</p>
-            </article>
-            <article class="card">
-              <h3>Course Agent</h3>
-              <p>Selenium bootstrap + prompt-tool builder + autodev loop for stable task execution.</p>
-            </article>
-            <article class="card">
-              <h3>AutoAppDev</h3>
-              <p>Auto-README and auto-website refresh across AgInTi and nested repos.</p>
-            </article>
-            <article class="card">
-              <h3>Run Artifacts</h3>
-              <p>Structured logs and self-heal reports for iterative, evidence-backed improvement.</p>
-            </article>
+          <div class="kpis">
+            <div class="kpi">
+              <strong>4</strong>
+              <span>LRE core stages</span>
+            </div>
+            <div class="kpi">
+              <strong>2</strong>
+              <span>Course-agent generation phases</span>
+            </div>
+            <div class="kpi">
+              <strong>5</strong>
+              <span>AutoAppDev repo targets</span>
+            </div>
+            <div class="kpi">
+              <strong class="ok">Live</strong>
+              <span>Custom domain pipeline</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <p class="footer">Suggested path: keep static site files under <code>website/</code>; use <code>docs/</code> only if you want documentation tooling.</p>
+      <section class="section">
+        <h2>Core Systems</h2>
+        <p>AgInTi connects research, execution, and maintenance using dedicated prompt tools.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>LRE Deep Research</h3>
+            <ul>
+              <li>Profile, books, investments, ideas</li>
+              <li>Single-copy notes update flow</li>
+              <li>Email output with stage aggregation</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Course Agent</h3>
+            <ul>
+              <li>Selenium bootstrap with session reuse</li>
+              <li>Tool builder and autodev loop</li>
+              <li>Prompt-driven recovery for stalls</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>AutoAppDev</h3>
+            <ul>
+              <li>Auto-README updates</li>
+              <li>Auto-website refresh</li>
+              <li>Cross-repo consistency sync</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>LRE Pipeline</h2>
+        <p>Deterministic stage chain with fallback behavior and latest-artifact promotion.</p>
+        <div class="pipeline">
+          <div class="step">
+            <strong>1) Profile</strong>
+            <span>Identity anchors, source validation, and evidence quality checks.</span>
+          </div>
+          <div class="step">
+            <strong>2) Books</strong>
+            <span>Growth-focused reading plan derived from profile strengths and gaps.</span>
+          </div>
+          <div class="step">
+            <strong>3) Investments</strong>
+            <span>Thesis candidates and risk framing aligned with current objectives.</span>
+          </div>
+          <div class="step">
+            <strong>4) Ideas</strong>
+            <span>Research directions, milestone draft, and self-heal checkpoints.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Course Agent Pipeline</h2>
+        <p>Human-like action loop for online course completion and workflow maintenance.</p>
+        <div class="pipeline">
+          <div class="step">
+            <strong>A) Bootstrap</strong>
+            <span>Open login session with browser automation and controlled checkpoints.</span>
+          </div>
+          <div class="step">
+            <strong>B) Build Plan</strong>
+            <span>Create structured tool plan from objective and prior issue logs.</span>
+          </div>
+          <div class="step">
+            <strong>C) Autodev</strong>
+            <span>Generate/fix tools inside target root and reuse runtime primitives.</span>
+          </div>
+          <div class="step">
+            <strong>D) Iterate</strong>
+            <span>Use result artifacts to refine prompt logic and reduce failure loops.</span>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer">
+        Deployment note: this site is served from <code>website/</code> via GitHub Actions, with
+        local logo assets in <code>website/logos/</code> to avoid broken path/hotlink issues.
+      </p>
     </main>
   </body>
 </html>
