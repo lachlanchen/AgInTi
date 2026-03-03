@@ -314,14 +314,16 @@ Nested structure for LRE:
 - `AgInTi/LifeReverseEngineering/earn` -> [LazyEarn](https://github.com/lachlanchen/LazyEarn)
 - `AgInTi/LifeReverseEngineering/IDEAS` -> [IDEAS](https://github.com/lachlanchen/IDEAS)
 
-## 🧠 LRE Deep Research Prompt Tools
+## 🧠 LRE and AutoAppDev Prompt Tools
 
-AgInTi now includes a LAB-compatible prompt-tool bundle under:
+AgInTi includes a LAB-compatible prompt-tool bundle under:
 
 - `AgInTi/lab_prompt_tools/`
 
-LRE-specific tools:
+Core LRE and AutoAppDev scripts:
 
+- `lab_prompt_tools/lre/run_lre_deep_research.sh`
+- `lab_prompt_tools/lre/run_lre_autoappdev.sh`
 - `lab_prompt_tools/lre/prompt_lre_profile_research.sh`
 - `lab_prompt_tools/lre/prompt_lre_book_finder.sh`
 - `lab_prompt_tools/lre/prompt_lre_investment_finder.sh`
@@ -329,8 +331,38 @@ LRE-specific tools:
 - `lab_prompt_tools/lre/prompt_lre_self_evolve.sh`
 - `lab_prompt_tools/lre/prompt_lre_repo_autoreadme.sh`
 - `lab_prompt_tools/lre/prompt_lre_repo_autowebsite.sh`
-- `lab_prompt_tools/lre/run_lre_autoappdev.sh`
+
+### LRE pipeline logic
+
+Entry point:
+
 - `lab_prompt_tools/lre/run_lre_deep_research.sh`
+
+Pipeline stages:
+
+1. Profile research stage runs `prompt_lre_profile_research.sh`.
+2. Books stage runs `prompt_lre_book_finder.sh` using profile output.
+3. Investments stage runs `prompt_lre_investment_finder.sh` using profile output.
+4. Ideas stage runs `prompt_lre_ideas_finder.sh` using profile output.
+5. Single-copy report is rebuilt into one markdown file, not appended.
+6. Outputs are synced into LRE sub-repos as latest snapshots and self-heal logs.
+7. AutoAppDev stage runs for README and website updates across all related repos.
+8. Email stage drafts/sends final summary via runtime mail tools.
+
+Key data flow:
+
+- Base output root: `~/.openclaw/workspace/LRE/`
+- Per-stage JSON output: `.../codex/latest-result.json`
+- Single-copy report: `LifeReverseEngineering/notes/lre_single_copy.md`
+- Learn notes: `LifeReverseEngineering/learn/notes/lre_books_latest.md`
+- Earn notes: `LifeReverseEngineering/earn/notes/lre_investments_latest.md`
+- IDEAS notes: `LifeReverseEngineering/IDEAS/notes/lre_research_ideas_latest.md`
+- Self-heal snapshots: `LifeReverseEngineering/**/tools/lre/*_self_heal_latest.{json,log}`
+
+Failure handling:
+
+- Each major research step uses timed execution and fallback mode.
+- Fallback automatically retries with websearch disabled to prevent full pipeline abort.
 
 Quick run:
 
@@ -338,6 +370,57 @@ Quick run:
 cd AgInTi
 lab_prompt_tools/lre/run_lre_deep_research.sh --model gpt-5.3-codex --reasoning high
 ```
+
+### AutoAppDev auto-README and auto-website logic
+
+Entry point:
+
+- `lab_prompt_tools/lre/run_lre_autoappdev.sh`
+
+Targets updated in one run:
+
+- `AgInTi`
+- `LifeReverseEngineering`
+- `LifeReverseEngineering/learn` (LazyLearn)
+- `LifeReverseEngineering/earn` (LazyEarn)
+- `LifeReverseEngineering/IDEAS` (IDEAS)
+
+For each target repo, the pipeline executes:
+
+1. `prompt_lre_repo_autoreadme.sh` to update README artifacts.
+2. `prompt_lre_repo_autowebsite.sh` to update website artifacts.
+3. Run logs are written under `~/.openclaw/workspace/LRE/autoappdev/logs/<run-id>/`.
+
+## 🎓 Course Agent (Career Tools) logic and pipeline
+
+The course/LinkedIn automation stack is in:
+
+- `lab_prompt_tools/career/`
+
+Primary scripts:
+
+- `lab_prompt_tools/career/start_dec_login_session.sh`
+- `lab_prompt_tools/career/selenium_login_bootstrap.py`
+- `lab_prompt_tools/career/prompt_career_tool_builder.sh`
+- `lab_prompt_tools/career/prompt_career_tool_autodev.sh`
+
+Runtime dependencies reused from shared tools:
+
+- `lab_prompt_tools/runtime/codex-json-runner.py`
+- `lab_prompt_tools/runtime/codex-noninteractive.sh`
+- `lab_prompt_tools/websearch/prompt_web_search_immersive.sh`
+
+Course agent pipeline:
+
+1. Manual bootstrap opens browser session and handles login checkpoints.
+2. Builder stage generates a structured tool plan JSON for the objective.
+3. Autodev stage consumes the plan and applies/fixes scripts under a target root.
+4. Prompt-driven tool generation is iterative, so the same loop can refine broken actions.
+5. Output artifacts are stored in run directories under `~/.openclaw/workspace/AgInTi/`.
+
+Default target root for generated career tooling:
+
+- `AgInTi/AutoAppDev/CareerOps`
 
 ## ❤️ Support
 
