@@ -418,6 +418,39 @@ Course agent pipeline:
 4. Prompt-driven tool generation is iterative, so the same loop can refine broken actions.
 5. Output artifacts are stored in run directories under `~/.openclaw/workspace/AgInTi/`.
 
+```mermaid
+flowchart TD
+  A[Human run start_dec_login_session.sh] --> B[selenium_login_bootstrap.py]
+  B --> C{Login state}
+  C -- logged in --> D[Open DEC course]
+  C -- needs auth --> E[Username/password + OTP checkpoint]
+  E --> D
+  D --> F[Course auto-run loop]
+  F --> G[Detect state and question]
+  G --> H[Pick answer and click confirm/next]
+  H --> I{Progress?}
+  I -- yes --> F
+  I -- no --> J[Stall handling: retry/refresh/no-action]
+  J --> F
+  F --> K{Completion marker}
+  K -- yes --> L[completed]
+  K -- no --> M[incomplete + diagnostics]
+  L --> N[sessions/<run-id>/ screenshots + bootstrap.log]
+  M --> N
+```
+
+```mermaid
+flowchart LR
+  O[Human objective] --> P[prompt_career_tool_builder.sh]
+  P --> Q[Structured tool plan JSON]
+  Q --> R[prompt_career_tool_autodev.sh]
+  R --> S[Apply/fix scripts and prompts]
+  S --> T[Re-run bootstrap]
+  T --> U[New logs/screenshots]
+  U --> V[Shadow-self style diagnosis and next repair]
+  V --> R
+```
+
 Default target root for generated career tooling:
 
 - `AgInTi/AutoAppDev/CareerOps`
