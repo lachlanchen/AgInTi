@@ -1,9 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 <p align="center">
-  <a href="https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png">
-    <img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="75%">
-  </a>
+  <a href="https://lazying.art"><img src="https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png" alt="LazyingArt banner" width="75%"></a>
   <a href="../logos/aginti-logo-wordmark.png">
     <img src="../logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="23%">
   </a>
