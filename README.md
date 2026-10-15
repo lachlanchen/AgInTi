@@ -1,7 +1,7 @@
 [English](README.md) · [العربية](i18n/README.ar.md) · [Español](i18n/README.es.md) · [Français](i18n/README.fr.md) · [日本語](i18n/README.ja.md) · [한국어](i18n/README.ko.md) · [Tiếng Việt](i18n/README.vi.md) · [中文 (简体)](i18n/README.zh-Hans.md) · [中文（繁體）](i18n/README.zh-Hant.md) · [Deutsch](i18n/README.de.md) · [Русский](i18n/README.ru.md)
 
 <p align="center">
-  <a href="https://lazying.art"><img src="https://github.com/lachlanchen/LazyingArtWebsite/raw/main/media/brand/lazyingart-intro.gif" alt="LazyingArt banner — apps and four buddies" width="75%"></a>
+  <a href="https://lazying.art"><img src="https://lazying.art/media/brand/lazyingart-intro.gif" alt="LazyingArt banner — apps and four buddies" width="75%"></a>
   <a href="logos/aginti-logo-wordmark.png">
     <img src="logos/aginti-logo-wordmark.png" alt="AgInTi wordmark" width="23%">
   </a>
